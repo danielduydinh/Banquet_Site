@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MainPage() {
+export default function Appbar() {
 
   const [value, setValue] = React.useState('home');
 

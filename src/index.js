@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import MainPage from './Components/mainpage.js';
+import Appbar from './Components/AppBar.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <MainPage />
+    <Appbar/>
   </React.StrictMode>,
   document.getElementById('root')
 );
