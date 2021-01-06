@@ -49,13 +49,6 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     flexGrow: 1,
   },
-  heroContent: {
-    backgroundColor: '#424242',
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
 }));
 
 export default function Appbar() {
