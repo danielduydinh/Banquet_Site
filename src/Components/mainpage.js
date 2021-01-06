@@ -104,10 +104,10 @@ export default function MainPage() {
           </div>
         </main>
         <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/one" component={One} />
-            <Route exact path="/two" component={Two} />
-          </Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/one" component={One} />
+          <Route exact path="/two" component={Two} />
+        </Switch>
         </ThemeProvider>
       </Router>
     </React.Fragment>
