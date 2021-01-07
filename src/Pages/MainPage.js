@@ -1,11 +1,10 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import Carousel from 'react-elastic-carousel';
 
 const theme = createMuiTheme({
   palette: {
@@ -40,6 +39,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const items = [
+    {id: 1, title: 'item #1'},
+    {id: 2, title: 'item #2'},
+    {id: 3, title: 'item #3'},
+    {id: 4, title: 'item #4'},
+    {id: 5, title: 'item #5'},
+];
+
 export default function Mainpage() {
   const classes = useStyles();
   return (
@@ -49,20 +56,9 @@ export default function Mainpage() {
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Main Page
           </Typography>
-          <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 1
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 2
-                </Button>
-              </Grid>
-            </Grid>
-          </div>
+          <Carousel itemsToShow={1}>
+            {items.map(item => <div key={item.id}>{item.title}</div>)}
+          </Carousel>
         </Container>
       </div>
     </ThemeProvider>
