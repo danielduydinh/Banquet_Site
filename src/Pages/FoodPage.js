@@ -28,6 +28,7 @@ const theme = createMuiTheme({
     },
   },
 });
+
 const useStyles = makeStyles((theme) => ({
   PageContent: {
     backgroundColor: '#424242',
@@ -39,6 +40,22 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
 }));
+
+/*
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
+    backgroundColor: theme.palette.background.paper,
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+  },
+}));
+*/
 
 export default function Foodpage() {
   const classes = useStyles();
