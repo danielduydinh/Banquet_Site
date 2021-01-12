@@ -38,6 +38,14 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
+  footer: {
+    position: 'fixed',
+    backgroundColor: '#d32f2f',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: '50px',
+  },
 }));
 
 export default function Mainpage() {
@@ -65,6 +73,7 @@ export default function Mainpage() {
           </div>
         </Container>
       </div>
+      <footer className={classes.footer}>HELLO</footer>
     </ThemeProvider>
   )
 }
