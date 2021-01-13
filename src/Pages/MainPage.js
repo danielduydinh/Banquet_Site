@@ -71,6 +71,9 @@ export default function Mainpage() {
               </Grid>
             </Grid>
           </div>
+	  <Typography component="h3" variant="h4" align="center" color="textPrimary" gutterBottom>
+	    About CSA and Banquet
+	  </Typography>
         </Container>
       </div>
       <footer className={classes.footer}>HELLO</footer>
