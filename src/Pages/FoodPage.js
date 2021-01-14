@@ -8,6 +8,12 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import myImg from './Photos/foood.jpg';
+import pic from './Photos/dat.jpg';
+import pic2 from './Photos/DanielPFP.jpg';
+import pizza from './Photos/pizza.jpg';
+import mac from './Photos/mac.jpg';
+
 
 const theme = createMuiTheme({
   palette: {
@@ -46,70 +52,75 @@ const useStyles = makeStyles((theme) => ({
     height: 450,
   },
 }));
-
 const tileData = [
   {
-    img: '../Photos/dat.jpg',
+    img: pizza,
     title: 'Breakfast',
     author: 'jill111',
-    cols: 2,
+    cols: 1,
     featured: true,
   },
   {
-    img: '../Photos/DanielPFP.jpg',
+    img: pic,
     title: 'Tasty burger',
     author: 'director90',
   },
   {
-    img: '../Photos/foood.jpg',
+    img: pic2,
     title: 'Camera',
     author: 'Danson67',
   },
   {
-    img: '../Photos/dat.jpg',
+    img: myImg,
     title: 'Morning',
     author: 'fancycrave1',
+    cols: 3,
     featured: true,
   },
   {
-    img: '../Photos/DanielPFP.jpg',
+    img: pic2,
     title: 'Hats',
     author: 'Hans',
   },
   {
-    img: '../Photos/foood.jpg',
+    img: mac,
     title: 'Honey',
     author: 'fancycravel',
   },
   {
-    img: '../Photos/dat.jpg',
+    img: pic,
     title: 'Vegetables',
     author: 'jill111',
-    cols: 2,
+    cols: 1,
   },
   {
-    img: '../Photos/DanielPFP.jpg',
+    img: pizza,
     title: 'Water plant',
     author: 'BkrmadtyaKarki',
   },
   {
-    img: '../Photos/foood.jpg',
+    img: pic,
     title: 'Mushrooms',
     author: 'PublicDomainPictures',
   },
   {
-    img: '../Photos/dat.jpg',
+    img: pic2,
     title: 'Olive oil',
     author: 'congerdesign',
   },
   {
-    img: '../Photos/DanielPFP.jpg',
+    img: pizza,
     title: 'Sea star',
-    cols: 2,
+    cols: 1,
     author: '821292',
   },
   {
-    img: '../Photos/foood.jpg',
+    img: pic,
+    title: 'Bike',
+    author: 'danfador',
+  },
+  {
+    img: mac,
     title: 'Bike',
     author: 'danfador',
   },
