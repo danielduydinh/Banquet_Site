@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+//import Button from '@material-ui/core/Button';
+//import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
@@ -53,28 +53,20 @@ export default function Mainpage() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-        <Container maxWidth="sm">
-          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-            Main Page
-          </Typography>
-          <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 1
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 2
-                </Button>
-              </Grid>
-            </Grid>
-          </div>
-	  <Typography component="h3" variant="h4" align="center" color="textPrimary" gutterBottom>
-	    About CSA and Banquet
-	  </Typography>
-        </Container>
+        <Container maxWidth="1/4">
+          <Box width="45%">
+            <Typography component="h2" underline="always" variant="h3" align="left" color="textPrimary" gutterBottom>
+              WELCOME TO OUR ANNUAL BANQUET 
+            </Typography>
+          </Box>
+          <Box width="30%">
+            <Typography component="h5" variant="h6" align="left" color="textPrimary" gutterBottom>
+              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
+              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen 
+              the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+            </Typography>
+          </Box>
+        </Container>  
       </div>
       <footer className={classes.footer}>HELLO</footer>
     </ThemeProvider>
