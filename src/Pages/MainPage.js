@@ -38,14 +38,6 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
-  footer: {
-    position: 'fixed',
-    backgroundColor: '#d32f2f',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: '50px',
-  },
 }));
 
 export default function Mainpage() {
@@ -70,13 +62,181 @@ export default function Mainpage() {
                 </Button>
               </Grid>
             </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <h3>Hello</h3>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
           </div>
 	  <Typography component="h3" variant="h4" align="center" color="textPrimary" gutterBottom>
 	    About CSA and Banquet
 	  </Typography>
         </Container>
       </div>
-      <footer className={classes.footer}>HELLO</footer>
     </ThemeProvider>
   )
 }
