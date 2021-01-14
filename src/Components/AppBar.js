@@ -49,6 +49,14 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     flexGrow: 1,
   },
+  footer: {
+    position: 'fixed',
+    backgroundColor: '#b63d2d',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: '50px',
+  },
 }));
 
 export default function Appbar() {
@@ -81,6 +89,7 @@ export default function Appbar() {
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
           </Switch>
+          <footer className={classes.footer}>HELLO</footer>
         </ThemeProvider>
       </Router>
     </React.Fragment>
