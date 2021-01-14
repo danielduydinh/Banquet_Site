@@ -9,6 +9,7 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
+import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
   palette: {
@@ -38,11 +39,14 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 0, 6),
     width: '99.1vw',
     height: '100vh',
+    //
+    maxwidth: "100%",
   },
   PageButtons: {
     marginTop: theme.spacing(4),
   },
   Video: {
+    marginLeft: "-7%",
   },
 }));
 const videoOptions = {
@@ -62,7 +66,7 @@ export default function Skitpage() {
   const classes = useStyles();
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.PageContent}>
+      <div className={classes.PageContent} content="width=device-width">
         <Container maxWidth="sm">
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Skit Page
@@ -70,6 +74,12 @@ export default function Skitpage() {
           <div className={classes.Video}>
             <YouTube videoId="2g811Eo7K8U" opts={videoOptions} onReady={_onReady} />;
           </div>
+          <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
+            Description:
+          </Typography>
+          <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
+            Codeijdisijidsj Codeijdisijidsj Codeijdisijidsj Codeijdisijidsj
+          </Typography>
           <div className={classes.PageButtons}>
             <Grid container spacing={2} justify="center">
               <Grid item>
