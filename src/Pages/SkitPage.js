@@ -42,7 +42,21 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
+  Video: {
+  },
 }));
+const videoOptions = {
+  height: "390",
+  width: "640",
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 1
+  }
+};
+function _onReady(event) {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();
+}
 
 export default function Skitpage() {
   const classes = useStyles();
@@ -53,6 +67,9 @@ export default function Skitpage() {
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Skit Page
           </Typography>
+          <div className={classes.Video}>
+            <YouTube videoId="2g811Eo7K8U" opts={videoOptions} onReady={_onReady} />;
+          </div>
           <div className={classes.PageButtons}>
             <Grid container spacing={2} justify="center">
               <Grid item>
