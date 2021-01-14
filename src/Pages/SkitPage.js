@@ -8,6 +8,7 @@ import Container from '@material-ui/core/Container';
 
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import YouTube from "react-youtube";
 
 const theme = createMuiTheme({
   palette: {
@@ -73,7 +74,7 @@ export default function Skitpage() {
 }
 
 /**
- * 
+ *
 import React from "react";
 import "./styles.css";
 import YouTube from "react-youtube";
