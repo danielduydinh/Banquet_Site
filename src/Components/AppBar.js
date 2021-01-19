@@ -6,6 +6,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Popover from '@material-ui/core/Popover';
 import {
   BrowserRouter as Router,
   Switch,
@@ -52,6 +55,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Appbar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const [value, setValue] = React.useState('home');
 
@@ -66,12 +76,12 @@ export default function Appbar() {
       <Router>
         <ThemeProvider theme={theme}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange}>
+          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="Food" to="/food" component={Link} value='food'/>
-            <Tab label="Skit" to="/skit" component={Link} value='skit'/>
-            <Tab label="Fashion" to="/fashion" component={Link} value='fashion'/>
-            <Tab label="Language" to="/language" component={Link} value='language'/>
+            <Tab label="Themes" 
+              value='themes'
+              onClick={handleOpen}
+            ></Tab>
           </Tabs>
         </AppBar>
         <Switch>
@@ -81,6 +91,18 @@ export default function Appbar() {
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
           </Switch>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose} to="/food" component={Link}> Food + Fortune </MenuItem>
+            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> Fashion + Beauty </MenuItem>
+            <MenuItem onClick={handleClose} to="/language" component={Link}> Influence + Language </MenuItem>
+            <MenuItem onClick={handleClose} to="/skit" component={Link}> Film + Media </MenuItem>
+          </Menu>
         </ThemeProvider>
       </Router>
     </React.Fragment>
