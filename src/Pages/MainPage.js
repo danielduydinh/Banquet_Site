@@ -55,6 +55,18 @@ export default function Mainpage() {
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
             </Typography>
           </Box>
+          <Box width="45%">
+            <Typography component="h2" underline="always" variant="h3" align="left" color="textPrimary" gutterBottom>
+              WELCOME TO OUR ANNUAL BANQUET 
+            </Typography>
+          </Box>
+          <Box width="30%">
+            <Typography component="h5" variant="h6" align="left" color="textPrimary" gutterBottom>
+              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
+              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen 
+              the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+            </Typography>
+          </Box>
         </Container>  
       </div>
     </ThemeProvider>

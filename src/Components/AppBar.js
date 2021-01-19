@@ -6,6 +6,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -46,7 +50,6 @@ const theme = createMuiTheme({
   },
 });
 const useStyles = makeStyles((theme) => ({
-  
   appBar: {
     position: 'fixed',
     minHeight: '5vh',
@@ -59,8 +62,35 @@ const useStyles = makeStyles((theme) => ({
   },
   
   footer: {
-    backgroundColor: '#b63d2d',
+    backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontFamily: 'Arial',
+  },
+  leftFooter: {
+
+  },
+  rightFooter: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  socialMediaContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  socialMedia: {
+
+  },
+  text1: {
+    fontFamily: 'Verdana',
+    fontSize: 15,
+  },
+  text2: {
+    fontFamily: 'Arial',
+    fontSize: 12,
   },
 }));
 
@@ -95,7 +125,40 @@ export default function Appbar() {
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
           </Switch>
-          <footer className={classes.footer}>HELLO</footer>
+          <footer className={classes.footer}>
+            <div className={classes.leftFooter}>
+              <p className={classes.text1}>
+                UNIVERSITY OF CALIFORNIA | SANTA CRUZ
+              </p>
+              <p>
+                CHINESE STUDENT ASSOCIATION
+              </p>
+            </div>
+            <div className={classes.rightFooter}>
+              <div>
+                <p>
+                  LET'S KEEP IN TOUCH!
+                </p>
+                <p>
+                  Please, we need friends
+                </p>
+              </div>
+              <div className={classes.socialMediaContainer}>
+                <div> 
+                  <FacebookIcon />
+                  Facebook
+                </div>
+                <div> 
+                  <InstagramIcon />
+                  Instagram
+                </div>
+                <div> 
+                  <YouTubeIcon />
+                  Youtube
+                </div>
+              </div>
+            </div>
+          </footer>
           </div>
         </ThemeProvider>
       </Router>
