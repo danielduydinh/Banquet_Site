@@ -46,16 +46,21 @@ const theme = createMuiTheme({
   },
 });
 const useStyles = makeStyles((theme) => ({
+  
   appBar: {
-    flexGrow: 1,
-  },
-  footer: {
     position: 'fixed',
+    minHeight: '5vh',
+  },
+
+  body: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+  
+  footer: {
     backgroundColor: '#b63d2d',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    height: '50px',
+    minHeight: '15vh',
   },
 }));
 
@@ -73,6 +78,7 @@ export default function Appbar() {
       <CssBaseline />
       <Router>
         <ThemeProvider theme={theme}>
+        <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange}>
             <Tab label="Home" to="/" component={Link} value='home'/>
@@ -82,14 +88,15 @@ export default function Appbar() {
             <Tab label="Language" to="/language" component={Link} value='language'/>
           </Tabs>
         </AppBar>
-        <Switch>
-            <Route exact path="/" component={Mainpage} />
+          <Switch>
+            <Route exact path="/" component={Mainpage}/>
             <Route path="/food" component={Foodpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
           </Switch>
           <footer className={classes.footer}>HELLO</footer>
+          </div>
         </ThemeProvider>
       </Router>
     </React.Fragment>

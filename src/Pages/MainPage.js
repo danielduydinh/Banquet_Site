@@ -32,11 +32,8 @@ const useStyles = makeStyles((theme) => ({
   PageContent: {
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
-    width: '99.1vw',
-    height: '100vh',
-  },
-  PageButtons: {
-    marginTop: theme.spacing(4),
+    // width: '99.1vw',
+    minHeight: '85vh',
   },
 }));
 
