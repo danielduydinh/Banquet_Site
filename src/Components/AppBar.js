@@ -81,10 +81,24 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    //
+    alignItems: 'baseline'
   },
   socialMediaContainer: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  facebook: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  instagram: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  youtube: {
+    display: 'flex',
+    alignItems: 'center',
   },
   socialMedia: {
 
@@ -164,17 +178,17 @@ export default function Appbar() {
               <Divider className={classes.divider} orientation='vertical'
                 variant='middle' flexItem/>
               <div className={classes.socialMediaContainer}>
-                <div> 
+                <div className={classes.facebook}> 
                   <FacebookIcon />
-                  Facebook
+                  <span>Facebook</span>
                 </div>
-                <div> 
+                <div className={classes.instagram}> 
                   <InstagramIcon />
-                  Instagram
+                  <span>Instagram</span>
                 </div>
-                <div> 
+                <div className={classes.youtube}> 
                   <YouTubeIcon />
-                  Youtube
+                  <span>Youtube</span>
                 </div>
               </div>
             </div>
