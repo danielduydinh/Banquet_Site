@@ -41,15 +41,15 @@ const useStyles = makeStyles((theme) => ({
   PageContent: {
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
-    width: '99.1vw',
-    height: '100vh',
+    width: '98.8vw',
+    height: '175vh',
   },
   PageButtons: {
     marginTop: theme.spacing(4),
   },
   gridList: {
-    width: 500,
-    height: 450,
+    width: 400,
+    height: 600,
   },
 }));
 const tileData = [
@@ -58,6 +58,7 @@ const tileData = [
     title: 'Breakfast',
     author: 'jill111',
     cols: 1,
+    width: '50vw',
     featured: true,
   },
   {
@@ -69,6 +70,11 @@ const tileData = [
     img: pic2,
     title: 'Camera',
     author: 'Danson67',
+  },
+  {
+    img: mac,
+    title: 'Honey',
+    author: 'fancycravel',
   },
   {
     img: myImg,
@@ -137,7 +143,7 @@ export default function Foodpage() {
             Food Page
           </Typography>
           <div className={classes.root}>
-            <GridList cellHeight={160} className={classes.gridList} cols={3}>
+            <GridList cellHeight={160} cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
                 <img src={tile.img} alt={tile.title} />
