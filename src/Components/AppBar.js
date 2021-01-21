@@ -9,6 +9,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid';
 
 import {
   BrowserRouter as Router,
@@ -76,10 +78,24 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    //
+    alignItems: 'baseline'
   },
   socialMediaContainer: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  facebook: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  instagram: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  youtube: {
+    display: 'flex',
+    alignItems: 'center',
   },
   socialMedia: {
 
@@ -92,6 +108,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Arial',
     fontSize: 12,
   },
+  divider: {
+    background: 'black',
+  }
 }));
 
 export default function Appbar() {
@@ -118,6 +137,7 @@ export default function Appbar() {
             <Tab label="Language" to="/language" component={Link} value='language'/>
           </Tabs>
         </AppBar>
+        
           <Switch>
             <Route exact path="/" component={Mainpage}/>
             <Route path="/food" component={Foodpage} />
@@ -128,7 +148,9 @@ export default function Appbar() {
           <footer className={classes.footer}>
             <div className={classes.leftFooter}>
               <p className={classes.text1}>
-                UNIVERSITY OF CALIFORNIA | SANTA CRUZ
+                UNIVERSITY OF CALIFORNIA |
+                <br/>
+                SANTA CRUZ
               </p>
               <p>
                 CHINESE STUDENT ASSOCIATION
@@ -143,18 +165,19 @@ export default function Appbar() {
                   Please, we need friends
                 </p>
               </div>
+              
               <div className={classes.socialMediaContainer}>
-                <div> 
+                <div className={classes.facebook}> 
                   <FacebookIcon />
-                  Facebook
+                  <span>Facebook</span>
                 </div>
-                <div> 
+                <div className={classes.instagram}> 
                   <InstagramIcon />
-                  Instagram
+                  <span>Instagram</span>
                 </div>
-                <div> 
+                <div className={classes.youtube}> 
                   <YouTubeIcon />
-                  Youtube
+                  <span>Youtube</span>
                 </div>
               </div>
             </div>
