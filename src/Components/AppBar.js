@@ -9,8 +9,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
 
 import {
   BrowserRouter as Router,
@@ -72,7 +72,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Arial',
   },
   leftFooter: {
-
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
   },
   rightFooter: {
     display: 'flex',
@@ -95,7 +98,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 12,
   },
   divider: {
-    background: 'black',
+    backgroundColor: 'white',
+    marginLeft: '0.5vw',
+    marginRight: '0.5vw',
+    height: '7.5vh',
+    width: '0.25vw',
   }
 }));
 
@@ -133,14 +140,17 @@ export default function Appbar() {
           </Switch>
           <footer className={classes.footer}>
             <div className={classes.leftFooter}>
-              <p className={classes.text1}>
-                UNIVERSITY OF CALIFORNIA |
-                <br/>
-                SANTA CRUZ
-              </p>
-              <p>
-                CHINESE STUDENT ASSOCIATION
-              </p>
+              <PetsIcon />
+              <div>
+                <p className={classes.text1}>
+                  UNIVERSITY OF CALIFORNIA |
+                  <br/>
+                  SANTA CRUZ
+                </p>
+                <p>
+                  CHINESE STUDENT ASSOCIATION
+                </p>
+              </div>
             </div>
             <div className={classes.rightFooter}>
               <div>
@@ -151,7 +161,8 @@ export default function Appbar() {
                   Please, we need friends
                 </p>
               </div>
-              
+              <Divider className={classes.divider} orientation='vertical'
+                variant='middle' flexItem/>
               <div className={classes.socialMediaContainer}>
                 <div> 
                   <FacebookIcon />
