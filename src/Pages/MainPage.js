@@ -5,6 +5,9 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Carousel from 'react-bootstrap/Carousel'
+import Button from 'react-bootstrap/Button';
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
+
 
 const theme = createMuiTheme({
   palette: {
@@ -63,7 +66,7 @@ export default function Mainpage() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://d17fnq9dkz9hgj.cloudfront.net/uploads/2020/04/shelter-dog-cropped-1-632x329.jpg"
+          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
           alt="Second slide"
         />
 
@@ -75,7 +78,7 @@ export default function Mainpage() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/v1584388937/shape/mentalfloss/536413-gettyimages-1077470274.jpg?itok=NoDcW5uz"
+          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
           alt="Third slide"
         />
 
