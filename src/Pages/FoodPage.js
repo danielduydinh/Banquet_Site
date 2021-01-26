@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   PageContent: {
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
+    width: '98.8vw',
     height: '175vh',
   },
   PageButtons: {
@@ -138,6 +139,9 @@ export default function Foodpage() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="sm">
+          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+            Food Page
+          </Typography>
           <div className={classes.root}>
             <GridList cellHeight={160} cols={4}>
               {tileData.map((tile) => (
@@ -146,6 +150,20 @@ export default function Foodpage() {
                 </GridListTile>
                 ))}
             </GridList>
+          </div>
+          <div className={classes.PageButtons}>
+            <Grid container spacing={2} justify="center">
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 1
+                </Button>
+              </Grid>
+              <Grid item>
+                <Button variant="contained" color="primary">
+                  Button 2
+                </Button>
+              </Grid>
+            </Grid>
           </div>
         </Container>
       </div>
