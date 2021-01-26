@@ -6,6 +6,12 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import PetsIcon from '@material-ui/icons/Pets';
+import Divider from '@material-ui/core/Divider';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -47,8 +53,71 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    flexGrow: 1,
+    position: 'fixed',
+    minHeight: '5vh',
   },
+
+  body: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+  
+  footer: {
+    backgroundColor: theme.palette.error.main,
+    minHeight: '15vh',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    fontFamily: 'Arial',
+  },
+  leftFooter: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'baseline',
+  },
+  rightFooter: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    //
+    alignItems: 'baseline'
+  },
+  socialMediaContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  facebook: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  instagram: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  youtube: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  socialMedia: {
+
+  },
+  text1: {
+    fontFamily: 'Verdana',
+    fontSize: 15,
+  },
+  text2: {
+    fontFamily: 'Arial',
+    fontSize: 12,
+  },
+  divider: {
+    backgroundColor: 'white',
+    marginLeft: '0.5vw',
+    marginRight: '0.5vw',
+    height: '7.5vh',
+    width: '0.25vw',
+  }
 }));
 
 export default function Appbar() {
@@ -65,6 +134,7 @@ export default function Appbar() {
       <CssBaseline />
       <Router>
         <ThemeProvider theme={theme}>
+        <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange}>
             <Tab label="Home" to="/" component={Link} value='home'/>
@@ -74,13 +144,56 @@ export default function Appbar() {
             <Tab label="Language" to="/language" component={Link} value='language'/>
           </Tabs>
         </AppBar>
-        <Switch>
-            <Route exact path="/" component={Mainpage} />
+        
+          <Switch>
+            <Route exact path="/" component={Mainpage}/>
             <Route path="/food" component={Foodpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
           </Switch>
+          <footer className={classes.footer}>
+            <div className={classes.leftFooter}>
+              <PetsIcon />
+              <div>
+                <p className={classes.text1}>
+                  UNIVERSITY OF CALIFORNIA |
+                  <br/>
+                  SANTA CRUZ
+                </p>
+                <p>
+                  CHINESE STUDENT ASSOCIATION
+                </p>
+              </div>
+            </div>
+            <div className={classes.rightFooter}>
+              <div>
+                <p>
+                  LET'S KEEP IN TOUCH!
+                </p>
+                <p>
+                  Please, we need friends
+                </p>
+              </div>
+              <Divider className={classes.divider} orientation='vertical'
+                variant='middle' flexItem/>
+              <div className={classes.socialMediaContainer}>
+                <div className={classes.facebook}> 
+                  <FacebookIcon />
+                  <span>Facebook</span>
+                </div>
+                <div className={classes.instagram}> 
+                  <InstagramIcon />
+                  <span>Instagram</span>
+                </div>
+                <div className={classes.youtube}> 
+                  <YouTubeIcon />
+                  <span>Youtube</span>
+                </div>
+              </div>
+            </div>
+          </footer>
+          </div>
         </ThemeProvider>
       </Router>
     </React.Fragment>
