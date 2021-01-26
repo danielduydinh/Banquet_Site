@@ -39,6 +39,10 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
+  carouseldiv: {
+    width: '60vw',
+    height: '20vh',
+  },
 }));
 
 export default function Mainpage() {
@@ -50,59 +54,60 @@ export default function Mainpage() {
   };
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Food"
-        />
-        <Carousel.Caption>
-          <h3>Food</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Skit"
-        />
+    <div className={classes.carouseldiv}>
+      <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+            alt="Food"
+          />
+          <Carousel.Caption>
+            <h3>Food</h3>
+            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+            alt="Skit"
+          />
 
-        <Carousel.Caption>
-          <h3>Skit</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Fashion"
-        />
+          <Carousel.Caption>
+            <h3>Skit</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+            alt="Fashion"
+          />
 
-        <Carousel.Caption>
-          <h3>Fashion</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Language"
-        />
+          <Carousel.Caption>
+            <h3>Fashion</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+            alt="Language"
+          />
 
-        <Carousel.Caption>
-          <h3>Language</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
+          <Carousel.Caption>
+            <h3>Language</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+    </div>
   );
 }
-
