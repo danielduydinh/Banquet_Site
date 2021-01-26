@@ -5,7 +5,6 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Carousel from 'react-bootstrap/Carousel'
-import Button from 'react-bootstrap/Button';
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 
 
@@ -56,10 +55,10 @@ export default function Mainpage() {
         <img
           className="d-block w-100"
           src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="First slide"
+          alt="Food"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
+          <h3>Food</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -67,11 +66,11 @@ export default function Mainpage() {
         <img
           className="d-block w-100"
           src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Second slide"
+          alt="Skit"
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
+          <h3>Skit</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
@@ -79,11 +78,25 @@ export default function Mainpage() {
         <img
           className="d-block w-100"
           src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-          alt="Third slide"
+          alt="Fashion"
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Fashion</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+          alt="Language"
+        />
+
+        <Carousel.Caption>
+          <h3>Language</h3>
           <p>
             Praesent commodo cursus magna, vel scelerisque nisl consectetur.
           </p>
