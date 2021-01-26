@@ -23,6 +23,9 @@ import Foodpage from '../Pages/FoodPage.js';
 import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Langpage from '../Pages/LangPage.js';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import Popover from '@material-ui/core/Popover';
 // im a comment
 /**
  * Resources consulted:
@@ -62,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     minHeight: '100vh',
   },
-  
+
   footer: {
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
@@ -121,6 +124,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Appbar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const [value, setValue] = React.useState('home');
 
@@ -136,15 +146,15 @@ export default function Appbar() {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange}>
+          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="Food" to="/food" component={Link} value='food'/>
-            <Tab label="Skit" to="/skit" component={Link} value='skit'/>
-            <Tab label="Fashion" to="/fashion" component={Link} value='fashion'/>
-            <Tab label="Language" to="/language" component={Link} value='language'/>
+            <Tab label="Themes"
+              value='themes'
+              onClick={handleOpen}
+            ></Tab>
           </Tabs>
         </AppBar>
-        
+
           <Switch>
             <Route exact path="/" component={Mainpage}/>
             <Route path="/food" component={Foodpage} />
@@ -178,15 +188,15 @@ export default function Appbar() {
               <Divider className={classes.divider} orientation='vertical'
                 variant='middle' flexItem/>
               <div className={classes.socialMediaContainer}>
-                <div className={classes.facebook}> 
+                <div className={classes.facebook}>
                   <FacebookIcon />
                   <span>Facebook</span>
                 </div>
-                <div className={classes.instagram}> 
+                <div className={classes.instagram}>
                   <InstagramIcon />
                   <span>Instagram</span>
                 </div>
-                <div className={classes.youtube}> 
+                <div className={classes.youtube}>
                   <YouTubeIcon />
                   <span>Youtube</span>
                 </div>
@@ -194,6 +204,18 @@ export default function Appbar() {
             </div>
           </footer>
           </div>
+          <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose} to="/food" component={Link}> Food + Fortune </MenuItem>
+            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> Fashion + Beauty </MenuItem>
+            <MenuItem onClick={handleClose} to="/language" component={Link}> Influence + Language </MenuItem>
+            <MenuItem onClick={handleClose} to="/skit" component={Link}> Film + Media </MenuItem>
+          </Menu>
         </ThemeProvider>
       </Router>
     </React.Fragment>
