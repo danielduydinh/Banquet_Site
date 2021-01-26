@@ -38,6 +38,10 @@ const theme = createMuiTheme({
 });
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    width: 650,
+    height: 500,
+  },
   PageContent: {
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
@@ -80,6 +84,7 @@ const tileData = [
     img: myImg,
     title: 'Morning',
     author: 'fancycrave1',
+    width: 800,
     cols: 3,
     featured: true,
   },
