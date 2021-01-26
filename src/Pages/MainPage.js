@@ -9,6 +9,8 @@ import { positions } from '@material-ui/system';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import Carousel from 'react-bootstrap/Carousel'
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 //import Carousel from 'react-elastic-carousel';
 import { spacing } from '@material-ui/system';
 
@@ -43,35 +45,101 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
+  carouseldiv: {
+    width: '60vw',
+    height: '20vh',
+  },
 }));
 
 export default function Mainpage() {
   const classes = useStyles();
+  const [index, setIndex] = React.useState(0);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
+        <div className={classes.carouseldiv}>
+          <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                alt="Food"
+              />
+              <Carousel.Caption>
+                <h3>Food</h3>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                alt="Skit"
+              />
+
+              <Carousel.Caption>
+                <h3>Skit</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                alt="Fashion"
+              />
+
+              <Carousel.Caption>
+                <h3>Fashion</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                alt="Language"
+              />
+
+              <Carousel.Caption>
+                <h3>Language</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
+        </div>
+
         <Container maxWidth="1/4">
           <Box width="45%">
             <Typography component="h2" underline="always" variant="h3" align="left" color="textPrimary" gutterBottom>
-              WELCOME TO OUR ANNUAL BANQUET 
+              WELCOME TO OUR ANNUAL BANQUET
             </Typography>
           </Box>
           <Box width="30%">
             <Typography component="h5" variant="h6" align="left" color="textPrimary" gutterBottom>
               CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
-              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen 
+              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
             </Typography>
           </Box>
           <Box width="100%">
             <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
-              Something about Annual Meeting  
+              Something about Annual Meeting
             </Typography>
           </Box>
           <Box  p={2} width="100%" mx={16}>
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
               CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
-              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen 
+              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
             </Typography>
           </Box>
@@ -79,7 +147,7 @@ export default function Mainpage() {
             <Grid container spacing={2} justify="center">
               <Grid item>
                 <Button variant="contained" color="primary">
-                  LEARN MORE ABOUT US 
+                  LEARN MORE ABOUT US
                 </Button>
               </Grid>
               <Grid item>
@@ -88,8 +156,8 @@ export default function Mainpage() {
                 </Button>
                </Grid>
               </Grid>
-          </div>  
-        </Container>   
+          </div>
+        </Container>
       </div>
     </ThemeProvider>
   )
