@@ -15,6 +15,12 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { spacing } from '@material-ui/system';
 
 const theme = createMuiTheme({
+  typography: {
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+    },
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -117,7 +123,6 @@ export default function Mainpage() {
             </Carousel.Item>
           </Carousel>
         </div>
-
         <Container maxWidth="1/4">
           <Box width="45%">
             <Typography component="h2" underline="always" variant="h3" align="left" color="textPrimary" gutterBottom>
