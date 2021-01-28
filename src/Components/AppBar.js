@@ -25,7 +25,7 @@ import Fashionpage from '../Pages/FashionPage.js';
 import Langpage from '../Pages/LangPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Popover from '@material-ui/core/Popover';
+// import Popover from '@material-ui/core/Popover';
 // im a comment
 /**
  * Resources consulted:
@@ -145,16 +145,15 @@ export default function Appbar() {
       <Router>
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
-        <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
-            <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="Themes"
-              value='themes'
-              onClick={handleOpen}
-            ></Tab>
-          </Tabs>
-        </AppBar>
-
+          <AppBar position="relative" className={classes.appBar}>
+            <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
+              <Tab label="Home" to="/" component={Link} value='home'/>
+              <Tab label="Themes"
+                value='themes'
+                onClick={handleOpen}
+              ></Tab>
+            </Tabs>
+          </AppBar>
           <Switch>
             <Route exact path="/" component={Mainpage}/>
             <Route path="/food" component={Foodpage} />

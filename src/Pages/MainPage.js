@@ -4,15 +4,15 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import { flexbox } from '@material-ui/system';
-import { positions } from '@material-ui/system';
+// import { flexbox } from '@material-ui/system';
+// import { positions } from '@material-ui/system';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Carousel from 'react-bootstrap/Carousel'
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 //import Carousel from 'react-elastic-carousel';
-import { spacing } from '@material-ui/system';
+// import { spacing } from '@material-ui/system';
 
 const theme = createMuiTheme({
   palette: {
@@ -51,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function Mainpage() {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
@@ -59,12 +61,24 @@ export default function Mainpage() {
     setIndex(selectedIndex);
   };
 
+  function handleClick(){
+    console.log('clicked click');
+  }
+  
+  function handleFood(){
+    console.log('clicked food');
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
+        <button onClick={() => handleClick()}> 
+          Click me
+        </button>
+
         <div className={classes.carouseldiv}>
           <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
+            <Carousel.Item onClick={() => handleFood()}>
               <img
                 className="d-block w-100"
                 src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
