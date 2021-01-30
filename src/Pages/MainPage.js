@@ -107,7 +107,7 @@ export default function Mainpage() {
           </Box>
           <Box p={2} width="80vw" mx={16}>
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
-              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
+              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of California, Santa Cruz
               (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
             </Typography>
