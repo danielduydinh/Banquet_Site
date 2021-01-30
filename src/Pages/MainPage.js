@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   IntroPhoto:{
     backgroundImage: `url(${tDance})`,
-    height:'800px',
+    height:'1080px',
   },
   buttons:{
     borderRadius: 15,
@@ -92,7 +92,7 @@ export default function Mainpage() {
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
               </Box>
-              <Box width="50%" paddingBottom="30px" paddingLeft='20px'>
+              <Box width="70%" paddingBottom="30px" paddingLeft='20px'>
                 <Typography component="h5" variant="h6" align="left" color="textPrimary" gutterBottom>
                   CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
                   (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
