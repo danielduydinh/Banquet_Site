@@ -26,6 +26,7 @@ import Langpage from '../Pages/LangPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
+import popo from '../Photos/popo.png'
 // im a comment
 /**
  * Resources consulted:
@@ -34,6 +35,13 @@ import Popover from '@material-ui/core/Popover';
  */
 
 const theme = createMuiTheme({
+  typography: {
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '60px',
+    },
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -56,8 +64,13 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    width: '100vw',
     position: 'fixed',
-    minHeight: '5vh',
+    height: '8vh',
+    background: '#171C20',
+    boxShadow: 'none',
+    color: 'white',
+    fontSize: '70px',
   },
 
   body: {
@@ -67,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   footer: {
+    width: '100vw',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
     display: 'flex',
@@ -120,13 +134,23 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '0.5vw',
     height: '7.5vh',
     width: '0.25vw',
-  }
+  },
+  logo: {
+    maxWidth: 100,
+  },
+  Menu: {
+    transform:' translate(0px, 6%)',
+  },
 }));
 
 export default function Appbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+    if (anchorEl == null){
+      setAnchorEl(event.currentTarget);
+    } else {
+      setAnchorEl(event.currentTarget);
+    }
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -148,10 +172,12 @@ export default function Appbar() {
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="Themes"
-              value='themes'
-              onClick={handleOpen}
-            ></Tab>
+            <Tab label="About Us"/>
+            <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
+            <img src={popo} className={classes.logo}/>
+            <Tab label="Themes" value='themes' onClick={handleOpen}/>
+            <Tab label="Behind the Scenes"/>
+            <Tab label="Skit" to="/" component={Link} value='skit'/>
           </Tabs>
         </AppBar>
 
@@ -210,11 +236,13 @@ export default function Appbar() {
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}
+            borderRadius = "20px"
+            className={classes.Menu}
           >
-            <MenuItem onClick={handleClose} to="/food" component={Link}> Food + Fortune </MenuItem>
-            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> Fashion + Beauty </MenuItem>
-            <MenuItem onClick={handleClose} to="/language" component={Link}> Influence + Language </MenuItem>
-            <MenuItem onClick={handleClose} to="/skit" component={Link}> Film + Media </MenuItem>
+            <MenuItem onClick={handleClose} to="/food" component={Link}> FOOD + FORTUNE </MenuItem>
+            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
+            <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
+            <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
           </Menu>
         </ThemeProvider>
       </Router>
