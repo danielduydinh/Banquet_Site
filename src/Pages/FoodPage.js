@@ -16,6 +16,13 @@ import mac from './Photos/mac.jpg';
 
 
 const theme = createMuiTheme({
+  typography: {
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '60px',
+    },
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -43,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     height: 500,
   },
   PageContent: {
+    paddingTop: '8vh',
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
     width: '98.8vw',
