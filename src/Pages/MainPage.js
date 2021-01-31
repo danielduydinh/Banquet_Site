@@ -14,14 +14,29 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
+import nax from '../Photos/nax.png';
 
 const theme = createMuiTheme({
   typography: {
-    h3: {
+    h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '32px',
+      '@media (min-width: 1400px)':{
+        fontSize: '60px',
+      },
+    },
+    body1:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media (min-width: 1200px)':{
+        fontSize: '24px',
+      },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    fontSize: '12px',
+    '@media (min-width: 1000px)':{
+      fontSize: '24px',
+    },
   },
   palette: {
     type: 'dark',
@@ -52,22 +67,33 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '85vh',
   },
   PageButtons: {
-    marginTop: theme.spacing(4),
+    marginTop: theme.spacing(2),
   },
   carouseldiv: {
-    width: '600px',
-    height: '200px',
+    width: '39vw',
+    height: '30vh',
     margin: 'auto',
   },
   carouselContainer:{
-    padding:'30px',
-  },
-  bottomText:{
-    paddingTop: '150px',
+    paddingTop:'5vh',
+    paddingBottom: '30vh',
+    backgroundImage: `url(${nax})`,
+    mixBlendMode: 'lighten',
+    height:'50vh',
   },
   IntroPhoto:{
+    padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${tDance})`,
-    height:'800px',
+    mixBlendMode: 'lighten',
+    height:'50vh',
+    width:'100vw',
+    '@media (min-width: 1200px)':{
+      width: '60vw',
+    },
+    flexGrow: '1',
+  },
+  bannerBoxes:{
+    flexGrow:'1',
   },
   buttons:{
     borderRadius: 15,
@@ -86,27 +112,27 @@ export default function Mainpage() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
-            <Box width="1501px" className={classes.IntroPhoto} paddingTop='20px'>
-              <Box width="60%" paddingTop="30px" paddingBottom="10px" paddingLeft='20px'>
-                <Typography component="h2" underline="always" variant="h3" align="left" color="textPrimary" gutterBottom>
+            <Grid className={classes.IntroPhoto} container wrap='nowrap' spacing={3}>
+              <Grid item xs>
+                <Typography  component="h1" underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
-              </Box>
-              <Box width="50%" paddingBottom="30px" paddingLeft='20px'>
-                <Typography component="h5" variant="h6" align="left" color="textPrimary" gutterBottom>
+                <Grid item xs>
+                <Typography component="body1" variant="body1" align="left"  color="textPrimary" gutterBottom>
                   CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
                   (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
                   the diverse UCSC community by organizing events that create a space for student voices and coalition building.
                 </Typography>
-              </Box>
-            </Box>
-          <Box width="100%" paddingTop='30px'>
-            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+                </Grid>
+              </Grid>
+            </Grid>
+          <Box width="100%" paddingTop='5vh'>
+            <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
               SOMETHING ABOUT THE ANNUAL BANQUET
             </Typography>
           </Box>
           <Box p={2} width="80vw" mx={16}>
-            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
+            <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
               CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of California, Santa Cruz
               (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
@@ -127,9 +153,9 @@ export default function Mainpage() {
             </Grid>
           </div>
           <Grid className={classes.carouselContainer}>
-            <Grid item>
+            <Grid item paddingBottom="15vh">
               <div className={classes.carouseldiv} >
-                <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
+                <Carousel activeIndex={index} onSelect={handleSelect}>
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
@@ -149,7 +175,7 @@ export default function Mainpage() {
                       alt="Skit"
                     />
                     <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                         FASHION SHOW
                       </Typography>
                     </Carousel.Caption>
@@ -161,7 +187,7 @@ export default function Mainpage() {
                       alt="Skit"
                     />
                     <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                         BEHIND THE SCENES
                       </Typography>
                     </Carousel.Caption>
@@ -173,7 +199,7 @@ export default function Mainpage() {
                       alt="Fashion"
                     />
                     <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                         STUDENT WORKS
                       </Typography>
                     </Carousel.Caption>
@@ -185,7 +211,7 @@ export default function Mainpage() {
                       alt="Language"
                     />
                     <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                         SKIT
                       </Typography>
                     </Carousel.Caption>
@@ -194,12 +220,6 @@ export default function Mainpage() {
               </div>
             </Grid>
           </Grid>
-          <Box p={2} width="80vw" mx={16} className={classes.bottomText}>
-            <Typography component="h5" variant="h3" align="center" color="textPrimary" gutterBottom>
-              INSERT SOME RANDOM SHIT HERE. HELLO HOW ARE YA I WANT TO EAT SOMETHING BUT MAYBE I'LL DRINK LATER AHAHA PROGRAMMING IS FUN AMIRITE!!
-              MOM I'M HUNGRY CAN WE GET BOBA.
-            </Typography>
-          </Box>
         </Container>
 
       </div>

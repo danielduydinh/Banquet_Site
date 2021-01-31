@@ -37,14 +37,12 @@ import popo from '../Photos/popo.png'
 
 const theme = createMuiTheme({
   typography: {
+    color:"white",
     body2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '18px',
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-    color: {
-      textPrimary: 'white',
-    }
   },
   palette: {
     type: 'dark',
@@ -84,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   footer: {
+    color: "#FFFFFF",
     width: '100vw',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
@@ -120,17 +119,6 @@ const useStyles = makeStyles((theme) => ({
   youtube: {
     display: 'flex',
     alignItems: 'center',
-  },
-  socialMedia: {
-
-  },
-  text1: {
-    fontFamily: 'Verdana',
-    fontSize: 15,
-  },
-  text2: {
-    fontFamily: 'Arial',
-    fontSize: 12,
   },
   divider: {
     backgroundColor: 'white',
