@@ -153,6 +153,11 @@ const useStyles = makeStyles((theme) => ({
   footerLogo: {
     transform:' translate(-20px, 50%)'
   },
+  link: {
+    textDecoration: 'inherit',
+    color: 'inherit',
+    // underline: 'inherit',
+  },
 }));
 
 export default function Appbar() {
@@ -174,11 +179,11 @@ export default function Appbar() {
     setValue(newValue);
   };
 
-  /*
   React.useEffect(() => {
-    console.log('inside useEffect, value is ' + value);
-  }, [value]);
-*/
+    console.log('Scrolling to top in appbar');
+    window.scrollTo(0, 0);
+  }, []);
+
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -188,8 +193,9 @@ export default function Appbar() {
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
-            <Tab label="Home" to="/" component={Link} value='home'/>
+            <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
+              
             <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>

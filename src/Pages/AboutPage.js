@@ -50,6 +50,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Aboutpage() {
   const classes = useStyles();
 
+  React.useEffect(() => {
+    console.log('Scrolling to top in mainpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
@@ -60,9 +65,9 @@ export default function Aboutpage() {
                 <div className={classes.PageButtons}>
                     <Grid container spacing={2} justify="center">
                     <Grid item>
-                            <Button variant="contained" color="primary">
-                                Button 4
-                            </Button>
+                      <Button variant="contained" color="primary">
+                        Button 4
+                      </Button>
                     </Grid>
                     </Grid>
                 </div>

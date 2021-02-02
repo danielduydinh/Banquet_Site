@@ -81,6 +81,11 @@ const useStyles = makeStyles((theme) => ({
   buttons:{
     borderRadius: 15,
   },
+  link: {
+    textDecoration: 'none',
+    color: 'inherit',
+    // underline: 'none',
+  },
 }));
 
 
@@ -105,6 +110,11 @@ export default function Mainpage() {
   const handleBanquet = (setValue) => {
     setValue('skit');
   }
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in mainpage');
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -142,7 +152,7 @@ export default function Mainpage() {
               {({value, setValue}) => (
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Link to="/about">
+                    <Link className={classes.link} to="/about">
                       <Button variant="contained" color="#171C20" className={classes.buttons}
                         onClick={() => handleAbout(setValue)}>
                         LEARN MORE ABOUT US
@@ -150,7 +160,7 @@ export default function Mainpage() {
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link to="/skit">
+                    <Link className={classes.link} to="/skit">
                       <Button variant="contained" color='#171C20' className={classes.buttons}
                         onClick={() => handleBanquet(setValue)}>
                         WATCH THE BANQUET!

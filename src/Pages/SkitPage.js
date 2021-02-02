@@ -65,6 +65,12 @@ function _onReady(event) {
 
 export default function Skitpage() {
   const classes = useStyles();
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in skit');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent} content="width=device-width">
