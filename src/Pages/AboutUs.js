@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Mainpage() {
+export default function AboutUs() {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
 
