@@ -86,16 +86,25 @@ export default function AboutUs() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
-          <Box width="100%" paddingTop='30px'>
+          <Box p={2} width="80vw" mx={16} paddingTop="30px">
+            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
+              UNIVERSITY OF CALIFORNIA | SANTA CRUZ
+            </Typography>
+          </Box>
+          <Box width="100%">
             <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
               CHINESE STUDENT ASSOCIATION
             </Typography>
           </Box>
-          <Box p={2} width="80vw" mx={16}>
+          <Box p={2} width="80vw" mx={16} paddingBottom="240px">
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
-              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of California, Santa Cruz
-              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
-              the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+              CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquet looked like in person:
+              https://www.youtube.com/watch?v=dQw4w9WgXcQ
+            </Typography>
+          </Box>
+          <Box width="100%">
+            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+            GRAPHIC LEADS
             </Typography>
           </Box>
         </Container>
