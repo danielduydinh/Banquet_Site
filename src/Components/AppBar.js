@@ -11,7 +11,6 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
 
 import {
   BrowserRouter as Router,
@@ -27,7 +26,6 @@ import Langpage from '../Pages/LangPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Popover from '@material-ui/core/Popover';
-import popo from '../Photos/popo.png'
 // im a comment
 /**
  * Resources consulted:
@@ -36,16 +34,6 @@ import popo from '../Photos/popo.png'
  */
 
 const theme = createMuiTheme({
-  typography: {
-    body2: {
-      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '18px',
-    },
-    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-    color: {
-      textPrimary: 'white',
-    }
-  },
   palette: {
     type: 'dark',
     primary: {
@@ -68,13 +56,8 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    width: '100vw',
     position: 'fixed',
-    height: '8vh',
-    background: '#171C20',
-    boxShadow: 'none',
-    color: 'white',
-    fontSize: '70px',
+    minHeight: '5vh',
   },
 
   body: {
@@ -84,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   footer: {
-    width: '100vw',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
     display: 'flex',
@@ -136,29 +118,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     marginLeft: '0.5vw',
     marginRight: '0.5vw',
-    height: '8vh',
-    width: '2px',
-    transform: 'translate(0px, 37.5%)',
-  },
-  logo: {
-    maxWidth: 100,
-  },
-  Menu: {
-    transform:' translate(0px, 6%)',
-  },
-  footerLogo: {
-    transform:' translate(-20px, 50%)'
-  },
+    height: '7.5vh',
+    width: '0.25vw',
+  }
 }));
 
 export default function Appbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
-    if (anchorEl == null){
-      setAnchorEl(event.currentTarget);
-    } else {
-      setAnchorEl(null);
-    }
+    setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
@@ -180,12 +148,10 @@ export default function Appbar() {
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="About Us"/>
-            <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
-            <img src={popo} className={classes.logo}/>
-            <Tab label="Themes" value='themes' onClick={handleOpen}/>
-            <Tab label="Behind the Scenes"/>
-            <Tab label="Skit" to="/" component={Link} value='skit'/>
+            <Tab label="Themes"
+              value='themes'
+              onClick={handleOpen}
+            ></Tab>
           </Tabs>
         </AppBar>
 
@@ -198,48 +164,46 @@ export default function Appbar() {
           </Switch>
           <footer className={classes.footer}>
             <div className={classes.leftFooter}>
-              <div className={classes.footerLogo}>
-                <img src={popo} className={classes.logo}/>
-              </div>
+              <PetsIcon />
               <div>
-                <br/>
-                <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/>SANTA CRUZ</Typography>
-                <br/>
-                <Typography>CHINESE STUDENT ASSOCIATION</Typography>
+                <p className={classes.text1}>
+                  UNIVERSITY OF CALIFORNIA |
+                  <br/>
+                  SANTA CRUZ
+                </p>
+                <p>
+                  CHINESE STUDENT ASSOCIATION
+                </p>
               </div>
             </div>
-            <div className={classes.rightFooter} >
-              <div paddingRight='50px'>
-                <br/>
-                <br/>
-                <br/>
-                <Typography variant= "body2">LET'S KEEP IN TOUCH!</Typography>
-                <br/>
-                <Typography>Please, we need friends.</Typography>
+            <div className={classes.rightFooter}>
+              <div>
+                <p>
+                  LET'S KEEP IN TOUCH!
+                </p>
+                <p>
+                  Please, we need friends
+                </p>
               </div>
               <Divider className={classes.divider} orientation='vertical'
                 variant='middle' flexItem/>
-              <div className={classes.socialMediaContainer} paddingLeft='50px'>
-                <br/>
-                <br />
-                <div className={classes.facebook}>
+              <div className={classes.socialMediaContainer} >
+                <div className={classes.facebook} >
                   <a href="https://www.facebook.com/CSAUCSC">
-                  <FacebookIcon style={{color: "white"}}/>
-                  <Typography style={{color: "white"}}>FACEBOOK</Typography>
+                    <FacebookIcon style={{color: "white"}}/>
+                    <span style={{color: "white"}}>Facebook</span>
                   </a>
                 </div>
-                <br />
                 <div className={classes.instagram}>
                   <a href="https://www.instagram.com/csa_ucsc/">
                   <InstagramIcon style={{color: "white"}}/>
-                  <Typography style={{color: "white"}}>INSTAGRAM</Typography>
+                  <span style={{color: "white"}}>Instagram</span>
                   </a>
                 </div>
-                <br />
                 <div className={classes.youtube}>
                   <a href="https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ">
                   <YouTubeIcon style={{color: "white"}}/>
-                  <Typography style={{color: "white"}}>YOUTUBE</Typography>
+                  <span style={{color: "white"}}>Youtube</span>
                   </a>
                 </div>
               </div>
@@ -252,13 +216,11 @@ export default function Appbar() {
             keepMounted
             open={Boolean(anchorEl)}
             onClose={handleClose}
-            borderRadius = "20px"
-            className={classes.Menu}
           >
-            <MenuItem onClick={handleClose} to="/food" component={Link}> FOOD + FORTUNE </MenuItem>
-            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
-            <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
-            <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
+            <MenuItem onClick={handleClose} to="/food" component={Link}> Food + Fortune </MenuItem>
+            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> Fashion + Beauty </MenuItem>
+            <MenuItem onClick={handleClose} to="/language" component={Link}> Influence + Language </MenuItem>
+            <MenuItem onClick={handleClose} to="/skit" component={Link}> Film + Media </MenuItem>
           </Menu>
         </ThemeProvider>
       </Router>
