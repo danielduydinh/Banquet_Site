@@ -39,14 +39,15 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 650,
-    height: 500,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
   },
   PageContent: {
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
-    width: '98.8vw',
-    height: '175vh',
+    height: '100vh',
   },
   PageButtons: {
     marginTop: theme.spacing(4),
@@ -54,7 +55,13 @@ const useStyles = makeStyles((theme) => ({
   gridList: {
     width: 400,
     height: 600,
+    justifyContent: 'center',
   },
+  GridContainer:{
+    justifyContent: 'center',
+    width: '50vw',
+    heigh: '50vh',
+  }
 }));
 const tileData = [
   {
@@ -147,28 +154,16 @@ export default function Foodpage() {
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Food Page
           </Typography>
+        </Container>
+        <Container className={classes.GridContainer}>
           <div className={classes.root}>
-            <GridList cellHeight={160} cols={4}>
+            <GridList cellHeight='auto' cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
                 <img src={tile.img} alt={tile.title} />
                 </GridListTile>
                 ))}
             </GridList>
-          </div>
-          <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 1
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 2
-                </Button>
-              </Grid>
-            </Grid>
           </div>
         </Container>
       </div>
