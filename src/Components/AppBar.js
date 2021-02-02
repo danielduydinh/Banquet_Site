@@ -12,6 +12,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import LocationContext from './LocationContext';
 
 import {
   BrowserRouter as Router,
@@ -24,6 +25,7 @@ import Foodpage from '../Pages/FoodPage.js';
 import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Langpage from '../Pages/LangPage.js';
+import Aboutpage from '../Pages/AboutPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -172,6 +174,11 @@ export default function Appbar() {
     setValue(newValue);
   };
 
+  /*
+  React.useEffect(() => {
+    console.log('inside useEffect, value is ' + value);
+  }, [value]);
+*/
   const classes = useStyles();
   return (
     <React.Fragment>
@@ -182,18 +189,24 @@ export default function Appbar() {
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="About Us"/>
+            <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>
             <Tab label="Behind the Scenes"/>
-            <Tab label="Skit" to="/" component={Link} value='skit'/>
+            <Tab label="Skit" to="/skit" component={Link} value='skit'/>
           </Tabs>
         </AppBar>
+        {console.log(value)}
 
           <Switch>
-            <Route exact path="/" component={Mainpage}/>
-            <Route path="/food" component={Foodpage} />
+            <Route exact path="/">
+              <LocationContext.Provider value={{value, setValue}}>
+                <Mainpage/>
+              </LocationContext.Provider>
+            </Route>
+            <Route exact path="/about" component={Aboutpage} />
+            <Route exact path="/food" component={Foodpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />

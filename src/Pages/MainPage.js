@@ -14,7 +14,15 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
+import Foodpage from '../Pages/FoodPage.js';
+import LocationContext from '../Components/LocationContext.js';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {
@@ -85,21 +93,22 @@ export default function Mainpage() {
     setIndex(selectedIndex);
   };
 
-  function handleClick(){
-    console.log('clicked click');
+  const handleAbout = (setValue) => {
+    setValue('about');
   }
   
-  function handleFood(){
-    console.log('clicked food');
+  const handleSkit = (setValue) => {
+    setValue('skit');
+  }
+
+  // there isnt a banquet page atm so this links to skit
+  const handleBanquet = (setValue) => {
+    setValue('skit');
   }
 
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-
-        {/*<button onClick={() => handleClick()}> 
-          Click me
-  </button>*/}
 
         <Container maxWidth="1/4">
             <Box width="1501px" className={classes.IntroPhoto} paddingTop='20px'>
@@ -129,47 +138,69 @@ export default function Mainpage() {
             </Typography>
           </Box>
           <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="#171C20" className={classes.buttons}>
-                  LEARN MORE ABOUT US
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color='#171C20' className={classes.buttons}>
-                  WATCH THE BANQUET!
-                </Button>
-              </Grid>
-            </Grid>
+            <LocationContext.Consumer>
+              {({value, setValue}) => (
+                <Grid container spacing={2} justify="center">
+                  <Grid item>
+                    <Link to="/about">
+                      <Button variant="contained" color="#171C20" className={classes.buttons}
+                        onClick={() => handleAbout(setValue)}>
+                        LEARN MORE ABOUT US
+                      </Button>
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <Link to="/skit">
+                      <Button variant="contained" color='#171C20' className={classes.buttons}
+                        onClick={() => handleBanquet(setValue)}>
+                        WATCH THE BANQUET!
+                      </Button>
+                    </Link>
+                  </Grid>
+                </Grid>
+              )}
+            </LocationContext.Consumer>
           </div>
           <Grid className={classes.carouselContainer}>
             <Grid item>
               <div className={classes.carouseldiv} >
+              <LocationContext.Consumer>
+              {({value, setValue}) => (
                 <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-                      alt="Food"
-                    />
-                    <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
-                        ABOUT US
-                      </Typography>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-                      alt="Skit"
-                    />
-                    <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
-                        FASHION SHOW
-                      </Typography>
-                    </Carousel.Caption>
-                  </Carousel.Item>
+                  
+                    <Carousel.Item>
+                    <Link to="/about">
+                      <img
+                        className="d-block w-100"
+                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        alt="Food"
+                        onClick={() => handleAbout(setValue)}
+                      />
+                      </Link>
+                      <Carousel.Caption>
+                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                          ABOUT US
+                        </Typography>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+                  
+                  
+                    <Carousel.Item>
+                    <Link to="/skit">
+                      <img
+                        className="d-block w-100"
+                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        alt="Skit"
+                        onClick={() => handleSkit(setValue)}
+                      />
+                      </Link>
+                      <Carousel.Caption>
+                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                          FASHION SHOW
+                        </Typography>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+                  
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
@@ -207,6 +238,8 @@ export default function Mainpage() {
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
+                )}
+                </LocationContext.Consumer>
               </div>
             </Grid>
           </Grid>
