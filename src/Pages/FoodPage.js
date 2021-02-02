@@ -61,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4),
   },
   gridList: {
-    width: 400,
-    height: 600,
+    width: '500px',
+    height: '500px',
     justifyContent: 'center',
   },
   GridContainer:{
@@ -165,7 +165,7 @@ export default function Foodpage() {
         </Container>
         <Container className={classes.GridContainer}>
           <div className={classes.root}>
-            <GridList cellHeight='auto' cols={4}>
+            <GridList cellHeight='200' cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
                 <img src={tile.img} alt={tile.title} />
