@@ -16,6 +16,13 @@ import mac from './Photos/mac.jpg';
 
 
 const theme = createMuiTheme({
+  typography: {
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '60px',
+    },
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -39,22 +46,30 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 650,
-    height: 500,
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    overflow: 'hidden',
   },
   PageContent: {
+    paddingTop: '8vh',
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
-    width: '98.8vw',
-    height: '175vh',
+    height: '100vh',
   },
   PageButtons: {
     marginTop: theme.spacing(4),
   },
   gridList: {
-    width: 400,
-    height: 600,
+    width: '500px',
+    height: '500px',
+    justifyContent: 'center',
   },
+  GridContainer:{
+    justifyContent: 'center',
+    width: '50vw',
+    heigh: '50vh',
+  }
 }));
 const tileData = [
   {
@@ -147,8 +162,10 @@ export default function Foodpage() {
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
             Food Page
           </Typography>
+        </Container>
+        <Container className={classes.GridContainer}>
           <div className={classes.root}>
-            <GridList cellHeight={160} cols={4}>
+            <GridList cellHeight='200' cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
                   <Button >
@@ -158,20 +175,6 @@ export default function Foodpage() {
                 </GridListTile>
                 ))}
             </GridList>
-          </div>
-          <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 1
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 2
-                </Button>
-              </Grid>
-            </Grid>
           </div>
         </Container>
       </div>
