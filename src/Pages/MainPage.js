@@ -81,11 +81,6 @@ const useStyles = makeStyles((theme) => ({
   buttons:{
     borderRadius: 15,
   },
-  link: {
-    textDecoration: 'none',
-    color: 'inherit',
-    // underline: 'none',
-  },
 }));
 
 
@@ -152,7 +147,7 @@ export default function Mainpage() {
               {({value, setValue}) => (
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Link className={classes.link} to="/about">
+                    <Link style={{ textDecoration: 'none' }} to="/about">
                       <Button variant="contained" color="#171C20" className={classes.buttons}
                         onClick={() => handleAbout(setValue)}>
                         LEARN MORE ABOUT US
@@ -160,7 +155,7 @@ export default function Mainpage() {
                     </Link>
                   </Grid>
                   <Grid item>
-                    <Link className={classes.link} to="/skit">
+                    <Link style={{ textDecoration: 'none' }} to="/skit">
                       <Button variant="contained" color='#171C20' className={classes.buttons}
                         onClick={() => handleBanquet(setValue)}>
                         WATCH THE BANQUET!
