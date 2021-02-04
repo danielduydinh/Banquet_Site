@@ -14,6 +14,7 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
+import GP from './Photos/AboutUs.jpg';
 
 const theme = createMuiTheme({
   typography: {
@@ -65,9 +66,10 @@ const useStyles = makeStyles((theme) => ({
   bottomText:{
     paddingTop: '150px',
   },
-  IntroPhoto:{
-    backgroundImage: `url(${tDance})`,
-    height:'1080px',
+  GroupPhoto:{
+    image: `url(${GP})`,
+    height:'561px',
+    transform: 'translate(31.5%)',
   },
   buttons:{
     borderRadius: 15,
@@ -87,6 +89,9 @@ export default function AboutUs() {
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
           <Box p={2} width="80vw" mx={16} paddingTop="30px">
+            <Grid>
+              <img className={classes.GroupPhoto} src={GP}  alt="Group photo"/>
+            </Grid>
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
@@ -108,7 +113,6 @@ export default function AboutUs() {
             </Typography>
           </Box>
         </Container>
-
       </div>
     </ThemeProvider>
   )
