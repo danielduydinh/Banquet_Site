@@ -151,7 +151,10 @@ export default function Foodpage() {
             <GridList cellHeight={160} cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
-                <img src={tile.img} alt={tile.title} />
+                  <Button >
+                    <img src={tile.img} alt={tile.title} />
+                  </Button>
+                  
                 </GridListTile>
                 ))}
             </GridList>
