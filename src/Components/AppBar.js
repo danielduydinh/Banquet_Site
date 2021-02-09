@@ -223,18 +223,24 @@ export default function Appbar() {
                 <br/>
                 <br />
                 <div className={classes.facebook}>
-                  <FacebookIcon />
-                  <Typography>FACEBOOK</Typography>
+                  <a href="https://www.facebook.com/CSAUCSC">
+                  <FacebookIcon style={{color: "white"}}/>
+                  <Typography style={{color: "white"}}>FACEBOOK</Typography>
+                  </a>
                 </div>
                 <br />
                 <div className={classes.instagram}>
-                  <InstagramIcon />
-                  <Typography>INSTAGRAM</Typography>
+                  <a href="https://www.facebook.com/CSAUCSC">
+                  <InstagramIcon style={{color: "white"}}/>
+                  <Typography style={{color: "white"}}>INSTAGRAM</Typography>
+                  </a>
                 </div>
                 <br />
                 <div className={classes.youtube}>
-                  <YouTubeIcon />
-                  <Typography>YOUTUBE</Typography>
+                  <a href="https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ">
+                  <YouTubeIcon style={{color: "white"}}/>
+                  <Typography style={{color: "white"}}>YOUTUBE</Typography>
+                  </a>
                 </div>
               </div>
             </div>
