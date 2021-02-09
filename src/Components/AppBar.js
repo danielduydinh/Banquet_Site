@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Appbar() {
+export default function Appbar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
     if (anchorEl == null){
@@ -183,8 +183,9 @@ export default function Appbar() {
     console.log('Scrolling to top in appbar');
     window.scrollTo(0, 0);
   }, []);
-
+  
   const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -195,7 +196,6 @@ export default function Appbar() {
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
-              
             <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>
@@ -204,7 +204,6 @@ export default function Appbar() {
           </Tabs>
         </AppBar>
         {console.log(value)}
-
           <Switch>
             <Route exact path="/">
               <LocationContext.Provider value={{value, setValue}}>

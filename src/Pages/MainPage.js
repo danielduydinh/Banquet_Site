@@ -18,9 +18,6 @@ import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
 
