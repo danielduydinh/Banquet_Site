@@ -169,8 +169,8 @@ export default function Appbar() {
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="About Us" to="/about" component={Link} value='about'/>
-            <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
+            <Tab label="About Us"/>
+            <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>
             <Tab label="Behind the Scenes"/>
