@@ -105,23 +105,23 @@ export default function AboutUs() {
             <img src={GP} alt="Group photo"/>
           </Grid>
           <Box p={2} width="80vw" mx={16} paddingTop="30px">
-            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
+            <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
           </Box>
           <Box width="100%">
-            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+            <Typography variant="h1" align="center" color="textPrimary">
               CHINESE STUDENT ASSOCIATION
             </Typography>
           </Box>
           <Box p={2} width="80vw" mx={16} paddingBottom="240px">
-            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
+            <Typography variant="body1" align="center" color="textPrimary">
               CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquet looked like in person:
               <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
             </Typography>
           </Box>
           <Box width="100%">
-            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+            <Typography variant="h1" align="center" color="textPrimary">
             GRAPHIC LEADS
             </Typography>
           </Box>
