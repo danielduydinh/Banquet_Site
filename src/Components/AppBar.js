@@ -42,14 +42,12 @@ import BTSpage from '../Pages/BethindTheScenes';
 
 const theme = createMuiTheme({
   typography: {
+    color:"white",
     body2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '18px',
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-    color: {
-      textPrimary: 'white',
-    }
   },
   palette: {
     type: 'dark',
@@ -73,9 +71,9 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    width: '100vw',
+    minWidth: '100vw',
     position: 'fixed',
-    height: '8vh',
+    minHeight: '8vh',
     background: '#171C20',
     boxShadow: 'none',
     color: 'white',
@@ -89,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   footer: {
+    color: "#FFFFFF",
     width: '100vw',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
@@ -125,17 +124,6 @@ const useStyles = makeStyles((theme) => ({
   youtube: {
     display: 'flex',
     alignItems: 'center',
-  },
-  socialMedia: {
-
-  },
-  text1: {
-    fontFamily: 'Verdana',
-    fontSize: 15,
-  },
-  text2: {
-    fontFamily: 'Arial',
-    fontSize: 12,
   },
   divider: {
     backgroundColor: 'white',
@@ -194,7 +182,7 @@ export default function Appbar(props) {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
+          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered> variant="fullWidth"
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
