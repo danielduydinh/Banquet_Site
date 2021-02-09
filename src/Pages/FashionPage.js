@@ -94,6 +94,11 @@ function _onReady(event) {
 
 export default function Fashionpage() {
   const classes = useStyles();
+  React.useEffect(() => {
+    console.log('Scrolling to top in fashionpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
