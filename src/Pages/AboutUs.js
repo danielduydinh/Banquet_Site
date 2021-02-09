@@ -83,6 +83,11 @@ export default function AboutUs() {
     setIndex(selectedIndex);
   };
 
+  React.useEffect(() => {
+    console.log('Scrolling to top in aboutpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>

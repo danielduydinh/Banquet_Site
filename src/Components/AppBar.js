@@ -12,6 +12,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import LocationContext from './LocationContext';
 
 import {
   BrowserRouter as Router,
@@ -26,9 +27,12 @@ import Fashionpage from '../Pages/FashionPage.js';
 import Langpage from '../Pages/LangPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+
 import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
 import AboutUs from '../Pages/AboutUs.js';
+import BTSpage from '../Pages/BethindTheScenes';
+
 // im a comment
 /**
  * Resources consulted:
@@ -138,9 +142,14 @@ const useStyles = makeStyles((theme) => ({
   footerLogo: {
     transform:' translate(-20px, 50%)'
   },
+  link: {
+    textDecoration: 'inherit',
+    color: 'inherit',
+    // underline: 'inherit',
+  },
 }));
 
-export default function Appbar() {
+export default function Appbar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
     if (anchorEl == null){
@@ -159,7 +168,13 @@ export default function Appbar() {
     setValue(newValue);
   };
 
+  React.useEffect(() => {
+    console.log('Scrolling to top in appbar');
+    window.scrollTo(0, 0);
+  }, []);
+
   const classes = useStyles();
+
   return (
     <React.Fragment>
       <CssBaseline />
@@ -168,19 +183,25 @@ export default function Appbar() {
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
-            <Tab label="Home" to="/" component={Link} value='home'/>
-            <Tab label="About Us"/>
+            <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
+            <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>
-            <Tab label="Behind the Scenes"/>
-            <Tab label="Skit" to="/" component={Link} value='skit'/>
+            <Tab label="Behind the Scenes" to='/bts' component={Link} value='BTSpage'/>
+            <Tab label="Skit" to="/skit" component={Link} value='skit'/>
           </Tabs>
         </AppBar>
-
+        {console.log(value)}
           <Switch>
-            <Route exact path="/" component={Mainpage}/>
-            <Route path="/food" component={Foodpage} />
+            <Route exact path="/">
+              <LocationContext.Provider value={{value, setValue}}>
+                <Mainpage/>
+              </LocationContext.Provider>
+            </Route>
+            <Route exact path="/about" component={AboutUs} />
+            <Route exact path="/food" component={Foodpage} />
+            <Route exact path="/bts" component={BTSpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />

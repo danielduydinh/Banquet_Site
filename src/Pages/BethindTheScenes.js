@@ -63,11 +63,11 @@ function _onReady(event) {
   event.target.pauseVideo();
 }
 
-export default function Skitpage() {
+export default function BTSpage() {
   const classes = useStyles();
 
   React.useEffect(() => {
-    console.log('Scrolling to top in skit');
+    console.log('Scrolling to top in bts');
     window.scrollTo(0, 0);
   }, []);
 
@@ -76,7 +76,7 @@ export default function Skitpage() {
       <div className={classes.PageContent} content="width=device-width">
         <Container maxWidth="sm">
           <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-            Skit Page
+             BTS Army
           </Typography>
           <div className={classes.Video}>
             <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;

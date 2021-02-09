@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import { flexbox } from '@material-ui/system';
-import { positions } from '@material-ui/system';
+// import { flexbox } from '@material-ui/system';
+// import { positions } from '@material-ui/system';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -15,6 +15,12 @@ import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
 import nax from '../Photos/nax.png';
+import Foodpage from '../Pages/FoodPage.js';
+import LocationContext from '../Components/LocationContext.js';
+
+import {
+  Link
+} from "react-router-dom";
 
 const theme = createMuiTheme({
   typography: {
@@ -100,6 +106,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+
 export default function Mainpage() {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
@@ -108,9 +116,28 @@ export default function Mainpage() {
     setIndex(selectedIndex);
   };
 
+  const handleAbout = (setValue) => {
+    setValue('about');
+  }
+
+  const handleSkit = (setValue) => {
+    setValue('skit');
+  }
+
+  // there isnt a banquet page atm so this links to skit
+  const handleBanquet = (setValue) => {
+    setValue('skit');
+  }
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in mainpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
+
         <Container maxWidth="1/4">
             <Grid className={classes.IntroPhoto} container wrap='nowrap' spacing={3}>
               <Grid item xs>
@@ -139,47 +166,69 @@ export default function Mainpage() {
             </Typography>
           </Box>
           <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="#171C20" className={classes.buttons}>
-                  LEARN MORE ABOUT US
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color='#171C20' className={classes.buttons}>
-                  WATCH THE BANQUET!
-                </Button>
-              </Grid>
-            </Grid>
+            <LocationContext.Consumer>
+              {({value, setValue}) => (
+                <Grid container spacing={2} justify="center">
+                  <Grid item>
+                    <Link style={{ textDecoration: 'none' }} to="/about">
+                      <Button variant="contained" color="#171C20" className={classes.buttons}
+                        onClick={() => handleAbout(setValue)}>
+                        LEARN MORE ABOUT US
+                      </Button>
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <Link style={{ textDecoration: 'none' }} to="/skit">
+                      <Button variant="contained" color='#171C20' className={classes.buttons}
+                        onClick={() => handleBanquet(setValue)}>
+                        WATCH THE BANQUET!
+                      </Button>
+                    </Link>
+                  </Grid>
+                </Grid>
+              )}
+            </LocationContext.Consumer>
           </div>
           <Grid className={classes.carouselContainer}>
             <Grid item paddingBottom="15vh">
               <div className={classes.carouseldiv} >
-                <Carousel activeIndex={index} onSelect={handleSelect}>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-                      alt="Food"
-                    />
-                    <Carousel.Caption>
-                      <Typography component="h2" align="center" color="textPrimary" gutterBottom>
-                        ABOUT US
-                      </Typography>
-                    </Carousel.Caption>
-                  </Carousel.Item>
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
-                      alt="Skit"
-                    />
-                    <Carousel.Caption>
-                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
-                        FASHION SHOW
-                      </Typography>
-                    </Carousel.Caption>
-                  </Carousel.Item>
+              <LocationContext.Consumer>
+              {({value, setValue}) => (
+                <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
+
+                    <Carousel.Item>
+                    <Link to="/about">
+                      <img
+                        className="d-block w-100"
+                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        alt="Food"
+                        onClick={() => handleAbout(setValue)}
+                      />
+                      </Link>
+                      <Carousel.Caption>
+                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                          ABOUT US
+                        </Typography>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+
+
+                    <Carousel.Item>
+                    <Link to="/skit">
+                      <img
+                        className="d-block w-100"
+                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        alt="Skit"
+                        onClick={() => handleSkit(setValue)}
+                      />
+                      </Link>
+                      <Carousel.Caption>
+                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                          FASHION SHOW
+                        </Typography>
+                      </Carousel.Caption>
+                    </Carousel.Item>
+
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
@@ -217,6 +266,8 @@ export default function Mainpage() {
                     </Carousel.Caption>
                   </Carousel.Item>
                 </Carousel>
+                )}
+                </LocationContext.Consumer>
               </div>
             </Grid>
           </Grid>

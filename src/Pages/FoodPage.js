@@ -155,6 +155,12 @@ const tileData = [
 
 export default function Foodpage() {
   const classes = useStyles();
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in foodpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
