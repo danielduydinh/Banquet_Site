@@ -31,7 +31,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
+<<<<<<< HEAD
 
+=======
+import AboutUs from '../Pages/AboutUs.js';
+>>>>>>> origin/about
 // im a comment
 /**
  * Resources consulted:
@@ -194,7 +198,11 @@ export default function Appbar(props) {
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
+<<<<<<< HEAD
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
+=======
+            <Tab label="Home" to="/" component={Link} value='home'/>
+>>>>>>> origin/about
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
@@ -215,6 +223,7 @@ export default function Appbar(props) {
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
             <Route exact path="/language" component={Langpage} />
+            <Route exact path="/about" component={AboutUs} />
           </Switch>
           <footer className={classes.footer}>
             <div className={classes.leftFooter}>
