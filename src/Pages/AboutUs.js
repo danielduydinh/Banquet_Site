@@ -18,12 +18,26 @@ import GP from './Photos/AboutUs.jpg';
 
 const theme = createMuiTheme({
   typography: {
-    h3: {
+    h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '32px',
+      '@media (min-width: 1400px)' :{
+        fontSize: '60px',
+      },
+    },
+    body1:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media (min-width: 1200px)' :{
+        fontSize: '24px',   
+      },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-  },
+    fontSize: '12px',
+    '@media (min-width: 1200px)' :{
+      fontSize: '24px',   
+    },
+  },   
   palette: {
     type: 'dark',
     primary: {
@@ -103,7 +117,7 @@ export default function AboutUs() {
           <Box p={2} width="80vw" mx={16} paddingBottom="240px">
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
               CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquet looked like in person:
-              https://www.youtube.com/watch?v=dQw4w9WgXcQ
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
             </Typography>
           </Box>
           <Box width="100%">
