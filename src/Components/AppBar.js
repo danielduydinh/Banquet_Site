@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
   body: {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh',
+    minHeight: '77vh',
   },
 
   footer: {
