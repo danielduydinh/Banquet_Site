@@ -25,17 +25,12 @@ import Foodpage from '../Pages/FoodPage.js';
 import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Langpage from '../Pages/LangPage.js';
-import Aboutpage from '../Pages/AboutPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
-<<<<<<< HEAD
-
-=======
 import AboutUs from '../Pages/AboutUs.js';
->>>>>>> origin/about
 // im a comment
 /**
  * Resources consulted:
@@ -198,13 +193,9 @@ export default function Appbar(props) {
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
-<<<<<<< HEAD
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
-=======
-            <Tab label="Home" to="/" component={Link} value='home'/>
->>>>>>> origin/about
             <Tab label="About Us" to="/about" component={Link} value='about'/>
-            <Tab label="Fashion Show" to="/" component={Link} value='fashion'/>
+            <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
             <Tab label="Themes" value='themes' onClick={handleOpen}/>
             <Tab label="Behind the Scenes"/>
@@ -218,7 +209,7 @@ export default function Appbar(props) {
                 <Mainpage/>
               </LocationContext.Provider>
             </Route>
-            <Route exact path="/about" component={Aboutpage} />
+            <Route exact path="/about" component={AboutUs} />
             <Route exact path="/food" component={Foodpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
