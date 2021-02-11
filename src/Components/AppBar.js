@@ -24,7 +24,6 @@ import Mainpage from '../Pages/MainPage.js';
 import Foodpage from '../Pages/FoodPage.js';
 import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
-import Langpage from '../Pages/LangPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -78,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
     color: 'white',
     fontSize: '70px',
+    fontWeight: 'bold',
   },
 
   body: {
@@ -147,6 +147,9 @@ const useStyles = makeStyles((theme) => ({
     color: 'inherit',
     // underline: 'inherit',
   },
+  indicator: {
+    backgroundColor: '#171C20',
+  },
 }));
 
 export default function Appbar(props) {
@@ -169,9 +172,8 @@ export default function Appbar(props) {
   };
 
   React.useEffect(() => {
-    console.log('Scrolling to top in appbar');
-    window.scrollTo(0, 0);
-  }, []);
+    console.log('appbar running use effect');
+  }, [value]);
   
   const classes = useStyles();
 
@@ -182,12 +184,16 @@ export default function Appbar(props) {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered> variant="fullWidth"
+          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
+            classes={{
+              indicator: classes.indicator,
+            }}> 
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
             <img src={popo} className={classes.logo}/>
-            <Tab label="Themes" value='themes' onClick={handleOpen}/>
+            {/*<Tab label="Themes" value='themes' onClick={handleOpen}/>*/}
+            <Tab label="Student Work" to='/student-work' component={Link} value='food'/>
             <Tab label="Behind the Scenes" to='/bts' component={Link} value='BTSpage'/>
             <Tab label="Skit" to="/skit" component={Link} value='skit'/>
           </Tabs>
@@ -200,11 +206,10 @@ export default function Appbar(props) {
               </LocationContext.Provider>
             </Route>
             <Route exact path="/about" component={AboutUs} />
-            <Route exact path="/food" component={Foodpage} />
+            <Route exact path="/student-work" component={Foodpage} />
             <Route exact path="/bts" component={BTSpage} />
             <Route exact path="/skit" component={Skitpage} />
             <Route exact path="/fashion" component={Fashionpage} />
-            <Route exact path="/language" component={Langpage} />
             <Route exact path="/about" component={AboutUs} />
           </Switch>
           <footer className={classes.footer}>
@@ -251,6 +256,7 @@ export default function Appbar(props) {
             </div>
           </footer>
           </div>
+          {/*
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}
@@ -264,7 +270,7 @@ export default function Appbar(props) {
             <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
             <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
             <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
-          </Menu>
+          </Menu>*/}
         </ThemeProvider>
       </Router>
     </React.Fragment>
