@@ -9,7 +9,7 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
-import { Block } from '@material-ui/icons';
+// import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
   palette: {
@@ -34,6 +34,7 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   PageContent: {
+    paddingTop: '8vh',
     flewGrow: 1,
     backgroundColor: '#424242',
     padding: theme.spacing(8, 0, 6),
@@ -64,6 +65,12 @@ function _onReady(event) {
 
 export default function Skitpage() {
   const classes = useStyles();
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in skit');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent} content="width=device-width">
@@ -72,7 +79,7 @@ export default function Skitpage() {
             Skit Page
           </Typography>
           <div className={classes.Video}>
-            <YouTube videoId="2g811Eo7K8U" opts={videoOptions} onReady={_onReady} />;
+            <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
           </div>
           <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
             Description:
@@ -99,32 +106,3 @@ export default function Skitpage() {
     </ThemeProvider>
   )
 }
-
-/**
- *
-import React from "react";
-import "./styles.css";
-import YouTube from "react-youtube";
-
-export default function App() {
-  const opts = {
-    height: "390",
-    width: "640",
-    playerVars: {
-      // https://developers.google.com/youtube/player_parameters
-      autoplay: 1
-    }
-  };
-
-  function _onReady(event) {
-    // access to player in all event handlers via event.target
-    event.target.pauseVideo();
-  }
-
-  return (
-    <div className="App">
-      <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={_onReady} />;
-    </div>
-  );
-}
- */
