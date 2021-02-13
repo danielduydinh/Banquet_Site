@@ -13,7 +13,7 @@ import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import LocationContext from './LocationContext';
-
+import Grid from '@material-ui/core/Grid';
 import {
   BrowserRouter as Router,
   Switch,
@@ -52,34 +52,40 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     background: {
-      default: '#424242',
-      paper: '#424242',
+      default: '#171C20',
+      paper: '#171C20',
     },
   },
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    zIndex: theme.zIndex.drawer +300,
     width: '100vw',
+    maxWidth: '100%',
     position: 'fixed',
-    height: '8vh',
+    height: '100px',
     background: '#171C20',
     boxShadow: 'none',
     color: 'white',
     fontSize: '70px',
   },
-
+  appbarTabs:{
+    // [theme.breakpoints.down('md')]: {
+    //   display: 'none',
+    // },
+  },
   body: {
     display: 'flex',
     flexDirection: 'column',
@@ -89,6 +95,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     color: "#FFFFFF",
     width: '100vw',
+    maxWidth: '100%',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
     display: 'flex',
@@ -126,12 +133,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   divider: {
+    display: 'flex',
+    alignItems: 'center',
     backgroundColor: 'white',
     marginLeft: '0.5vw',
     marginRight: '0.5vw',
     height: '8vh',
     width: '2px',
-    transform: 'translate(0px, 37.5%)',
+    veritcalAlign: 'middle',
   },
   logo: {
     maxWidth: 100,
@@ -182,7 +191,7 @@ export default function Appbar(props) {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered>
+          <Tabs className= {classes.appbarTabs} aria-label="simple tabs example" value={value} onChange={handleChange} centered>
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
@@ -220,11 +229,11 @@ export default function Appbar(props) {
               </div>
             </div>
             <div className={classes.rightFooter} >
-              <div paddingRight='50px'>
+              <div paddingRight='50px' alignItems="center">
                 <br/>
                 <br/>
                 <br/>
-                <Typography variant= "body2">LET'S KEEP IN TOUCH!</Typography>
+                <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
                 <br/>
                 <Typography>Please, we need friends.</Typography>
               </div>
@@ -251,6 +260,7 @@ export default function Appbar(props) {
             </div>
           </footer>
           </div>
+
           <Menu
             id="simple-menu"
             anchorEl={anchorEl}

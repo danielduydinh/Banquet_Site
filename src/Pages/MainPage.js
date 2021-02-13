@@ -15,6 +15,8 @@ import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
 import nax from '../Photos/nax.png';
+import fashion from '../Photos/fashion.png';
+import tpose from '../Photos/tpose.jpg';
 import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
 
@@ -27,35 +29,35 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '32px',
-      '@media (min-width: 1400px)':{
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
         fontSize: '60px',
       },
     },
     body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '12px',
-      '@media (min-width: 1200px)':{
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
         fontSize: '24px',
       },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
     fontSize: '12px',
-    '@media (min-width: 1000px)':{
+    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
       fontSize: '24px',
     },
   },
   palette: {
     type: 'dark',
     primary: {
-      light: '#ff7961',
-      main: '#B63D2D',
-      dark: '#ba000d',
+      light: '#f44336',
+      main: '#f44336',
+      dark: '#f44336',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     background: {
@@ -69,8 +71,10 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '8vh',
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    width: '100vw',
+    minwidth: '100vw',
     minHeight: '85vh',
+    flexGrow: 1,
+    maxWidth: '100%',
   },
   PageButtons: {
     marginTop: theme.spacing(2),
@@ -84,19 +88,24 @@ const useStyles = makeStyles((theme) => ({
     paddingTop:'5vh',
     paddingBottom: '30vh',
     backgroundImage: `url(${nax})`,
+    backgroundPosition: 'right',
+    backgroundRepeat: 'no-repeat',
     mixBlendMode: 'lighten',
     height:'50vh',
+    maxWidth: '100%',
   },
   IntroPhoto:{
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${tDance})`,
     mixBlendMode: 'lighten',
     height:'50vh',
-    width:'100vw',
+    width:'99vw',
     '@media (min-width: 1200px)':{
       width: '60vw',
     },
+    maxWidth: '100%',
     flexGrow: '1',
+    backgroundRepeat: 'no-repeat',
   },
   bannerBoxes:{
     flexGrow:'1',
@@ -137,19 +146,18 @@ export default function Mainpage() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-
         <Container maxWidth="1/4">
             <Grid className={classes.IntroPhoto} container wrap='nowrap' spacing={3}>
-              <Grid item xs>
-                <Typography  component="h1" underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
+              <Grid item>
+                <Typography underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
-                <Grid item xs>
-                <Typography component="body1" variant="body1" align="left"  color="textPrimary" gutterBottom>
-                  CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
-                  (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
-                  the diverse UCSC community by organizing events that create a space for student voices and coalition building.
-                </Typography>
+                <Grid item>
+                  <Typography component="body1" variant="body1" align="left" margin='auto' color="textPrimary" gutterBottom>
+                    CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
+                    (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
+                    the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+                  </Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -158,8 +166,8 @@ export default function Mainpage() {
               SOMETHING ABOUT THE ANNUAL BANQUET
             </Typography>
           </Box>
-          <Box p={2} width="80vw" mx={16}>
-            <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
+          <Box p={2} width="80vw"  margin="auto" textAlign= 'center'>
+            <Typography component="body1" variant="body1" color="textPrimary" gutterBottom>
               CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of California, Santa Cruz
               (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
@@ -217,7 +225,7 @@ export default function Mainpage() {
                     <Link to="/skit">
                       <img
                         className="d-block w-100"
-                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        src={tpose}
                         alt="Skit"
                         onClick={() => handleSkit(setValue)}
                       />
@@ -244,7 +252,7 @@ export default function Mainpage() {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                      src={fashion}
                       alt="Fashion"
                     />
                     <Carousel.Caption>
