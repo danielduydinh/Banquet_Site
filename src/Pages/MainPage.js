@@ -120,7 +120,7 @@ export default function Mainpage() {
   const handleAbout = (setValue) => {
     setValue('about');
   }
-  
+
   const handleSkit = (setValue) => {
     setValue('skit');
   }
@@ -196,7 +196,7 @@ export default function Mainpage() {
               <LocationContext.Consumer>
               {({value, setValue}) => (
                 <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
-                  
+
                     <Carousel.Item>
                     <Link to="/about">
                       <img
@@ -212,8 +212,8 @@ export default function Mainpage() {
                         </Typography>
                       </Carousel.Caption>
                     </Carousel.Item>
-                  
-                  
+
+
                     <Carousel.Item>
                     <Link to="/skit">
                       <img
@@ -229,7 +229,6 @@ export default function Mainpage() {
                         </Typography>
                       </Carousel.Caption>
                     </Carousel.Item>
-                  
                   <Carousel.Item>
                     <img
                       className="d-block w-100"

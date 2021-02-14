@@ -69,7 +69,6 @@ const useStyles = makeStyles((theme) => ({
   GroupPhoto:{
     image: `url(${GP})`,
     height:'561px',
-    transform: 'translate(31.5%)',
   },
   buttons:{
     borderRadius: 15,
@@ -93,10 +92,10 @@ export default function AboutUs() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
+          <Grid className={classes.GroupPhoto} align="center">
+            <img src={GP} alt="Group photo"/>
+          </Grid>
           <Box p={2} width="80vw" mx={16} paddingTop="30px">
-            <Grid>
-              <img className={classes.GroupPhoto} src={GP}  alt="Group photo"/>
-            </Grid>
             <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
