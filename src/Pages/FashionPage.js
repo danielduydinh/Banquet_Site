@@ -8,9 +8,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import YouTube from "react-youtube";
-import {Block, Translate} from '@material-ui/icons';
+import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
-import pic from './Photos/fashion.png';
+import pic from './Photos/DanielPFP.jpg';
 
 const theme = createMuiTheme({
   typography: {
@@ -58,17 +58,18 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
+  fashiontitle: {
+    transform: 'translate(-100%, 50%)'
+  },
+  fashiondescription: {
+    width: '100',
+    height: '100',
+  },
   IntroPhoto: {
     backgroundImage: `url(${pic})`,
-    //height:'800px',
-    height: '731px',
-    width: '1306px',
-  },
-  textbox: {
-    transform: 'translate(20%)'
-  },
-  description: {
-    width: "100px"
+    height: '1080px',
+    //position: 'fixed',
+    transform: 'translate(20%)',
   },
   Video: {
     //borderRadius: '25px',
@@ -102,22 +103,22 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        
-        <Box width="1500px" className={classes.IntroPhoto} marginTop="5vh">
-          <Box className={classes.textbox} width="100%" paddingTop="30px" paddingBottom="10px" paddingLeft='20px'>
-          
-            <Typography component="h1" variant="h1" align="left" color="textPrimary" position="fixed" className={classes.fashiontitle} >
+        <Box width="1501px" className={classes.IntroPhoto} paddingTop='20px'>
+          <Box p={2} width = "80vw" mx={16}>
+          <Box paddingTop="30px" paddingBottom="10px" paddingLeft='20px'>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary" className={classes.fashiontitle} >
               FASHION 
             </Typography>
+            </Box>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               SHOW
             </Typography>
-            <div className={classes.description} >
+          <div className={classes.fashiondescription}>
             <Typography component="h2" variant="h2" align="left" color="textPrimary">
               We don't got designer brands but this is it, this is the best school funding could provide.
             </Typography>
-            </div>
-            </Box>
+          </div>
+        </Box>
         </Box>
         <Box className={classes.Video}>
           <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
