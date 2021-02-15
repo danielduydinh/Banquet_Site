@@ -147,20 +147,16 @@ export default function Fashionpage() {
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               SHOW
             </Typography>
-            <Grid item className={classes.fashiondescription}>
-            <Typography component="h2" variant="h2" align="left" color="textPrimary">
-              We don't got designer brands but this is it, this is the best school funding could provide.
-            </Typography>
-            </Grid>
+            <Box className={classes.fashiondescription} width="40vh">
+              <Typography component="h2" variant="h2" align="left" color="textPrimary">
+                We don't got designer brands but this is it, this is the best school funding could provide.
+              </Typography>
+            </Box>
           </Grid>
-        </Grid>
-        
-        <Box className={classes.Video} paddingTop="12vh" paddingLeft="10vh">
-          <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
-        </Box>
-        
-        
-        
+          <Grid item className={classes.Video} paddingTop="12vh" paddingLeft="10vh">
+              <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
+          </Grid>
+        </Grid>  
       </Container>
     </div>
   </ThemeProvider>
