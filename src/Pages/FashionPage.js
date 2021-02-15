@@ -10,34 +10,42 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
-import pic from './Photos/DanielPFP.jpg';
+import fashion from '../Photos/fashion.png';
+import icon1 from '../Photos/icon.png';
 
 const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '60px',//32
+      //'@media screen and (min-width: 1400px) and (min-height: 1000px':{
+        //fonSize: '60px',
+      //}
     },
     h2: {
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      //fontSize: '30px'
+      fontSize: '24px',//32
+      //'@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        //fontSize: '24px',
+      //}
     },
     color: {
       textPrimary: 'white',
     }
+  
   },
   palette: {
     type: 'dark',
     primary: {
-      light: '#ff7961',
-      main: '#B63D2D',
-      dark: '#ba000d',
+      light: '#f44336',
+      main: '#f44336',
+      dark: '#f44336',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     background: {
@@ -58,25 +66,52 @@ const useStyles = makeStyles((theme) => ({
   PageButtons: {
     marginTop: theme.spacing(4),
   },
-  fashiontitle: {
-    transform: 'translate(-100%, 50%)'
-  },
   fashiondescription: {
     width: '100',
     height: '100',
   },
   IntroPhoto: {
-    backgroundImage: `url(${pic})`,
-    height: '1080px',
-    //position: 'fixed',
-    transform: 'translate(20%)',
+    padding: theme.spacing(8, 0, 6),
+    backgroundImage: `url(${fashion})`,
+    mixBlendMode: 'lighten',
+    height:'50vh',
+    width:'99vw',
+    '@media (min-width: 1200px)':{
+      width: '60vw',
+      position: 'absolute',
+      right: '0%',
+    },
+    maxWidth: '100%',
+    flexGrow: '1',
+    backgroundRepeat: 'no-repeat',
+    //backgroundImage: `url(${pic})`,
+    //width: '1306px',
+    //height: '731px',
+  },
+  entirebox: {
+    position: 'absolute',
+    left: '10%',
+    top: '20%',
   },
   Video: {
+    //position: 'relative',
+    //down: '50%',
+      transform: 'translate(5%, 50%)',
     //borderRadius: '25px',
     //borderBottomLeftRadius: '25px',
     //borderBottomRightRadius: '25px',
     //overflow: 'hidden',
-    transform: 'translate(-100%, 50%)'
+    
+  },
+  icon: {
+    background: 'lightblue',
+    borderRadius: '50%',
+    width: '100px',
+    height: '100px',
+    //image: `url(${icon1})`,
+    //transform: 'translate(10%, 50%)',
+    //height: '715px',
+    //width: '715px',
   },
 }));
 const videoOptions = {
@@ -103,26 +138,28 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        <Box width="1501px" className={classes.IntroPhoto} paddingTop='20px'>
-          <Box p={2} width = "80vw" mx={16}>
-          <Box paddingTop="30px" paddingBottom="10px" paddingLeft='20px'>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary" className={classes.fashiontitle} >
+        <Grid>
+          <Grid item width="1500px" className={classes.IntroPhoto} paddingTop='50px'></Grid>
+            <Grid item className={classes.entirebox}>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
               FASHION 
             </Typography>
-            </Box>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               SHOW
             </Typography>
-          <div className={classes.fashiondescription}>
+            <Grid item className={classes.fashiondescription}>
             <Typography component="h2" variant="h2" align="left" color="textPrimary">
               We don't got designer brands but this is it, this is the best school funding could provide.
             </Typography>
-          </div>
-        </Box>
-        </Box>
-        <Box className={classes.Video}>
+            </Grid>
+          </Grid>
+        </Grid>
+        
+        <Box className={classes.Video} paddingTop="12vh" paddingLeft="10vh">
           <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
         </Box>
+        
+        
         
       </Container>
     </div>
