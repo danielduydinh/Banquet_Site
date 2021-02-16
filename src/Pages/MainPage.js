@@ -24,11 +24,12 @@ import skitphoto from '../Photos/skitphoto.png';
 import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
 import YouTube from "react-youtube";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import {
   Link
 } from "react-router-dom";
-
+AOS.init();
 const theme = createMuiTheme({
   typography: {
     h1: {
@@ -202,7 +203,7 @@ export default function Mainpage() {
                 <Typography underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
-                <Grid item alignItems="flex-end">
+                <Grid item>
                   <Typography component="body1" variant="body1" align="left" margin='auto' color="textPrimary" gutterBottom>
                     CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
                     (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
@@ -212,9 +213,10 @@ export default function Mainpage() {
               </Grid>
             </Grid>
             <Box height="100px"/>
-            <div className= {classes.videoContainer}>
+            <div className= {classes.videoContainer} data-aos="fade-up">
               <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
             </div>
+          <div data-aos="fade-right">
           <Box width="100%" paddingTop='100px'>
             <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
               SOMETHING ABOUT THE ANNUAL BANQUET
@@ -227,7 +229,8 @@ export default function Mainpage() {
               the diverse UCSC community by organizing events that create a space for student voices and coalition building.
             </Typography>
           </Box>
-          <div className={classes.PageButtons}>
+          </div>
+          <div className={classes.PageButtons} data-aos='fade-in'>
             <LocationContext.Consumer>
               {({value, setValue}) => (
                 <Grid container spacing={2} justify="center">
