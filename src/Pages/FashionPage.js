@@ -17,22 +17,23 @@ const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',//32
-      //'@media screen and (min-width: 1400px) and (min-height: 1000px':{
-        //fonSize: '60px',
-      //}
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '60px',
+      },
     },
-    h2: {
+    body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      fontSize: '24px',//32
-      //'@media screen and (min-width: 1200px) and (min-height: 1000px)':{
-        //fontSize: '24px',
-      //}
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     },
-    color: {
-      textPrimary: 'white',
-    }
-
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    fontSize: '12px',
+    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
+      fontSize: '24px',
+    },
   },
   palette: {
     type: 'dark',
@@ -60,8 +61,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    width: '100vw',
+    minwidth: '100vw',
     minHeight: '85vh',
+    maxWidth: '100%',
   },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
@@ -104,6 +106,7 @@ const videoOptions = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
+    rel: 0,
 
   }
 
@@ -134,7 +137,7 @@ export default function Fashionpage() {
                 SHOW
             </Typography>
             <Box className={classes.fashiondescription} width="40vw">
-              <Typography component="h2" variant="h2" align="left" color="textPrimary">
+              <Typography component="body1" variant="body1" align="left" color="textPrimary">
                   We don't got designer brands but this is it, this is the best school funding could provide.
               </Typography>
             </Box>
@@ -149,7 +152,7 @@ export default function Fashionpage() {
       // Good luck!
       }
       <div className= {classes.videoContainer}>
-        <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+        <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady}  />
       </div>
       </Container>
     </div>

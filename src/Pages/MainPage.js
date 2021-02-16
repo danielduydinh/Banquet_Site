@@ -17,6 +17,10 @@ import tDance from '../Photos/tdance.png';
 import nax from '../Photos/nax.png';
 import fashion from '../Photos/fashion.png';
 import tpose from '../Photos/tpose.jpg';
+import bts from '../Photos/btsphoto.jpg';
+import sworks from '../Photos/sworksphoto.jpg';
+import aboutphoto from '../Photos/aboutusphoto.jpg';
+import skitphoto from '../Photos/skitphoto.png';
 import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
 
@@ -203,12 +207,11 @@ export default function Mainpage() {
               <LocationContext.Consumer>
               {({value, setValue}) => (
                 <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
-
                     <Carousel.Item>
                     <Link to="/about">
                       <img
                         className="d-block w-100"
-                        src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                        src={aboutphoto}
                         alt="Food"
                         onClick={() => handleAbout(setValue)}
                       />
@@ -219,20 +222,18 @@ export default function Mainpage() {
                         </Typography>
                       </Carousel.Caption>
                     </Carousel.Item>
-
-
                     <Carousel.Item>
                     <Link to="/skit">
                       <img
                         className="d-block w-100"
-                        src={tpose}
+                        src={skitphoto}
                         alt="Skit"
                         onClick={() => handleSkit(setValue)}
                       />
                       </Link>
                       <Carousel.Caption>
                         <Typography component="h2" align="center" color="textPrimary" gutterBottom>
-                          FASHION SHOW
+                          SKIT
                         </Typography>
                       </Carousel.Caption>
                     </Carousel.Item>
@@ -240,7 +241,7 @@ export default function Mainpage() {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                      src={bts}
                       alt="Skit"
                     />
                     <Carousel.Caption>
@@ -252,7 +253,7 @@ export default function Mainpage() {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src={fashion}
+                      src={sworks}
                       alt="Fashion"
                     />
                     <Carousel.Caption>
@@ -264,12 +265,12 @@ export default function Mainpage() {
                   <Carousel.Item>
                     <img
                       className="d-block w-100"
-                      src="https://dogtime.com/assets/uploads/2018/10/puppies-cover.jpg"
+                      src={tpose}
                       alt="Language"
                     />
                     <Carousel.Caption>
                       <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
-                        SKIT
+                        FASHION SHOW
                       </Typography>
                     </Carousel.Caption>
                   </Carousel.Item>
