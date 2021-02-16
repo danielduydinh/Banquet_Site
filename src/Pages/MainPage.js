@@ -23,6 +23,7 @@ import aboutphoto from '../Photos/aboutusphoto.jpg';
 import skitphoto from '../Photos/skitphoto.png';
 import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
+import YouTube from "react-youtube";
 
 import {
   Link
@@ -83,11 +84,12 @@ const useStyles = makeStyles((theme) => ({
   },
   PageButtons: {
     marginTop: theme.spacing(2),
+    paddingBottom: '50px',
   },
   carouseldiv: {
     width: '60%',
     paddingTop: '40%',
-    borderRadius: '16px',
+    borderRadius: '25px',
     overflow: 'hidden',
     zIndex: 1,
     position: 'relative',
@@ -107,13 +109,15 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
     mixBlendMode: 'lighten',
-    height:'50vh',
+    height:'50%',
     maxWidth: '100%',
   },
   IntroPhoto:{
+    display: 'flex',
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${tDance})`,
     mixBlendMode: 'lighten',
+    minHeight: '750px',
     height:'50vh',
     width:'99vw',
     '@media (min-width: 1200px)':{
@@ -122,6 +126,8 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     flexGrow: '1',
     backgroundRepeat: 'no-repeat',
+    position: 'relative',
+    alignItems: 'flex-end',
   },
   bannerBoxes:{
     flexGrow:'1',
@@ -129,9 +135,37 @@ const useStyles = makeStyles((theme) => ({
   buttons:{
     borderRadius: 15,
   },
+  videoContainer: { // div containing the video
+    margin: 'auto',
+    width: '60%',
+    paddingBottom: '33.75%', // for ratio purposes 9/16 is 56.25%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    height:0,
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'relative', // make the position relative while allowing us to make the video absolute
+  },
+  videoPlayer: { // the actual video itself
+    position: 'absolute', // allows us to scale the video responsively
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
 }));
 
-
+const videoOptions = {
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+    rel: 0,
+  }
+};
+function _onReady(event) {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();
+}
 
 export default function Mainpage() {
   const classes = useStyles();
@@ -168,7 +202,7 @@ export default function Mainpage() {
                 <Typography underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
-                <Grid item>
+                <Grid item alignItems="flex-end">
                   <Typography component="body1" variant="body1" align="left" margin='auto' color="textPrimary" gutterBottom>
                     CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
                     (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
@@ -177,7 +211,11 @@ export default function Mainpage() {
                 </Grid>
               </Grid>
             </Grid>
-          <Box width="100%" paddingTop='5vh'>
+            <Box height="100px"/>
+            <div className= {classes.videoContainer}>
+              <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+            </div>
+          <Box width="100%" paddingTop='100px'>
             <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
               SOMETHING ABOUT THE ANNUAL BANQUET
             </Typography>

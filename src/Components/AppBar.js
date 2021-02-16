@@ -105,6 +105,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-around',
     fontFamily: 'Arial',
+    position: 'relative',
   },
   leftFooter: {
     display: 'flex',
