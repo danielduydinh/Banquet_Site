@@ -86,7 +86,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100',
   },
   videoContainer: { // div containing the video
-    paddingTop: '56.25%', // for ratio purposes 9/16 is 56.25%
+    width: '60%',
+    paddingTop: '33.75%', // for ratio purposes 9/16 is 56.25%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
     height:0,
@@ -152,7 +153,7 @@ export default function Fashionpage() {
       // Good luck!
       }
       <div className= {classes.videoContainer}>
-        <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady}  />
+        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
       </div>
       </Container>
     </div>

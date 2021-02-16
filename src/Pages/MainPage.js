@@ -79,18 +79,30 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '85vh',
     flexGrow: 1,
     maxWidth: '100%',
+    paddingBottom: '300px',
   },
   PageButtons: {
     marginTop: theme.spacing(2),
   },
   carouseldiv: {
-    width: '39vw',
-    height: '30vh',
+    width: '60%',
+    paddingTop: '40%',
+    borderRadius: '16px',
+    overflow: 'hidden',
+    zIndex: 1,
+    position: 'relative',
     margin: 'auto',
+
+  },
+  Carousel: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
   },
   carouselContainer:{
     paddingTop:'5vh',
-    paddingBottom: '30vh',
     backgroundImage: `url(${nax})`,
     backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
@@ -206,18 +218,18 @@ export default function Mainpage() {
               <div className={classes.carouseldiv} >
               <LocationContext.Consumer>
               {({value, setValue}) => (
-                <Carousel activeIndex={index} onSelect={handleSelect} borderRadius="16px">
+                <Carousel className= {classes.Carousel} activeIndex={index} onSelect={handleSelect} borderRadius="16px">
                     <Carousel.Item>
                     <Link to="/about">
                       <img
                         className="d-block w-100"
                         src={aboutphoto}
-                        alt="Food"
+                        alt="About"
                         onClick={() => handleAbout(setValue)}
                       />
                       </Link>
                       <Carousel.Caption>
-                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                        <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                           ABOUT US
                         </Typography>
                       </Carousel.Caption>
@@ -232,7 +244,7 @@ export default function Mainpage() {
                       />
                       </Link>
                       <Carousel.Caption>
-                        <Typography component="h2" align="center" color="textPrimary" gutterBottom>
+                        <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
                           SKIT
                         </Typography>
                       </Carousel.Caption>
@@ -242,10 +254,10 @@ export default function Mainpage() {
                     <img
                       className="d-block w-100"
                       src={bts}
-                      alt="Skit"
+                      alt="BTS"
                     />
                     <Carousel.Caption>
-                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant="body1" align="center" color="textPrimary" gutterBottom>
                         BEHIND THE SCENES
                       </Typography>
                     </Carousel.Caption>
@@ -254,10 +266,10 @@ export default function Mainpage() {
                     <img
                       className="d-block w-100"
                       src={sworks}
-                      alt="Fashion"
+                      alt="SWORKS"
                     />
                     <Carousel.Caption>
-                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant="body1"  align="center" color="textPrimary" gutterBottom>
                         STUDENT WORKS
                       </Typography>
                     </Carousel.Caption>
@@ -266,10 +278,10 @@ export default function Mainpage() {
                     <img
                       className="d-block w-100"
                       src={tpose}
-                      alt="Language"
+                      alt="FASHION"
                     />
                     <Carousel.Caption>
-                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
+                      <Typography variant="body1" align="center" color="textPrimary" gutterBottom>
                         FASHION SHOW
                       </Typography>
                     </Carousel.Caption>
