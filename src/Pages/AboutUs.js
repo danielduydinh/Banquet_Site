@@ -18,18 +18,18 @@ import GP from './Photos/AboutUs.jpg';
 
 const theme = createMuiTheme({
   typography: {
-    textAlign: 'center',
+    margin: 'auto',
     h1: {
-      textAlign: 'center',
+      margin: 'auto',
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '32px',
       '@media (min-width: 1400px)' :{
         fontSize: '60px',
-        textAlign: 'center',
+        margin: 'auto',
       },
     },
     body1:{
-      textAlign: 'center',
+      margin: 'auto',
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '12px',
       '@media (min-width: 1200px)' :{
@@ -39,10 +39,10 @@ const theme = createMuiTheme({
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
     fontSize: '12px',
-    textAlign: 'center',
+    margin: 'auto',
     '@media (min-width: 1200px)' :{
       fontSize: '24px',   
-      textAlign: 'center',
+      margin: 'auto',
     },
   },   
   palette: {
