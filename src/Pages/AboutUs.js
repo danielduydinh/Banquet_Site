@@ -35,6 +35,7 @@ const theme = createMuiTheme({
       '@media (min-width: 1200px)' :{
         fontSize: '24px', 
         textAlign: 'center',  
+        margin: 'auto'
       },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
@@ -94,6 +95,9 @@ const useStyles = makeStyles((theme) => ({
   buttons:{
     borderRadius: 15,
   },
+  photopadding:{
+    paddingTop: "12vh",
+  }
 }));
 
 export default function AboutUs() {
@@ -113,10 +117,12 @@ export default function AboutUs() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
-          <Grid className={classes.GroupPhoto} align="center">
-            <img src={GP} alt="Group photo"/>
-          </Grid>
-          <Box p={2} width="80vw" mx={16} paddingTop="30px">
+          <div className={classes.photopadding}>
+            <Grid className={classes.GroupPhoto} align="center">
+              <img src={GP} alt="Group photo"/>
+            </Grid>
+          </div>
+          <Box width="100%" paddingTop="38vh">
             <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
@@ -126,13 +132,13 @@ export default function AboutUs() {
               CHINESE STUDENT ASSOCIATION
             </Typography>
           </Box>
-          <Box p={2} width="80vw" mx={16} paddingBottom="240px">
+          <Box width="100%" paddingTop="8vh">
             <Typography variant="body1" align="center" color="textPrimary">
               CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquets looked like in person:
               <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
             </Typography>
           </Box>
-          <Box width="100%">
+          <Box width="100%" paddingTop="16vh">
             <Typography variant="h1" align="center" color="textPrimary">
             GRAPHIC LEADS
             </Typography>
