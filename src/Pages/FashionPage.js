@@ -32,7 +32,7 @@ const theme = createMuiTheme({
     color: {
       textPrimary: 'white',
     }
-  
+
   },
   palette: {
     type: 'dark',
@@ -63,13 +63,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     minHeight: '85vh',
   },
-  PageButtons: {
-    marginTop: theme.spacing(4),
-  },
-  fashiondescription: {
-    width: '100',
-    height: '100',
-  },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${fashion})`,
@@ -78,49 +71,42 @@ const useStyles = makeStyles((theme) => ({
     width:'99vw',
     '@media (min-width: 1200px)':{
       width: '60vw',
-      position: 'absolute',
       right: '0%',
     },
     maxWidth: '100%',
     flexGrow: '1',
     backgroundRepeat: 'no-repeat',
-    //backgroundImage: `url(${pic})`,
-    //width: '1306px',
-    //height: '731px',
+    zIndex: 0,
+    flexWrap: 'wrap',
   },
-  entirebox: {
-    position: 'absolute',
-    left: '10%',
-    top: '20%',
+  fashiondescription: {
+    width: '100',
+    height: '100',
   },
-  Video: {
-    //position: 'relative',
-    //down: '50%',
-      transform: 'translate(5%, 50%)',
-    //borderRadius: '25px',
-    //borderBottomLeftRadius: '25px',
-    //borderBottomRightRadius: '25px',
-    //overflow: 'hidden',
-    
+  videoContainer: { // div containing the video
+    paddingTop: '56.25%', // for ratio purposes 9/16 is 56.25%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    height:0,
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'relative', // make the position relative while allowing us to make the video absolute
   },
-  icon: {
-    background: 'lightblue',
-    borderRadius: '50%',
-    width: '100px',
-    height: '100px',
-    //image: `url(${icon1})`,
-    //transform: 'translate(10%, 50%)',
-    //height: '715px',
-    //width: '715px',
-  },
+  videoPlayer: { // the actual video itself
+    position: 'absolute', // allows us to scale the video responsively
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  }
 }));
 const videoOptions = {
-  height: "390",
-  width: "700", //640
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
-    autoplay: 1
+    autoplay: 0,
+
   }
+
 };
 function _onReady(event) {
   // access to player in all event handlers via event.target
@@ -138,28 +124,35 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        <Grid>
-          <Grid item width="1500px" className={classes.IntroPhoto} paddingTop='50px'></Grid>
-            <Grid item className={classes.entirebox}>
+      <div>
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
+          <Grid item className={classes.entirebox}>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              FASHION 
+                FASHION
             </Typography>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              SHOW
+                SHOW
             </Typography>
-            <Box className={classes.fashiondescription} width="40vh">
+            <Box className={classes.fashiondescription} width="40vw">
               <Typography component="h2" variant="h2" align="left" color="textPrimary">
-                We don't got designer brands but this is it, this is the best school funding could provide.
+                  We don't got designer brands but this is it, this is the best school funding could provide.
               </Typography>
             </Box>
           </Grid>
-          <Grid item className={classes.Video} paddingTop="12vh" paddingLeft="10vh">
-              <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
-          </Grid>
-        </Grid>  
+        </Grid>
+      </div>
+      {
+      // You can try containing this portion into a grid so you can add other text and stuff
+      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
+      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
+      // working in
+      // Good luck!
+      }
+      <div className= {classes.videoContainer}>
+        <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+      </div>
       </Container>
     </div>
   </ThemeProvider>
   )
 }
-
