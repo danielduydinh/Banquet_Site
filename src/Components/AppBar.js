@@ -13,7 +13,7 @@ import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import LocationContext from './LocationContext';
-
+import Grid from '@material-ui/core/Grid';
 import {
   BrowserRouter as Router,
   Switch,
@@ -63,11 +63,13 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
     background: {
-      default: '#424242',
-      paper: '#424242',
+      default: '#171C20',
+      paper: '#171C20',
     },
   },
 });
+
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
     minWidth: '100vw',
@@ -91,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
+    // maxHeight: '15vh',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
@@ -101,17 +104,19 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'baseline',
+    margin: 'auto',
   },
   rightFooter: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    //
-    alignItems: 'baseline'
+    alignItems: 'baseline',
+    margin: 'auto',
   },
   socialMediaContainer: {
     display: 'flex',
     flexDirection: 'column',
+    margin: 'auto',
   },
   facebook: {
     display: 'flex',
@@ -127,25 +132,27 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     backgroundColor: 'white',
-    marginLeft: '0.5vw',
-    marginRight: '0.5vw',
-    height: '8vh',
-    width: '2px',
-    transform: 'translate(0px, 37.5%)',
+    marginLeft: '1vw',
+    marginRight: '1vw',
+    height: '12vh',
+    width: '0.3vh',
+    transform: 'translate(0px, 15%)',
   },
-  logo: {
-    maxWidth: 100,
+  appbarLogo: {
+    height: '12vh',
+  },
+  footerLogo: {
+    height: '10vh',
   },
   Menu: {
     transform:' translate(0px, 6%)',
   },
-  footerLogo: {
+  footerLogoContainer: {
     transform:' translate(-20px, 50%)'
   },
   link: {
     textDecoration: 'inherit',
     color: 'inherit',
-    // underline: 'inherit',
   },
   indicator: {
     backgroundColor: '#171C20',
@@ -191,8 +198,7 @@ export default function Appbar(props) {
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
-            <img src={popo} className={classes.logo}/>
-            {/*<Tab label="Themes" value='themes' onClick={handleOpen}/>*/}
+            <img src={popo} className={classes.appbarLogo}/>
             <Tab label="Student Work" to='/student-work' component={Link} value='food'/>
             <Tab label="Behind the Scenes" to='/bts' component={Link} value='BTSpage'/>
             <Tab label="Skit" to="/skit" component={Link} value='skit'/>
@@ -214,9 +220,9 @@ export default function Appbar(props) {
           </Switch>
           <footer className={classes.footer}>
             <div className={classes.leftFooter}>
-              <div className={classes.footerLogo}>
-                <img src={popo} className={classes.logo}/>
-              </div>
+              <div className={classes.footerLogoContainer}>
+                <img src={popo} className={classes.footerLogo}/>
+          </div>
               <div>
                 <br/>
                 <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/>SANTA CRUZ</Typography>
@@ -225,9 +231,7 @@ export default function Appbar(props) {
               </div>
             </div>
             <div className={classes.rightFooter} >
-              <div paddingRight='50px'>
-                <br/>
-                <br/>
+              <div>
                 <br/>
                 <Typography variant= "body2">LET'S KEEP IN TOUCH!</Typography>
                 <br/>
@@ -235,9 +239,9 @@ export default function Appbar(props) {
               </div>
               <Divider className={classes.divider} orientation='vertical'
                 variant='middle' flexItem/>
-              <div className={classes.socialMediaContainer} paddingLeft='50px'>
-                <br/>
-                <br />
+              <div className={classes.socialMediaContainer}>
+                {/*<br/>
+                <br/>*/}
                 <div className={classes.facebook}>
                   <FacebookIcon />
                   <Typography>FACEBOOK</Typography>
@@ -256,21 +260,6 @@ export default function Appbar(props) {
             </div>
           </footer>
           </div>
-          {/*
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            borderRadius = "20px"
-            className={classes.Menu}
-          >
-            <MenuItem onClick={handleClose} to="/food" component={Link}> FOOD + FORTUNE </MenuItem>
-            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
-            <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
-            <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
-          </Menu>*/}
         </ThemeProvider>
       </Router>
     </React.Fragment>
