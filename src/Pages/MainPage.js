@@ -183,6 +183,15 @@ export default function Mainpage() {
   const handleSkit = (setValue) => {
     setValue('skit');
   }
+  const handleBts = (setValue) => {
+    setValue('BTSpage');
+  }
+  const handleSwork = (setValue) => {
+    setValue('student work');
+  }
+  const handleFashion = (setValue) => {
+    setValue('fashion');
+  }
 
   // there isnt a banquet page atm so this links to skit
   const handleBanquet = (setValue) => {
@@ -260,7 +269,7 @@ export default function Mainpage() {
               <LocationContext.Consumer>
               {({value, setValue}) => (
                 <Carousel className= {classes.Carousel} activeIndex={index} onSelect={handleSelect} borderRadius="16px">
-                    <Carousel.Item>
+                  <Carousel.Item>
                     <Link to="/about">
                       <img
                         className="d-block w-100"
@@ -268,14 +277,14 @@ export default function Mainpage() {
                         alt="About"
                         onClick={() => handleAbout(setValue)}
                       />
-                      </Link>
-                      <Carousel.Caption>
-                        <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
-                          ABOUT US
-                        </Typography>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
+                    </Link>
+                    <Carousel.Caption>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
+                        ABOUT US
+                      </Typography>
+                    </Carousel.Caption>
+                  </Carousel.Item>
+                  <Carousel.Item>
                     <Link to="/skit">
                       <img
                         className="d-block w-100"
@@ -283,20 +292,22 @@ export default function Mainpage() {
                         alt="Skit"
                         onClick={() => handleSkit(setValue)}
                       />
-                      </Link>
-                      <Carousel.Caption>
-                        <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
-                          SKIT
-                        </Typography>
-                      </Carousel.Caption>
-                    </Carousel.Item>
-
+                    </Link>
+                    <Carousel.Caption>
+                      <Typography variant= "body1" align="center" color="textPrimary" gutterBottom>
+                        SKIT
+                      </Typography>
+                    </Carousel.Caption>
+                  </Carousel.Item>
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={bts}
-                      alt="BTS"
-                    />
+                    <Link to="/bts">
+                      <img
+                        className="d-block w-100"
+                        src={bts}
+                        alt="BTS"
+                        onClick={() => handleBts(setValue)}
+                      />
+                    </Link>
                     <Carousel.Caption>
                       <Typography variant="body1" align="center" color="textPrimary" gutterBottom>
                         BEHIND THE SCENES
@@ -304,11 +315,14 @@ export default function Mainpage() {
                     </Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={sworks}
-                      alt="SWORKS"
-                    />
+                    <Link to="/student-work">
+                      <img
+                        className="d-block w-100"
+                        src={sworks}
+                        alt="SWORKS"
+                        onClick={() => handleSwork(setValue)}
+                      />
+                    </Link>
                     <Carousel.Caption>
                       <Typography variant="body1"  align="center" color="textPrimary" gutterBottom>
                         STUDENT WORKS
@@ -316,11 +330,14 @@ export default function Mainpage() {
                     </Carousel.Caption>
                   </Carousel.Item>
                   <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={tpose}
-                      alt="FASHION"
-                    />
+                    <Link to="/fashion">
+                      <img
+                        className="d-block w-100"
+                        src={tpose}
+                        alt="FASHION"
+                        onClick={() => handleFashion(setValue)}
+                      />
+                    </Link>
                     <Carousel.Caption>
                       <Typography variant="body1" align="center" color="textPrimary" gutterBottom>
                         FASHION SHOW
