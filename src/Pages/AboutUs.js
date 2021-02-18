@@ -18,12 +18,34 @@ import GP from './Photos/AboutUs.jpg';
 
 const theme = createMuiTheme({
   typography: {
-    h3: {
+    margin: 'auto',
+    h1: {
+      margin: 'auto',
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '32px',
+      '@media (min-width: 1400px)' :{
+        fontSize: '60px',
+        margin: 'auto',
+      },
+    },
+    body1:{
+      margin: 'auto',
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media (min-width: 1200px)' :{
+        fontSize: '24px', 
+        textAlign: 'center',  
+        margin: 'auto'
+      },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-  },
+    fontSize: '12px',
+    margin: 'auto',
+    '@media (min-width: 1200px)' :{
+      fontSize: '24px',   
+      margin: 'auto',
+    },
+  },   
   palette: {
     type: 'dark',
     primary: {
@@ -73,6 +95,9 @@ const useStyles = makeStyles((theme) => ({
   buttons:{
     borderRadius: 15,
   },
+  photopadding:{
+    paddingTop: "12vh",
+  }
 }));
 
 export default function AboutUs() {
@@ -92,27 +117,29 @@ export default function AboutUs() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
-          <Grid className={classes.GroupPhoto} align="center">
-            <img src={GP} alt="Group photo"/>
-          </Grid>
-          <Box p={2} width="80vw" mx={16} paddingTop="30px">
-            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
+          <div className={classes.photopadding}>
+            <Grid className={classes.GroupPhoto} align="center">
+              <img src={GP} alt="Group photo"/>
+            </Grid>
+          </div>
+          <Box width="100%" paddingTop="38vh">
+            <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
           </Box>
           <Box width="100%">
-            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+            <Typography variant="h1" align="center" color="textPrimary">
               CHINESE STUDENT ASSOCIATION
             </Typography>
           </Box>
-          <Box p={2} width="80vw" mx={16} paddingBottom="240px">
-            <Typography component="h5" variant="h6" align="center" color="textPrimary" gutterBottom>
-              CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquet looked like in person:
-              https://www.youtube.com/watch?v=dQw4w9WgXcQ
+          <Box width="100%" paddingTop="8vh">
+            <Typography variant="body1" align="center" color="textPrimary">
+              CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquets looked like in person:
+              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
             </Typography>
           </Box>
-          <Box width="100%">
-            <Typography component="h2" underline="always" variant="h3" align="center" color="textPrimary" gutterBottom>
+          <Box width="100%" paddingTop="16vh">
+            <Typography variant="h1" align="center" color="textPrimary">
             GRAPHIC LEADS
             </Typography>
           </Box>

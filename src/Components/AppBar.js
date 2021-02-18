@@ -54,15 +54,15 @@ const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     background: {
@@ -75,6 +75,11 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    zIndex: theme.zIndex.drawer +300,
+    width: '100vw',
+    maxWidth: '100%',
+    position: 'fixed',
+    height: '100px',
     minWidth: '100vw',
     position: 'fixed',
     minHeight: '8vh',
@@ -84,7 +89,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '70px',
     fontWeight: 'bold',
   },
-
+  appbarTabs:{
+    // [theme.breakpoints.down('md')]: {
+    //   display: 'none',
+    // },
+  },
   body: {
     display: 'flex',
     flexDirection: 'column',
@@ -94,6 +103,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     color: "#FFFFFF",
     width: '100vw',
+    maxWidth: '100%',
     backgroundColor: theme.palette.error.main,
     minHeight: '15vh',
     // maxHeight: '15vh',
@@ -101,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     justifyContent: 'space-around',
     fontFamily: 'Arial',
+    position: 'relative',
   },
   leftFooter: {
     display: 'flex',
@@ -134,12 +145,15 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   divider: {
+    display: 'flex',
+    alignItems: 'center',
     backgroundColor: 'white',
     marginLeft: '1vw',
     marginRight: '1vw',
     height: '12vh',
     width: '0.3vh',
     transform: 'translate(0px, 15%)',
+    // veritcalAlign: 'middle',
   },
   appbarLogo: {
     height: '12vh',
@@ -184,7 +198,7 @@ export default function Appbar(props) {
   React.useEffect(() => {
     console.log('appbar running use effect');
   }, [value]);
-  
+
   const classes = useStyles();
 
   return (
@@ -197,7 +211,7 @@ export default function Appbar(props) {
           <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
             classes={{
               indicator: classes.indicator,
-            }}> 
+            }}>
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
@@ -236,7 +250,7 @@ export default function Appbar(props) {
             <div className={classes.rightFooter} >
               <div>
                 <br/>
-                <Typography variant= "body2">LET'S KEEP IN TOUCH!</Typography>
+                <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
                 <br/>
                 <Typography>Please, we need friends.</Typography>
               </div>
