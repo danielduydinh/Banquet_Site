@@ -200,6 +200,7 @@ const DialogActions = withStyles((theme) => ({
 
 export default function Foodpage() {
   const classes = useStyles();
+
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -207,6 +208,13 @@ export default function Foodpage() {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+  React.useEffect(() => {
+    console.log('Scrolling to top in foodpage');
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
