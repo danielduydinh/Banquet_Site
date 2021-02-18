@@ -47,6 +47,9 @@ const theme = createMuiTheme({
       fontSize: '18px',
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    color: {
+      textPrimary: 'white',
+    }
   },
   palette: {
     type: 'dark',
