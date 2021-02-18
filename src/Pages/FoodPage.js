@@ -1,13 +1,20 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
+import MuiDialogTitle from '@material-ui/core/DialogTitle';
+import MuiDialogContent from '@material-ui/core/DialogContent';
+import MuiDialogActions from '@material-ui/core/DialogActions';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 import myImg from './Photos/foood.jpg';
 import pic from './Photos/dat.jpg';
 import pic2 from './Photos/DanielPFP.jpg';
@@ -50,12 +57,16 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
+    margin: 0,
+    padding: theme.spacing(1),
   },
   PageContent: {
     paddingTop: '8vh',
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
+    minwidth: '100vw',
     height: '160vh',
+    maxwidth: '100%',
   },
   PageButtons: {
     marginTop: theme.spacing(4),
@@ -65,12 +76,19 @@ const useStyles = makeStyles((theme) => ({
     height: '40vh',
     justifyContent: 'center',
   },
-  GridContainer:{
+  GridContainer: {
     justifyContent: 'center',
     width: '50vw',
     height: '50vh',
+  },
+  closeButton: {
+    position: 'absolute',
+    right: theme.spacing(1),
+    top: theme.spacing(1),
+    color: theme.palette.grey[500],
   }
 }));
+
 const tileData = [
   {
     img: pizza,
@@ -150,10 +168,45 @@ const tileData = [
     author: 'danfador',
   },
 ];
+const DialogTitle = withStyles(useStyles)((props) => {
+  const { children, classes, onClose, ...other } = props;
+  return (
+    <MuiDialogTitle disableTypography className={classes.root} {...other}>
+      <Typography variant="h6">{children}</Typography>
+      {onClose ? (
+        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
+      ) : null}
+    </MuiDialogTitle>
+  );
+});
+
+const DialogContent = withStyles((theme) => ({
+  root: {
+    padding: theme.spacing(2),
+  },
+}))(MuiDialogContent);
+
+const DialogActions = withStyles((theme) => ({
+  root: {
+    margin: 0,
+    padding: theme.spacing(1),
+  },
+}))(MuiDialogActions);
+
+
 
 
 export default function Foodpage() {
   const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
@@ -167,10 +220,40 @@ export default function Foodpage() {
             <GridList cellHeight={190} cols={4}>
               {tileData.map((tile) => (
                 <GridListTile key={tile.img} cols={tile.cols || 1}>
-                    <img src={tile.img} alt={tile.title} />
+                  <img src={tile.img} alt={tile.title} />
                 </GridListTile>
-                ))}
+              ))}
             </GridList>
+          </div>
+          <div>
+            <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+              Open dialog
+            </Button>
+            <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
+              <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+                Modal title
+            </DialogTitle>
+              <DialogContent dividers>
+                <Typography gutterBottom>
+                  Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+                  in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+              </Typography>
+                <Typography gutterBottom>
+                  Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis
+                  lacus vel augue laoreet rutrum faucibus dolor auctor.
+              </Typography>
+                <Typography gutterBottom>
+                  Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel
+                  scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus
+                  auctor fringilla.
+              </Typography>
+              </DialogContent>
+              <DialogActions>
+                <Button autoFocus onClick={handleClose} color="primary">
+                  Save changes
+              </Button>
+              </DialogActions>
+            </Dialog>
           </div>
         </Container>
       </div>
