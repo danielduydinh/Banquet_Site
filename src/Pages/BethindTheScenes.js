@@ -13,6 +13,28 @@ import YouTube from "react-youtube";
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
+  typography: {
+    h1: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      //Font size for the title
+      fontSize: '64px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '60px',
+      },
+    },
+    body1:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
+    },
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    fontSize: '12px',
+    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
+      fontSize: '24px',
+    },
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -36,13 +58,12 @@ const theme = createMuiTheme({
 const useStyles = makeStyles((theme) => ({
   PageContent: {
     paddingTop: '8vh',
-    flewGrow: 1,
-    backgroundColor: '#424242',
+    flexGrow: 1,
+    backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    width: '99.1vw',
-    height: '100vh',
-    //
-    maxwidth: "100%",
+    minwidth: '100vw',
+    minHeight: '85vh',
+    maxWidth: '100%',
   },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
