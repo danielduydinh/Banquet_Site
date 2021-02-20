@@ -14,6 +14,8 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import LocationContext from './LocationContext';
 import Grid from '@material-ui/core/Grid';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,7 +28,7 @@ import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import Toolbar from '@material-ui/core/Toolbar';
 import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
 import AboutUs from '../Pages/AboutUs.js';
@@ -73,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     display: 'flex',
     alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'center',
     zIndex: theme.zIndex.drawer +300,
     width: '100vw',
@@ -87,12 +90,25 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontSize: '70px',
     fontWeight: 'bold',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'space-between',
+    },
   },
-  appbarTabs:{
-    // [theme.breakpoints.down('md')]: {
-    //   display: 'none',
-    // },
-    overflow: 'hidden'
+  mobileMenu: {
+    '@media screen and (max-width: 1280px)':{
+      display: 'flex',
+
+    },
+    display: 'none',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: "20px",
+    justifyContent: 'space-between',
+  },
+  appBarTabs:{
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
   body: {
     display: 'flex',
@@ -171,6 +187,11 @@ const useStyles = makeStyles((theme) => ({
     height: '10vh',
     maxHeight: '100px',
   },
+  mobilelogo: {
+    height: '8vh',
+    minHeight: '80px',
+    maxHeight: '95px',
+  },
   footerlogo: {
     marginRight: '20px',
     paddingLeft: '20px',
@@ -182,7 +203,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   Menu: {
-    transform:' translate(0px, 6%)',
+    transform:' translate(0px, 8%)',
   },
   link: {
     textDecoration: 'inherit',
@@ -226,7 +247,39 @@ export default function Appbar(props) {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
+          <div className={classes.mobileMenu}>
+            <div>
+              <IconButton edge="start" color="inherit" aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+              <img src={popo} alt="mobilepopo" className={classes.mobilelogo}/>
+            </div>
+            <div>
+              <Typography marginLeft="20px">UCSC CSA</Typography>
+            </div>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              borderRadius = "20px"
+              className={classes.Menu}
+            >
+              <MenuItem onClick={handleClose} to="/" component={Link} value='home'> HOME </MenuItem>
+              <MenuItem onClick={handleClose} to="/about" component={Link} value='about'> ABOUT US </MenuItem>
+              <MenuItem onClick={handleClose} to="/fashion" component={Link} value='fashion'> FASHION SHOW </MenuItem>
+              <MenuItem onClick={handleClose} to='/student-work' component={Link} value='food'> STUDENT WORKS </MenuItem>
+              <MenuItem onClick={handleClose} to='/bts' component={Link} value='BTSpage'> BEHIND THE SCENES </MenuItem>
+              <MenuItem onClick={handleClose} to="/skit" component={Link} value='skit'> SKIT </MenuItem>
+            </Menu>
+          </div>
+
+          <Tabs className={classes.appBarTabs} aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
             classes={{
               indicator: classes.indicator,
             }}>
