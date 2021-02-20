@@ -31,6 +31,7 @@ import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
 import AboutUs from '../Pages/AboutUs.js';
 import BTSpage from '../Pages/BethindTheScenes';
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 // im a comment
 /**
@@ -70,6 +71,9 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   appBar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     zIndex: theme.zIndex.drawer +300,
     width: '100vw',
     maxWidth: '100%',
@@ -88,6 +92,7 @@ const useStyles = makeStyles((theme) => ({
     // [theme.breakpoints.down('md')]: {
     //   display: 'none',
     // },
+    overflow: 'hidden'
   },
   body: {
     display: 'flex',
@@ -100,60 +105,73 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     maxWidth: '100%',
     backgroundColor: theme.palette.error.main,
-    minHeight: '15vh',
+    minHeight: '300px',
+    height: '20vh',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     fontFamily: 'Arial',
     position: 'relative',
   },
-  leftFooter: {
+
+  footerGrid: {
+    width: '100vw',
+    maxWidth: '100%',
+    height: '100%',
+  },
+  footerLeft: {
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
+    justifyContent: 'center',
   },
-  rightFooter: {
+  footerRight: {
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    //
-    alignItems: 'baseline'
-  },
-  socialMediaContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  facebook: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  instagram: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  youtube: {
-    display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'center',
   },
   divider: {
-    display: 'flex',
-    alignItems: 'center',
     backgroundColor: 'white',
-    marginLeft: '0.5vw',
-    marginRight: '0.5vw',
-    height: '8vh',
+    height: '100px',
     width: '2px',
-    veritcalAlign: 'middle',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
   },
+  socials: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  socialText: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
+  },
+  icons: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '48px'
+    },
+  },
+
   logo: {
-    maxWidth: 100,
+    width: '10vw',
+    maxWidth: '100px',
+  },
+  footerlogo: {
+    width: '12%',
+    maxWidth: '12%',
+    [theme.breakpoints.down('sm')]:{
+      width: '200px'
+    },
+  },
+  footerRightText: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
   },
   Menu: {
     transform:' translate(0px, 6%)',
-  },
-  footerLogo: {
-    transform:' translate(-20px, 50%)'
   },
   link: {
     textDecoration: 'inherit',
@@ -204,7 +222,7 @@ export default function Appbar(props) {
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
-            <img src={popo} className={classes.logo}/>
+            <img src={popo} alt="headpopo" className={classes.logo}/>
             {/*<Tab label="Themes" value='themes' onClick={handleOpen}/>*/}
             <Tab label="Student Work" to='/student-work' component={Link} value='food'/>
             <Tab label="Behind the Scenes" to='/bts' component={Link} value='BTSpage'/>
@@ -226,64 +244,41 @@ export default function Appbar(props) {
             <Route exact path="/about" component={AboutUs} />
           </Switch>
           <footer className={classes.footer}>
-            <div className={classes.leftFooter}>
-              <div className={classes.footerLogo}>
-                <img src={popo} className={classes.logo}/>
-              </div>
-              <div>
-                <br/>
-                <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/>SANTA CRUZ</Typography>
-                <br/>
-                <Typography>CHINESE STUDENT ASSOCIATION</Typography>
-              </div>
-            </div>
-            <div className={classes.rightFooter} >
-              <div paddingRight='50px' alignItems="center">
-                <br/>
-                <br/>
-                <br/>
-                <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
-                <br/>
-                <Typography>Please, we need friends.</Typography>
-              </div>
-              <Divider className={classes.divider} orientation='vertical'
-                variant='middle' flexItem/>
-              <div className={classes.socialMediaContainer} paddingLeft='50px'>
-                <br/>
-                <br />
-                <div className={classes.facebook}>
-                  <FacebookIcon />
-                  <Typography>FACEBOOK</Typography>
+            <Grid className = {classes.footerGrid} container>
+              <Grid item xs={6} className={classes.footerLeft}>
+                <img src ={popo} alt="popo" className={classes.footerlogo}/>
+                <div className={classes.footerLeftText}>
+                  <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/> SANTA CRUZ</Typography>
+                  <Typography>CHINESE STUDENT ASSOCIATION</Typography>
                 </div>
-                <br />
-                <div className={classes.instagram}>
-                  <InstagramIcon />
-                  <Typography>INSTAGRAM</Typography>
+              </Grid>
+              <Grid item xs={6} className = {classes.footerRight}>
+                <div className = {classes.footerRightText}>
+                  <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
+                  <br/>
+                  <Typography>Check out our socials!</Typography>
                 </div>
-                <br />
-                <div className={classes.youtube}>
-                  <YouTubeIcon />
-                  <Typography>YOUTUBE</Typography>
+                <Divider className={classes.divider} orientation='vertical' variant='middle' />
+                <div className={classes.socialContainer}>
+                  <div className={classes.socials}>
+                    <FacebookIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >FACEBOOK</Typography>
+                  </div>
+                  <br/>
+                  <div className={classes.socials}>
+                    <InstagramIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >INSTAGRAM</Typography>
+                  </div>
+                  <br/>
+                  <div className={classes.socials}>
+                    <YouTubeIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >YOUTUBE</Typography>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </footer>
           </div>
-          {/*
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            borderRadius = "20px"
-            className={classes.Menu}
-          >
-            <MenuItem onClick={handleClose} to="/food" component={Link}> FOOD + FORTUNE </MenuItem>
-            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
-            <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
-            <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
-          </Menu>*/}
         </ThemeProvider>
       </Router>
     </React.Fragment>
