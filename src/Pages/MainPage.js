@@ -213,20 +213,24 @@ export default function Mainpage() {
               </Grid>
             </Grid>
             <Box height="100px"/>
-            <div className= {classes.videoContainer} data-aos="fade-up">
-              <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+            <div className= {classes.videoContainer}>
+              <YouTube className={classes.videoPlayer} videoId="3yVPCwnk-I8" opts={videoOptions} onReady={_onReady}  />
             </div>
           <div data-aos="fade-right">
           <Box width="100%" paddingTop='100px'>
             <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
-              SOMETHING ABOUT THE ANNUAL BANQUET
+              WHAT CSA'S BANQUET IS ABOUT
             </Typography>
           </Box>
-          <Box p={2} width="80vw"  margin="auto" textAlign= 'center'>
+          <Box p={2} width="60vw"  margin="auto" textAlign= 'center'>
             <Typography component="body1" variant="body1" color="textPrimary" gutterBottom>
-              CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of California, Santa Cruz
-              (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
-              the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+              Banquet has been strange this year, with communication and planning being strictly online.
+              As a result, the experience accrued through past banquets is not as applicable.
+              Banquet has been a journey, and we have embarked on a new, different path.
+              However, the core beliefs of banquet have not changed; banquet is hosted by Asian-Americans
+              for the celebration of Asian-American culture and heritage. This much will never change.
+              Our exhibition of this culture and heritage encapsulate what unites us under the CSA banner,
+              and imbues the pride we have as Asian-Americans.
             </Typography>
           </Box>
           </div>
