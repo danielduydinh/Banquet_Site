@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     maxWidth: '100%',
     paddingBottom: '300px',
+    justifyContent: 'center',
   },
   PageButtons: {
     marginTop: theme.spacing(2),
@@ -95,6 +96,11 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
     position: 'relative',
     margin: 'auto',
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+      paddingBottom: '53.4375%',
+      paddingTop: '5%'
+    },
 
   },
   Carousel: {
@@ -146,6 +152,10 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden', // removes any parts of the div that might extend outside it
     zIndex: 1, // idk its just says so in the code haha
     position: 'relative', // make the position relative while allowing us to make the video absolute
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+      paddingBottom: '53.4375%',
+    },
   },
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
@@ -205,9 +215,10 @@ export default function Mainpage() {
                 </Typography>
                 <Grid item>
                   <Typography component="body1" variant="body1" align="left" margin='auto' color="textPrimary" gutterBottom>
-                    CSA is a student organization and resource devoted to promoting unity and empowerment among students of the University of Santa Cruz
-                    (UCSC) through education, consciousness and recognition of Chinese, and Chinese American cultural aspects. We strive to strengthen
-                    the diverse UCSC community by organizing events that create a space for student voices and coalition building.
+                    Hey there, thanks for stopping by! We’ve been working really hard to put together a fantastic show throughout the past few months.
+                    Despite occasional adversity, we can confidently say that this 35th banquet will be unlike anything you’ve seen in the past.
+                    <br/>
+                    Unique times call for a unique banquet! That being said, enjoy the show, as well as the works of our banquet committees!
                   </Typography>
                 </Grid>
               </Grid>
@@ -227,6 +238,11 @@ export default function Mainpage() {
               Banquet has been strange this year, with communication and planning being strictly online.
               As a result, the experience accrued through past banquets is not as applicable.
               Banquet has been a journey, and we have embarked on a new, different path.
+
+            </Typography>
+            <br/>
+            <br/>
+            <Typography component="body1" variant="body1" color="textPrimary" gutterBottom>
               However, the core beliefs of banquet have not changed; banquet is hosted by Asian-Americans
               for the celebration of Asian-American culture and heritage. This much will never change.
               Our exhibition of this culture and heritage encapsulate what unites us under the CSA banner,
