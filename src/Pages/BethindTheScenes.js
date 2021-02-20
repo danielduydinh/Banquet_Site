@@ -5,9 +5,10 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-
+import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
+import bts from '../Photos/bts.png'
 import YouTube from "react-youtube";
 // import { Block } from '@material-ui/icons';
 
@@ -43,6 +44,22 @@ const useStyles = makeStyles((theme) => ({
     //
     maxwidth: "100%",
   },
+  IntroPhoto: {
+    padding: theme.spacing(8, 0, 6),
+    backgroundImage: `url(${bts})`,
+    mixBlendMode: 'lighten',
+    height:'50vh',
+    width:'99vw',
+    '@media (min-width: 1200px)':{
+      width: '100vw',
+      right: '0%',
+    },
+    maxWidth: '100%',
+    flexGrow: '1',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0,
+    flexWrap: 'wrap',
+  },
   PageButtons: {
     marginTop: theme.spacing(4),
   },
@@ -73,36 +90,37 @@ export default function BTSpage() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.PageContent} content="width=device-width">
-        <Container maxWidth="sm">
-          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-             BTS Army
-          </Typography>
-          <div className={classes.Video}>
-            <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
-          </div>
-          <Typography component="h3" variant="h3" align="center" color="textPrimary" gutterBottom>
-            Description:
-          </Typography>
-          <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
-            Codeijdisijidsj Codeijdisijidsj Codeijdisijidsj Codeijdisijidsj
-          </Typography>
-          <div className={classes.PageButtons}>
-            <Grid container spacing={2} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 1
-                </Button>
-              </Grid>
-              <Grid item>
-                <Button variant="contained" color="primary">
-                  Button 2
-                </Button>
-              </Grid>
-            </Grid>
-          </div>
-        </Container>
+    <div className={classes.PageContent}>
+      <Container maxWidth="1/4">
+      <div>
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
+          <Grid item className={classes.entirebox}>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+                Behind the Scenes
+            </Typography>
+            <Box className={classes.fashiondescription} width="40vw">
+              <Typography component="body1" variant="body1" align="left" color="textPrimary">
+                  I don't know what to put for BTS, idk anything about BTS either.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
       </div>
-    </ThemeProvider>
+      {
+      // You can try containing this portion into a grid so you can add other text and stuff
+      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
+      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
+      // working in
+      // Good luck!
+      }
+          <div className= {classes.videoContainer}>
+        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+        <Typography component="h1" variant="h1" align="right" color="textPrimary">
+                Behind the Scenes
+            </Typography>
+      </div>
+      </Container>
+    </div>
+  </ThemeProvider>
   )
 }
