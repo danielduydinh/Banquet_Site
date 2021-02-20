@@ -115,8 +115,8 @@ const useStyles = makeStyles((theme) => ({
   },
 
   footerGrid: {
-    width: '100vw',
-    maxWidth: '100%',
+    width: '80vw',
+    maxWidth: '80%',
     height: '100%',
   },
   footerLeft: {
@@ -130,12 +130,25 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-end',
+    }
   },
   divider: {
     backgroundColor: 'white',
     height: '100px',
     width: '2px',
     [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
+  },
+  UCSCText: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    }
+  },
+  UniversityText: {
+    [theme.breakpoints.down('md')]: {
       display: 'none',
     }
   },
@@ -150,20 +163,18 @@ const useStyles = makeStyles((theme) => ({
   },
   icons: {
     [theme.breakpoints.down('sm')]: {
-      fontSize: '48px'
+      fontSize: '32px'
     },
   },
 
   logo: {
-    width: '10vw',
-    maxWidth: '100px',
+    height: '10vh',
+    maxHeight: '100px',
   },
   footerlogo: {
-    width: '12%',
-    maxWidth: '12%',
-    [theme.breakpoints.down('sm')]:{
-      width: '200px'
-    },
+    marginRight: '20px',
+    paddingLeft: '20px',
+    height: '10vh',
   },
   footerRightText: {
     [theme.breakpoints.down('sm')]: {
@@ -248,7 +259,8 @@ export default function Appbar(props) {
               <Grid item xs={6} className={classes.footerLeft}>
                 <img src ={popo} alt="popo" className={classes.footerlogo}/>
                 <div className={classes.footerLeftText}>
-                  <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/> SANTA CRUZ</Typography>
+                  <Typography variant="body2" className={classes.UniversityText}>UNIVERSITY OF CALIFORNIA |<br/> SANTA CRUZ</Typography>
+                  <Typography className={classes.UCSCText}> UCSC </Typography>
                   <Typography>CHINESE STUDENT ASSOCIATION</Typography>
                 </div>
               </Grid>
