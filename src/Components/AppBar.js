@@ -210,6 +210,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Appbar(props) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const handleOpen = (event) => {
+    if (anchorEl == null){
+      setAnchorEl(event.currentTarget);
+    } else {
+      setAnchorEl(null);
+    }
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const [value, setValue] = React.useState('home');
 
   const handleChange = (event, newValue) => {
