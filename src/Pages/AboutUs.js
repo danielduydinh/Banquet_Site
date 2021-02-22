@@ -102,20 +102,22 @@ const useStyles = makeStyles((theme) => ({
   },
   AUBKGP:{
     backgroundImage: `url(${WWABGP})`,
-    // height:'1196px',
+    height:'118vh',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
     width: '100vw',
-    '@media (min-width: 1200px)':{
-      width: '60vw',
-    },
+    // '@media (min-width: 1200px)':{
+    //   width: '60vw',
+    // },
     maxWidth: '100%',
-    flexGrow: '1',
+    // flexGrow: '1',
     backgroundRepeat: 'no-repeat',
   },
   buttons:{
     borderRadius: 15,
   },
   photopadding:{
-    paddingTop: "12vh",
+    paddingTop: "16vh",
   },
   card: {
     minWidth: 275,
@@ -127,7 +129,7 @@ const useStyles = makeStyles((theme) => ({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 14,
+    fontSize: 22,
   },
   pos: {
     marginBottom: 12,
@@ -153,14 +155,13 @@ export default function AboutUs() {
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
           <Grid className={classes.AUBKGP} align="center">
-            <img src={WWABGP} alt="WWABGP"/>
+            <div className={classes.photopadding}>
+                <Grid className={classes.GroupPhoto} align="center">
+                  <img src={GP} alt="Group photo"/>
+                </Grid>
+            </div>
           </Grid>
-          <div className={classes.photopadding}>
-              <Grid className={classes.GroupPhoto} align="center">
-                <img src={GP} alt="Group photo"/>
-              </Grid>
-          </div>
-          <Box width="100%" paddingTop="38vh">
+          <Box width="100%" paddingTop="20vh">
             <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
@@ -182,27 +183,29 @@ export default function AboutUs() {
             </Typography>
           </Box>
         </Container>
-        <Card className={classes.card} variant="outlined">
-          <CardContent>
-            <Typography className={classes.title} color="textSecondary" gutterBottom>
-              Word of the Day
-            </Typography>
-            <Typography variant="h5" component="h2">
-              be{bull}nev{bull}o{bull}lent
-            </Typography>
-            <Typography className={classes.pos} color="textSecondary">
-              adjective
-            </Typography>
-            <Typography variant="body2" component="p">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
+        <Box>
+          <Card className={classes.card} variant="outlined">
+            <CardContent>
+              <Typography variant="h1" className={classes.title} color="textPrimary">
+                Name
+              </Typography>
+              <Typography variant="h5" component="h2">
+                be{bull}nev{bull}o{bull}lent
+              </Typography>
+              <Typography className={classes.pos} color="textSecondary">
+                adjective
+              </Typography>
+              <Typography variant="body2" component="p">
+                well meaning and kindly.
+                <br />
+                {'"a benevolent smile"'}
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small">Learn More</Button>
+            </CardActions>
+          </Card>
+        </Box>
       </div>
     </ThemeProvider>
   )
