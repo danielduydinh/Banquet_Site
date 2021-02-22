@@ -6,38 +6,46 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-
 import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
-import pic from './Photos/DanielPFP.jpg';
+import fashion from '../Photos/fashion.png';
+import icon1 from '../Photos/icon.png';
 
 const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '60px',
+      },
     },
-    h2: {
+    body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      //fontSize: '30px'
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     },
-    color: {
-      textPrimary: 'white',
-    }
+    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    fontSize: '12px',
+    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
+      fontSize: '24px',
+    },
   },
   palette: {
     type: 'dark',
     primary: {
-      light: '#ff7961',
-      main: '#B63D2D',
-      dark: '#ba000d',
+      light: '#f44336',
+      main: '#f44336',
+      dark: '#f44336',
       contrastText: '#000',
     },
     secondary: {
-      light: '#ff7961',
+      light: '#f44336',
       main: '#f44336',
-      dark: '#ba000d',
+      dark: '#f44336',
       contrastText: '#000',
     },
     background: {
@@ -52,40 +60,56 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    width: '100vw',
+    minwidth: '100vw',
     minHeight: '85vh',
+    maxWidth: '100%',
   },
-  PageButtons: {
-    marginTop: theme.spacing(4),
-  },
-  fashiontitle: {
-    transform: 'translate(-100%, 50%)'
+  IntroPhoto: {
+    padding: theme.spacing(8, 0, 6),
+    backgroundImage: `url(${fashion})`,
+    mixBlendMode: 'lighten',
+    height:'50vh',
+    width:'99vw',
+    '@media (min-width: 1200px)':{
+      width: '60vw',
+      right: '0%',
+    },
+    maxWidth: '100%',
+    flexGrow: '1',
+    backgroundRepeat: 'no-repeat',
+    zIndex: 0,
+    flexWrap: 'wrap',
   },
   fashiondescription: {
     width: '100',
     height: '100',
   },
-  IntroPhoto: {
-    backgroundImage: `url(${pic})`,
-    height: '1080px',
-    //position: 'fixed',
-    transform: 'translate(20%)',
+  videoContainer: { // div containing the video
+    width: '60%',
+    paddingTop: '33.75%', // for ratio purposes 9/16 is 56.25%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    height:0,
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'relative', // make the position relative while allowing us to make the video absolute
   },
-  Video: {
-    //borderRadius: '25px',
-    //borderBottomLeftRadius: '25px',
-    //borderBottomRightRadius: '25px',
-    //overflow: 'hidden',
-    transform: 'translate(-100%, 50%)'
-  },
+  videoPlayer: { // the actual video itself
+    position: 'absolute', // allows us to scale the video responsively
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  }
 }));
 const videoOptions = {
-  height: "390",
-  width: "700", //640
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
-    autoplay: 1
+    autoplay: 0,
+    rel: 0,
+
   }
+
 };
 function _onReady(event) {
   // access to player in all event handlers via event.target
@@ -103,30 +127,36 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        <Box width="1501px" className={classes.IntroPhoto} paddingTop='20px'>
-          <Box p={2} width = "80vw" mx={16}>
-          <Box paddingTop="30px" paddingBottom="10px" paddingLeft='20px'>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary" className={classes.fashiontitle} >
-              FASHION 
-            </Typography>
-            </Box>
+      <div>
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
+          <Grid item className={classes.entirebox}>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              SHOW
+                FASHION
             </Typography>
-          <div className={classes.fashiondescription}>
-            <Typography component="h2" variant="h2" align="left" color="textPrimary">
-              We don't got designer brands but this is it, this is the best school funding could provide.
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+                SHOW
             </Typography>
-          </div>
-        </Box>
-        </Box>
-        <Box className={classes.Video}>
-          <YouTube videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />;
-        </Box>
-        
+            <Box className={classes.fashiondescription} width="40vw">
+              <Typography component="body1" variant="body1" align="left" color="textPrimary">
+                  We don't got designer brands but this is it, this is the best school funding could provide.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+      </div>
+      {
+      // You can try containing this portion into a grid so you can add other text and stuff
+      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
+      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
+      // working in
+      // Good luck!
+      }
+      <div className= {classes.videoContainer}>
+        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+      </div>
       </Container>
     </div>
+
   </ThemeProvider>
   )
 }
-
