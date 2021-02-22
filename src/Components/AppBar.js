@@ -123,6 +123,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-around',
     fontFamily: 'Arial',
     position: 'relative',
+    bottom: '0px',
   },
 
   footerGrid: {
