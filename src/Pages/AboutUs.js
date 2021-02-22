@@ -15,6 +15,7 @@ import { spacing } from '@material-ui/system';
 import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
 import GP from './Photos/AboutUs.jpg';
+import WWABGP from './Photos/WWABGP.png';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent'
@@ -99,6 +100,17 @@ const useStyles = makeStyles((theme) => ({
     image: `url(${GP})`,
     height:'561px',
   },
+  AUBKGP:{
+    backgroundImage: `url(${WWABGP})`,
+    // height:'1196px',
+    width: '100vw',
+    '@media (min-width: 1200px)':{
+      width: '60vw',
+    },
+    maxWidth: '100%',
+    flexGrow: '1',
+    backgroundRepeat: 'no-repeat',
+  },
   buttons:{
     borderRadius: 15,
   },
@@ -140,10 +152,13 @@ export default function AboutUs() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
+          <Grid className={classes.AUBKGP} align="center">
+            <img src={WWABGP} alt="WWABGP"/>
+          </Grid>
           <div className={classes.photopadding}>
-            <Grid className={classes.GroupPhoto} align="center">
-              <img src={GP} alt="Group photo"/>
-            </Grid>
+              <Grid className={classes.GroupPhoto} align="center">
+                <img src={GP} alt="Group photo"/>
+              </Grid>
           </div>
           <Box width="100%" paddingTop="38vh">
             <Typography variant="body1" align="center" color="textPrimary">
