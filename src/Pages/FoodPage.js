@@ -72,8 +72,8 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
     background: {
-      default: '#424242',
-      paper: '#424242',
+      default: '#171C20',
+      paper: '#171C20',
     },
   },
 });
@@ -114,15 +114,12 @@ const useStyles = makeStyles((theme) => ({
   },
   Tile: {
     width: '300px',
-    // [theme.breakpoints.down('xs')]: {
-    //   width: '200px'
-    // },
   },
   dialogBox: {
     fullScreen: 'true',
     zIndex: theme.zIndex.drawer +2,
+    color: '#171C20',
   },
-
 }));
 
 const DialogTitle = withStyles(useStyles)((props) => {
@@ -215,11 +212,11 @@ export default function Foodpage() {
             selectedElement={selectedElement}
             open={open}
             setOpen={setOpen}>
-              <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                <Typography gutterBottom fontSize='9px'>
-                  {selectedElement.title}
-                </Typography>
-              </DialogTitle>
+                <DialogContent>
+                  <Typography gutterBottom variant='h1'>
+                    {selectedElement.title}
+                  </Typography>
+                </DialogContent>
                 <DialogContent dividers>
                 <Typography gutterBottom fontSize='9px'>
                   {selectedElement.content}
