@@ -112,13 +112,15 @@ const useStyles = makeStyles((theme) => ({
     minWidth: '80%',
     maxHeight: '2600px'
   },
+  // I found a good balance of keeping it between 200 and 300px for how large you'd want it to be
+  // if you change width here, make sure to change the cellHeight at line 195
   Tile: {
     width: '300px',
   },
+  // zIndex is set to appear in front of the appBarTabs
   dialogBox: {
     fullScreen: 'true',
     zIndex: theme.zIndex.drawer +2,
-    color: '#171C20',
   },
 }));
 
@@ -151,8 +153,10 @@ const DialogActions = withStyles((theme) => ({
 
 export default function Foodpage() {
   const classes = useStyles();
+  // selected Element is a state that will contain the data of whichever til we're working with
   const [selectedElement, setSelectedElement] = React.useState();
   const [open, setOpen] = React.useState(false);
+  // handleClickOpen will open the Dialog box and also set the information of the tile that the dialog box will display
   const handleClickOpen = (tile) => {
     setOpen(true);
     setSelectedElement(tile);
@@ -205,6 +209,15 @@ export default function Foodpage() {
               ))}
             </GridList>
           </div>
+          {/* So this is where the Dialog Box is being rendered.
+            You can find the styling for it up in the useStyles under dialogBox
+            What's happening here is that the tile from tileData is being passed to selectedElement.
+            selectedElement is now the tile and you can access the other info of tile, like the title or content.
+            You can get creative here, since we're mapping stuff. What I recommend is adding an extra parameter to tileData, name it
+            extra or something.
+            The extra parameter could contain an image, an embedded Spotify link, a video, etc. depending on which tiles
+            you're working on.
+            */}
           { selectedElement && (
             <Dialog
             className={classes.dialogBox}
@@ -228,6 +241,10 @@ export default function Foodpage() {
     </ThemeProvider>
   )
 }
+/*
+So here is the data and stuff for each tile. It includes the image, title, author, and the content, which is what each person wrote for their submission here.
+In the HTML part of the code, you can see that we mapped this info to each of the tiles and the dialog boxes that open up.
+*/
 const tileData = [
   {
     img: aaronz,
