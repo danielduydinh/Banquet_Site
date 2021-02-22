@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    zIndex: theme.zIndex.drawer +300,
+    zIndex: theme.zIndex.drawer +1,
     width: '100vw',
     maxWidth: '100%',
     position: 'fixed',

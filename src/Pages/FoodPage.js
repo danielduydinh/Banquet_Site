@@ -37,11 +37,25 @@ import tristynl from '../ContentSub/tristynl.JPG';
 
 const theme = createMuiTheme({
   typography: {
-    h3: {
+    h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',
+      fontSize: '40px',
+      '@media screen and (min-width: 1400px)':{
+        fontSize: '60px',
+      },
+    },
+    body1:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    fontSize: '12px',
+    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
+      fontSize: '24px',
+    },
   },
   palette: {
     type: 'dark',
@@ -100,11 +114,17 @@ const useStyles = makeStyles((theme) => ({
   },
   Tile: {
     width: '300px',
+    // [theme.breakpoints.down('xs')]: {
+    //   width: '200px'
+    // },
+  },
+  dialogBox: {
+    fullScreen: 'true',
+    zIndex: theme.zIndex.drawer +2,
   },
 
 }));
 
-const hellostr = "bruh moment";
 const DialogTitle = withStyles(useStyles)((props) => {
   const { children, classes, onClose, ...other } = props;
   return (
@@ -166,7 +186,7 @@ export default function Foodpage() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="sm">
-          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+          <Typography component="h1" variant="h1" align="center" color="textPrimary" gutterBottom>
             STUDENT WORKS
           </Typography>
         </Container>
@@ -174,8 +194,8 @@ export default function Foodpage() {
             <GridList className= {classes.gridList} spacing = {15} cellHeight={300} cols={getGridListCols}>
               {tileData.map((tile) => (
                   <GridListTile className={classes.Tile} key={tile.img} cols={1} >
-                    <img src={tile.img} alt={tile.title} onClick={handleClickOpen}/>
-                    <GridListTileBar
+                    <img src={tile.img} alt={tile.title} onClick={() => handleClickOpen(tile)}/>
+                    <GridListTileBar onClick={() => handleClickOpen(tile)}
                       title={tile.title}
                       subtitle={<span>by: {tile.author}</span>}
                       actionIcon={
@@ -189,32 +209,24 @@ export default function Foodpage() {
             </GridList>
           </div>
           { selectedElement && (
-            <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title"
-             selectedElement={selectedElement}
-             open={open}
-             setOpen={setOpen}>
+            <Dialog
+            className={classes.dialogBox}
+            onClose={handleClose} aria-labelledby="customized-dialog-title"
+            selectedElement={selectedElement}
+            open={open}
+            setOpen={setOpen}>
               <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-                Title of this
+                <Typography gutterBottom fontSize='9px'>
+                  {selectedElement.title}
+                </Typography>
               </DialogTitle>
                 <DialogContent dividers>
-                 <Typography gutterBottom>
+                <Typography gutterBottom fontSize='9px'>
                   {selectedElement.content}
-                 </Typography>
-               </DialogContent>
-             </Dialog>
+                </Typography>
+              </DialogContent>
+            </Dialog>
            )}
-          {/*
-          <Dialog onClose={handleClose} aria-labelledby="customized-dialog-title" open={open}>
-            <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-              Modal title
-          </DialogTitle>
-            <DialogContent dividers>
-              <Typography gutterBottom>
-                Bruh moment
-              </Typography>
-            </DialogContent>
-          </Dialog>
-        */}
       </div>
     </ThemeProvider>
   )
@@ -230,7 +242,7 @@ const tileData = [
     img: ethanl,
     title: 'Chinese Pop Playlist',
     author: 'Ethan Li',
-    content: "My submission for this theme is my Spotify playlist of popular chinese songs. Growing up, I never really felt like I was able to connect with my culture as much as I could have since I came to the states at a young age. Music is one of my major passions and it’s a big part of my life. In middle school, I began to listen to a lot more music and I started to delve into popular chinese music, starting with artists like Wanting and songs like Tong Hua. After that, my range of music grew larger and larger which has allowed me to feel more connected with modern chinese culture. Link: https://open.spotify.com/playlist/4PX2lPb64lsqzhq2na7e1O"
+    content: "My submission for this theme is my Spotify playlist of popular chinese songs. Growing up, I never really felt like I was able to connect with my culture as much as I could have since I came to the states at a young age. Music is one of my major passions and it’s a big part of my life. In middle school, I began to listen to a lot more music and I started to delve into popular chinese music, starting with artists like Wanting and songs like Tong Hua. After that, my range of music grew larger and larger which has allowed me to feel more connected with modern chinese culture."
   },
   {
     img: joannay,
