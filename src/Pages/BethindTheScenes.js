@@ -135,10 +135,20 @@ export default function BTSpage() {
       // Good luck!
       }
           <div className= {classes.videoContainer}>
-        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-        <Typography component="h1" variant="h1" align="right" color="textPrimary">
+        
+        <Grid container width="1500px"  container wrap='nowrap' paddingTop='50px'>
+          <Grid item className={classes.entirebox}>
+          <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+            <Typography component="h1" variant="h1" align="right" color="textPrimary">
                 Behind the Scenes
             </Typography>
+            <Box className={classes.fashiondescription} width="40vw">
+              <Typography component="body1" variant="body1" align="right" color="textPrimary">
+                  I don't know what to put for BTS, idk anything about BTS either.
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
       </div>
       </Container>
     </div>
