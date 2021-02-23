@@ -236,6 +236,11 @@ export default function Foodpage() {
                 <Typography gutterBottom fontSize='9px'>
                   {selectedElement.content}
                 </Typography>
+                <Typography gutterBottom >
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
+                    <img src={selectedElement.img} alt={selectedElement.img} />
+                  </GridList>
+                </Typography>
               </DialogContent>
             </Dialog>
            )}
