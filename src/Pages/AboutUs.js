@@ -165,31 +165,26 @@ export default function AboutUs() {
               CHINESE STUDENT ASSOCIATION
             </Typography>
           </Box>
-          <Box width="100%" paddingTop="8vh">
-            <Typography variant="body1" align="center" color="textPrimary">
-            CSA aka Chinese Student Association is an ethnic UCSC organization that
-            <br></br>
+          <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center'>
+            <Typography variant="body1" align="justify" color="textPrimary">
+            Chinese Student Association also known as CSA is an ethnic UCSC organization that
             seeks to serve those that identify with Chinese-American culture and
-            <br></br>
             foster an Asian-American community on campus!
-            <br></br>
-            <br></br>
+            <br/>
+            <br/>
             We strive to create a safe space for these individuals through
-            <br></br>
             cultural-themed events such as this banquet, and small-scale events
-            <br></br>
             primarily run through our unique house system.
-            <br></br>
-            <br></br>
+            <br/>
+            <br/>
             In spite of COVID-19, we aim to help our members build life-long
-            <br></br>
             friendships, and to provide a second home while at home.
             </Typography>
           </Box>
           <Box width="100%" paddingTop="16vh">
             <Typography variant="h1" align="center" color="textPrimary">
             CSA OFFICERS
-            <br></br>
+            <br/>
             (2020 - 2021)
             </Typography>
           </Box>
@@ -212,9 +207,6 @@ export default function AboutUs() {
                 {'"a benevolent smile"'}
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Learn More</Button>
-            </CardActions>
           </Card>
         </Box>
       </div>
