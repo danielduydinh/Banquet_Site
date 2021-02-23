@@ -37,8 +37,8 @@ const theme = createMuiTheme({
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '12px',
       '@media (min-width: 1200px)' :{
-        fontSize: '24px', 
-        textAlign: 'center',  
+        fontSize: '24px',
+        textAlign: 'center',
         margin: 'auto'
       },
     },
@@ -46,10 +46,10 @@ const theme = createMuiTheme({
     fontSize: '12px',
     margin: 'auto',
     '@media (min-width: 1200px)' :{
-      fontSize: '24px',   
+      fontSize: '24px',
       margin: 'auto',
     },
-  },   
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -153,7 +153,7 @@ export default function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-        <Container maxWidth="1/4">
+
           <Grid className={classes.AUBKGP} align="center">
             <div className={classes.photopadding}>
                 <Grid className={classes.GroupPhoto} align="center">
@@ -175,19 +175,19 @@ export default function AboutUs() {
             <Typography variant="body1" align="center" color="textPrimary">
             CSA aka Chinese Student Association is an ethnic UCSC organization that
             <br></br>
-            seeks to serve those that identify with Chinese-American culture and 
+            seeks to serve those that identify with Chinese-American culture and
             <br></br>
             foster an Asian-American community on campus!
             <br></br>
             <br></br>
-            We strive to create a safe space for these individuals through 
+            We strive to create a safe space for these individuals through
             <br></br>
-            cultural-themed events such as this banquet, and small-scale events 
+            cultural-themed events such as this banquet, and small-scale events
             <br></br>
             primarily run through our unique house system.
             <br></br>
             <br></br>
-            In spite of COVID-19, we aim to help our members build life-long 
+            In spite of COVID-19, we aim to help our members build life-long
             <br></br>
             friendships, and to provide a second home while at home.
             </Typography>
@@ -199,7 +199,7 @@ export default function AboutUs() {
             (2020 - 2021)
             </Typography>
           </Box>
-        </Container>
+
         <Box>
           <Card className={classes.card} variant="outlined">
             <CardContent>
