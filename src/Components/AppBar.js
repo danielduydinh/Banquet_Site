@@ -9,11 +9,12 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-import PetsIcon from '@material-ui/icons/Pets';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import LocationContext from './LocationContext';
 import Grid from '@material-ui/core/Grid';
+import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from '@material-ui/core/IconButton';
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,18 +27,12 @@ import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import Toolbar from '@material-ui/core/Toolbar';
 import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png'
 import AboutUs from '../Pages/AboutUs.js';
 import BTSpage from '../Pages/BethindTheScenes';
-
-// im a comment
-/**
- * Resources consulted:
- * react route tutorial https://reactrouter.com/web/example/basic
- * Tab and Link https://stackoverflow.com/questions/51313969/using-material-ui-tabs-as-navbar
- */
+import SvgIcon from '@material-ui/core/SvgIcon';
 
 const theme = createMuiTheme({
   typography: {
@@ -47,6 +42,9 @@ const theme = createMuiTheme({
       fontSize: '18px',
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+    /*color: {
+      textPrimary: 'white',
+    }*/
   },
   palette: {
     type: 'dark',
@@ -68,26 +66,44 @@ const theme = createMuiTheme({
     },
   },
 });
+
+
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    zIndex: theme.zIndex.drawer +300,
+    display: 'flex',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    zIndex: theme.zIndex.drawer +1,
     width: '100vw',
     maxWidth: '100%',
     position: 'fixed',
-    height: '100px',
     minWidth: '100vw',
-    position: 'fixed',
     minHeight: '8vh',
     background: '#171C20',
     boxShadow: 'none',
     color: 'white',
     fontSize: '70px',
     fontWeight: 'bold',
+    [theme.breakpoints.down('md')]: {
+      justifyContent: 'space-between',
+    },
   },
-  appbarTabs:{
-    // [theme.breakpoints.down('md')]: {
-    //   display: 'none',
-    // },
+  mobileMenu: {
+    '@media screen and (max-width: 1280px)':{
+      display: 'flex',
+
+    },
+    display: 'none',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: "20px",
+    justifyContent: 'space-between',
+  },
+  appBarTabs:{
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
   },
   body: {
     display: 'flex',
@@ -100,64 +116,96 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     maxWidth: '100%',
     backgroundColor: theme.palette.error.main,
-    minHeight: '15vh',
+    minHeight: '30vh',
+    height: '30vh',
+    //minHeight: '300px',
+    //height: '20vh',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-around',
     fontFamily: 'Arial',
+    position: 'relative',
+    bottom: '0px',
   },
-  leftFooter: {
+
+  footerGrid: {
+    width: '80vw',
+    maxWidth: '80%',
+    height: '100%',
+  },
+  footerLeft: {
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'baseline',
+    justifyContent: 'center',
   },
-  rightFooter: {
+  footerRight: {
     display: 'flex',
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    //
-    alignItems: 'baseline'
-  },
-  socialMediaContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  facebook: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  instagram: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  youtube: {
-    display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-end',
+    }
   },
   divider: {
-    display: 'flex',
-    alignItems: 'center',
     backgroundColor: 'white',
-    marginLeft: '0.5vw',
-    marginRight: '0.5vw',
-    height: '8vh',
+    height: '100px',
     width: '2px',
-    veritcalAlign: 'middle',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
   },
+  UCSCText: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    }
+  },
+  UniversityText: {
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    }
+  },
+  socials: {
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  socialText: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
+  },
+  icons: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '32px'
+    },
+  },
+
   logo: {
-    maxWidth: 100,
+    height: '10vh',
+    maxHeight: '100px',
+  },
+  mobilelogo: {
+    height: '8vh',
+    minHeight: '80px',
+    maxHeight: '95px',
+  },
+  footerlogo: {
+    marginRight: '20px',
+    paddingLeft: '20px',
+    height: '10vh',
+  },
+  footerRightText: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    }
   },
   Menu: {
-    transform:' translate(0px, 6%)',
-  },
-  footerLogo: {
-    transform:' translate(-20px, 50%)'
+    transform:' translate(0px, 8%)',
   },
   link: {
     textDecoration: 'inherit',
     color: 'inherit',
-    // underline: 'inherit',
   },
   indicator: {
     backgroundColor: '#171C20',
@@ -176,7 +224,6 @@ export default function Appbar(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
   const [value, setValue] = React.useState('home');
 
   const handleChange = (event, newValue) => {
@@ -196,14 +243,46 @@ export default function Appbar(props) {
         <ThemeProvider theme={theme}>
         <div className={classes.body}>
         <AppBar position="relative" className={classes.appBar}>
-          <Tabs aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
+          <div className={classes.mobileMenu}>
+            <div>
+              <IconButton edge="start" color="inherit" aria-label="menu"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpen}
+              >
+                <MenuIcon />
+              </IconButton>
+              <img src={popo} alt="mobilepopo" className={classes.mobilelogo}/>
+            </div>
+            <div>
+              <Typography marginLeft="20px">UCSC CSA</Typography>
+            </div>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              borderRadius = "20px"
+              className={classes.Menu}
+            >
+              <MenuItem onClick={handleClose} to="/" component={Link} value='home'> HOME </MenuItem>
+              <MenuItem onClick={handleClose} to="/about" component={Link} value='about'> ABOUT US </MenuItem>
+              <MenuItem onClick={handleClose} to="/fashion" component={Link} value='fashion'> FASHION SHOW </MenuItem>
+              <MenuItem onClick={handleClose} to='/student-work' component={Link} value='food'> STUDENT WORKS </MenuItem>
+              <MenuItem onClick={handleClose} to='/bts' component={Link} value='BTSpage'> BEHIND THE SCENES </MenuItem>
+              <MenuItem onClick={handleClose} to="/skit" component={Link} value='skit'> SKIT </MenuItem>
+            </Menu>
+          </div>
+
+          <Tabs className={classes.appBarTabs} aria-label="simple tabs example" value={value} onChange={handleChange} centered variant="fullWidth"
             classes={{
               indicator: classes.indicator,
             }}>
             <Tab className={classes.link} label="Home" to="/" component={Link} value='home'/>
             <Tab label="About Us" to="/about" component={Link} value='about'/>
             <Tab label="Fashion Show" to="/fashion" component={Link} value='fashion'/>
-            <img src={popo} className={classes.logo}/>
+            <img src={popo} alt="headpopo" className={classes.logo}/>
             {/*<Tab label="Themes" value='themes' onClick={handleOpen}/>*/}
             <Tab label="Student Work" to='/student-work' component={Link} value='food'/>
             <Tab label="Behind the Scenes" to='/bts' component={Link} value='BTSpage'/>
@@ -225,64 +304,42 @@ export default function Appbar(props) {
             <Route exact path="/about" component={AboutUs} />
           </Switch>
           <footer className={classes.footer}>
-            <div className={classes.leftFooter}>
-              <div className={classes.footerLogo}>
-                <img src={popo} className={classes.logo}/>
-              </div>
-              <div>
-                <br/>
-                <Typography color="#FFFFFF" variant="body2">UNIVERSITY OF CALIFORNIA | <br/>SANTA CRUZ</Typography>
-                <br/>
-                <Typography>CHINESE STUDENT ASSOCIATION</Typography>
-              </div>
-            </div>
-            <div className={classes.rightFooter} >
-              <div paddingRight='50px' alignItems="center">
-                <br/>
-                <br/>
-                <br/>
-                <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
-                <br/>
-                <Typography>Please, we need friends.</Typography>
-              </div>
-              <Divider className={classes.divider} orientation='vertical'
-                variant='middle' flexItem/>
-              <div className={classes.socialMediaContainer} paddingLeft='50px'>
-                <br/>
-                <br />
-                <div className={classes.facebook}>
-                  <FacebookIcon />
-                  <Typography>FACEBOOK</Typography>
+            <Grid className = {classes.footerGrid} container>
+              <Grid item xs={6} className={classes.footerLeft}>
+                <img src ={popo} alt="popo" className={classes.footerlogo}/>
+                <div className={classes.footerLeftText}>
+                  <Typography variant="body2" className={classes.UniversityText}>UNIVERSITY OF CALIFORNIA |<br/> SANTA CRUZ</Typography>
+                  <Typography className={classes.UCSCText}> UCSC </Typography>
+                  <Typography>CHINESE STUDENT ASSOCIATION</Typography>
                 </div>
-                <br />
-                <div className={classes.instagram}>
-                  <InstagramIcon />
-                  <Typography>INSTAGRAM</Typography>
+              </Grid>
+              <Grid item xs={6} className = {classes.footerRight}>
+                <div className = {classes.footerRightText}>
+                  <Typography variant= "body2"> LET'S KEEP IN TOUCH! </Typography>
+                  <br/>
+                  <Typography>Check out our socials!</Typography>
                 </div>
-                <br />
-                <div className={classes.youtube}>
-                  <YouTubeIcon />
-                  <Typography>YOUTUBE</Typography>
+                <Divider className={classes.divider} orientation='vertical' variant='middle' />
+                <div className={classes.socialContainer}>
+                  <div className={classes.socials}>
+                    <FacebookIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >FACEBOOK</Typography>
+                  </div>
+                  <br/>
+                  <div className={classes.socials}>
+                    <InstagramIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >INSTAGRAM</Typography>
+                  </div>
+                  <br/>
+                  <div className={classes.socials}>
+                    <YouTubeIcon className={classes.icons}/>
+                    <Typography className={classes.socialText} >YOUTUBE</Typography>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </footer>
           </div>
-          {/*
-          <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            borderRadius = "20px"
-            className={classes.Menu}
-          >
-            <MenuItem onClick={handleClose} to="/food" component={Link}> FOOD + FORTUNE </MenuItem>
-            <MenuItem onClick={handleClose} to="/fashion" component = {Link}> FASHION + BEAUTY </MenuItem>
-            <MenuItem onClick={handleClose} to="/language" component={Link}> INFLUENCE + LANGUAGE </MenuItem>
-            <MenuItem onClick={handleClose} to="/skit" component={Link}> FILM + MEDIA </MenuItem>
-          </Menu>*/}
         </ThemeProvider>
       </Router>
     </React.Fragment>

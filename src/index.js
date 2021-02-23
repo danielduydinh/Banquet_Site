@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-// import App from './App';
+import HttpsRedirect from 'react-https-redirect';
 import reportWebVitals from './reportWebVitals';
 import Appbar from './Components/AppBar.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Appbar/>
+    <HttpsRedirect>
+      <Appbar/>
+    </HttpsRedirect>
   </React.StrictMode>,
   document.getElementById('root')
 );

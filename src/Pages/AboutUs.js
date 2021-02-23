@@ -1,19 +1,14 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import { flexbox } from '@material-ui/system';
-import { positions } from '@material-ui/system';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import Carousel from 'react-bootstrap/Carousel'
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-import { spacing } from '@material-ui/system';
-import Paper from '@material-ui/core/Paper';
-import tDance from '../Photos/tdance.png';
+//import Paper from '@material-ui/core/Paper';
+//import tDance from '../Photos/tdance.png';
 import GP from './Photos/AboutUs.jpg';
 import WWABGP from './Photos/WWABGP.png';
 import Card from '@material-ui/core/Card';
@@ -44,7 +39,6 @@ const theme = createMuiTheme({
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
     fontSize: '12px',
-    margin: 'auto',
     '@media (min-width: 1200px)' :{
       fontSize: '24px',
       margin: 'auto',
