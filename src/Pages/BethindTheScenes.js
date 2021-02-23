@@ -8,7 +8,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import bts from '../Photos/bts.png'
+import bts from '../Photos/bts_1.png'
 import YouTube from "react-youtube";
 // import { Block } from '@material-ui/icons';
 
@@ -68,9 +68,13 @@ const useStyles = makeStyles((theme) => ({
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${bts})`,
+    backgroundSize: 'contain',
     mixBlendMode: 'lighten',
     height:'50vh',
     width:'99vw',
+    // height:'100%',
+    // width:'100%',
+    margin: 'auto',
     '@media (min-width: 1200px)':{
       width: '100vw',
       right: '0%',
@@ -81,8 +85,12 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 0,
     flexWrap: 'wrap',
   },
-  PageButtons: {
+  PageButtom: {
     marginTop: theme.spacing(4),
+  },
+  btsdescription: {
+    width: '100',
+    height: '100',
   },
   Video: {
     marginLeft: "-7%",
@@ -119,7 +127,7 @@ export default function BTSpage() {
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
                 Behind the Scenes
             </Typography>
-            <Box className={classes.fashiondescription} width="40vw">
+            <Box className={classes.btsdescription} width="40vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
                   I don't know what to put for BTS, idk anything about BTS either.
               </Typography>
@@ -134,21 +142,23 @@ export default function BTSpage() {
       // working in
       // Good luck!
       }
-          <div className= {classes.videoContainer}>
+        <div className= {classes.videoContainer}>
         
         <Grid container width="1500px"  container wrap='nowrap' paddingTop='50px'>
-          <Grid item className={classes.entirebox}>
-          <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-            <Typography component="h1" variant="h1" align="right" color="textPrimary">
-                Behind the Scenes
+          <Grid item xs={12}  className={classes.entirebox} align='right'>
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+                CONTENT LEADS
             </Typography>
-            <Box className={classes.fashiondescription} width="40vw">
-              <Typography component="body1" variant="body1" align="right" color="textPrimary">
+            <Typography component="body1" variant="body1" align="right" color="textPrimary">
                   I don't know what to put for BTS, idk anything about BTS either.
-              </Typography>
-            </Box>
+            </Typography>
           </Grid>
-        </Grid>
+          <Grid item xs={12}  className={classes.entirebox}></Grid>
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+            <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+          </Typography>
+          
+          </Grid>
       </div>
       </Container>
     </div>
