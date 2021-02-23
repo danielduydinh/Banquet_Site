@@ -162,7 +162,7 @@ export default function AboutUs() {
           </Box>
           <Box width="100%">
             <Typography variant="h1" align="center" color="textPrimary">
-              CHINESE STUDENT ASSOCIATION
+              Chinese Student Association
             </Typography>
           </Box>
           <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center'>
