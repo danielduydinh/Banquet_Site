@@ -12,22 +12,45 @@ import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
 import fashion from '../Photos/fashion.png';
 import icon1 from '../Photos/icon.png';
+import rectangle from '../Photos/redrectangle.png';
 
 const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '60px',//32
-      //'@media screen and (min-width: 1400px) and (min-height: 1000px':{
-        //fonSize: '60px',
-      //}
+      //fontSize: '60px',//32
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '60px',
+      },
     },
     h2: {
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      fontSize: '24px',//32
-      //'@media screen and (min-width: 1200px) and (min-height: 1000px)':{
-        //fontSize: '24px',
-      //}
+      fontSize: '32px',//32
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
+    },
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '50px',
+      },
+    },
+    h4: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '30px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '40px',
+      },  
+    },
+    subtitle1: {
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '32px',//32
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     },
     color: {
       textPrimary: 'white',
@@ -62,17 +85,19 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 0, 6),
     width: '100vw',
     minHeight: '85vh',
+    maxWidth: '100%',
   },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${fashion})`,
+    backgroundPosition: 'right',//
     mixBlendMode: 'lighten',
     height:'50vh',
     width:'99vw',
-    '@media (min-width: 1200px)':{
-      width: '60vw',
-      right: '0%',
-    },
+    //'@media (min-width: 1200px)':{
+     // width: '60vw',
+      //right: '0%',
+    //},
     maxWidth: '100%',
     flexGrow: '1',
     backgroundRepeat: 'no-repeat',
@@ -84,13 +109,19 @@ const useStyles = makeStyles((theme) => ({
     height: '100',
   },
   videoContainer: { // div containing the video
-    paddingTop: '56.25%', // for ratio purposes 9/16 is 56.25%
+    //width: '60%', //60%
+    paddingTop: '33.75%', // for ratio purposes 9/16 is 56.25% //33.75%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
-    height:0,
+    //height:0,
     overflow: 'hidden', // removes any parts of the div that might extend outside it
     zIndex: 1, // idk its just says so in the code haha
     position: 'relative', // make the position relative while allowing us to make the video absolute
+    //
+    flex: '1',
+    //paddingBottom: '75%',
+    maxWidth: '70%',
+    maxHeight: '30%',
   },
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
@@ -98,7 +129,46 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: '100%',
     height: '100%',
-  }
+  },
+  fashionleadtext: {
+    //padding: '10px',
+    bottom: '0',
+    left: '0',
+    boxsizing: 'border-box',
+    //margin: '0',
+    marginLeft: '5vh',
+  },
+  rectangleimage: {
+    backgroundImage: `url(${rectangle})`,
+    width: '25rem',
+    height: '2rem',
+    //
+    position: 'absolute',
+  },
+  flexcontainer: {
+    display: 'flex',
+    //maxWidth: '200vh',
+    margin: '50px auto',
+  },
+  rightcontainer: {
+    marginRight: '20%',
+  },
+  icon1: {
+    image: `url(${icon1})`,
+    width: '148px',
+    height: '148px',
+  },
+  flexcontainer2: {
+    display: 'flex',
+    margin: '10% auto',
+    paddingLeft: '10%',
+  },
+  iconcontainer: {
+    flex: '1',
+  },
+  lead1: {
+    marginLeft: '10%',
+  },
 }));
 const videoOptions = {
   playerVars: {
@@ -148,9 +218,68 @@ export default function Fashionpage() {
       // working in
       // Good luck!
       }
-      <div className= {classes.videoContainer}>
-        <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+      <div className={classes.flexcontainer}>
+        <div className= {classes.videoContainer}>
+          <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+        </div>
+    
+        <div className={classes.rightcontainer} maxWidth="70%">
+          <Box width="30vh">
+            <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="left" color="textPrimary">
+                FASHION LEADS
+            </Typography>
+          </Box>
+          <div className={classes.flexcontainer2}>
+            <div className={classes.iconcontainer}>
+            <img src={icon1} alt="icon 1"/>
+            </div>
+          <div className={classes.lead1}>
+          <Box width="50vh">
+            <Typography component="h4" variant="h4" align="left" color="textPrimary">
+              YOUR MOM
+            </Typography>
+          </Box>
+          <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
+            They did this, they worked on this
+          </Typography>
+          </div>
+          </div>
+          {
+          //<div className={classes.firstfl}>
+          //  <div>
+          //    <img className={classes.icon1}
+          //     src="Banquet_Site/src/Photos/icon.png"
+          //    />          
+          //  </div>
+           // <div>
+           //   <Typography component="h4" variant="h4" align="left" color="textPrimary">
+           //     YOUR MOM
+          //    </Typography>
+          //    <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
+          //      They did this, they worked on this
+          //    </Typography>
+          //  </div>
+         // </div>
+          
+        //  <div className={classes.secondfl}>
+        //    <div>
+        //      <img className={classes.icon2}
+        //       src="Banquet_Site/src/Photos/icon.png"
+        //      />          
+        //    </div>
+        //    <div>
+         //     <Typography className={classes.ftext} component="h4" variant="h4" align="left" color="textPrimary">
+          //      JOE MOMMA 
+          //    </Typography>
+           //   <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
+            //    They also did this.
+             // </Typography>
+            //</div>
+           // </div>
+          }
+        </div>
       </div>
+
       </Container>
     </div>
   </ThemeProvider>
