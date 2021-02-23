@@ -173,13 +173,30 @@ export default function AboutUs() {
           </Box>
           <Box width="100%" paddingTop="8vh">
             <Typography variant="body1" align="center" color="textPrimary">
-              CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquets looked like in person:
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
+            CSA aka Chinese Student Association is an ethnic UCSC organization that
+            <br></br>
+            seeks to serve those that identify with Chinese-American culture and 
+            <br></br>
+            foster an Asian-American community on campus!
+            <br></br>
+            <br></br>
+            We strive to create a safe space for these individuals through 
+            <br></br>
+            cultural-themed events such as this banquet, and small-scale events 
+            <br></br>
+            primarily run through our unique house system.
+            <br></br>
+            <br></br>
+            In spite of COVID-19, we aim to help our members build life-long 
+            <br></br>
+            friendships, and to provide a second home while at home.
             </Typography>
           </Box>
           <Box width="100%" paddingTop="16vh">
             <Typography variant="h1" align="center" color="textPrimary">
-            GRAPHIC LEADS
+            CSA OFFICERS
+            <br></br>
+            (2020 - 2021)
             </Typography>
           </Box>
         </Container>
