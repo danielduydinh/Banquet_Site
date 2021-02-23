@@ -230,6 +230,10 @@ export default function Appbar(props) {
     setValue(newValue);
   };
 
+  const navFacebook = () => {
+
+  }
+
   React.useEffect(() => {
     console.log('appbar running use effect');
   }, [value]);
@@ -255,7 +259,7 @@ export default function Appbar(props) {
               <img src={popo} alt="mobilepopo" className={classes.mobilelogo}/>
             </div>
             <div>
-              <Typography marginLeft="20px">UCSC CSA</Typography>
+              <Typography marginLeft="20px">CSA of UCSC</Typography>
             </div>
             <Menu
               id="simple-menu"
@@ -309,8 +313,8 @@ export default function Appbar(props) {
                 <img src ={popo} alt="popo" className={classes.footerlogo}/>
                 <div className={classes.footerLeftText}>
                   <Typography variant="body2" className={classes.UniversityText}>UNIVERSITY OF CALIFORNIA |<br/> SANTA CRUZ</Typography>
-                  <Typography className={classes.UCSCText}> UCSC </Typography>
                   <Typography>CHINESE STUDENT ASSOCIATION</Typography>
+                  <Typography className={classes.UCSCText}> UCSC </Typography>
                 </div>
               </Grid>
               <Grid item xs={6} className = {classes.footerRight}>
@@ -321,17 +325,18 @@ export default function Appbar(props) {
                 </div>
                 <Divider className={classes.divider} orientation='vertical' variant='middle' />
                 <div className={classes.socialContainer}>
-                  <div className={classes.socials}>
+                  <div className={classes.socials} onClick={() => window.open("https://www.facebook.com/CSAUCSC", "_blank")}>
                     <FacebookIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >FACEBOOK</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials}>
+                  <div className={classes.socials} onClick={() => window.open("https://www.instagram.com/csa_ucsc/?hl=en", "_blank")}>
                     <InstagramIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >INSTAGRAM</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials}>
+                  <div className={classes.socials} 
+                    onClick={() => window.open("https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ", "_blank")}>
                     <YouTubeIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >YOUTUBE</Typography>
                   </div>
