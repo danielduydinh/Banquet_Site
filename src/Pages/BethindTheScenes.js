@@ -67,13 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
-    backgroundImage: `url(${bts})`,
-    backgroundSize: 'contain',
-    mixBlendMode: 'lighten',
-    height:'50vh',
-    width:'99vw',
-    // height:'100%',
-    // width:'100%',
+    paddingLeft: '5vh',
     margin: 'auto',
     '@media (min-width: 1200px)':{
       width: '100vw',
@@ -81,9 +75,31 @@ const useStyles = makeStyles((theme) => ({
     },
     maxWidth: '100%',
     flexGrow: '1',
-    backgroundRepeat: 'no-repeat',
+    
     zIndex: 0,
     flexWrap: 'wrap',
+  },
+  entirebox: {
+    backgroundImage: `url(${bts})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'right',
+    mixBlendMode: 'lighten',
+    minHeight: '500px',
+    height:'60vh',
+    width:'99vw',
+  },
+  btsPhoto: {
+    mixBlendMode: 'lighten',
+    paddingTop : '5vh',
+    paddingLeft: '5vh',
+    minHeight:'100vh',
+    width:'99vw',
+    backgroundImage: `url(${bts})`,
+    backgroundSize: 'contain',
+    backgroundPosition: 'right',
+    backgroundRepeat: 'no-repeat',
+    backgroundOrigin: 'padding-box',
   },
   PageButtom: {
     marginTop: theme.spacing(4),
@@ -125,15 +141,27 @@ export default function BTSpage() {
         <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
           <Grid item className={classes.entirebox}>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
-                Behind the Scenes
+              Behind the
+            </Typography>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+              Scenes
             </Typography>
             <Box className={classes.btsdescription} width="40vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
                   I don't know what to put for BTS, idk anything about BTS either.
+                  Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+                Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
               </Typography>
             </Box>
           </Grid>
-        </Grid>
+        </Grid> 
       </div>
       {
       // You can try containing this portion into a grid so you can add other text and stuff

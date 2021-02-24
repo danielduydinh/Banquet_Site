@@ -183,6 +183,7 @@ const useStyles = makeStyles((theme) => ({
 
   logo: {
     height: '10vh',
+    minHeight: '80px',
     maxHeight: '100px',
   },
   mobilelogo: {
