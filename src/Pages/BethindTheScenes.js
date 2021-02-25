@@ -21,7 +21,7 @@ const theme = createMuiTheme({
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       //Font size for the title
-      fontSize: '64px',
+      fontSize: '32px',
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
         fontSize: '60px',
       },
@@ -33,12 +33,40 @@ const theme = createMuiTheme({
         fontSize: '24px',
       },
     },
+    h2: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '24px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '42px',
+      },
+    },
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '50px',
+      },
+    },
+    h4: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '30px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '40px',
+      },
+    },
+    subtitle1: {
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '32px',//32
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
     fontSize: '12px',
     '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
       fontSize: '24px',
     },
   },
+},
   palette: {
     type: 'dark',
     primary: {
@@ -58,6 +86,7 @@ const theme = createMuiTheme({
       paper: '#424242',
     },
   },
+
 });
 const useStyles = makeStyles((theme) => ({
   PageContent: {
@@ -141,6 +170,12 @@ const useStyles = makeStyles((theme) => ({
   Video: {
     marginLeft: "-7%",
   },
+  contentHeads: {
+    display: 'flex',
+    alignItems: 'left',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
   contentleadtext: {
     paddingBottom: '20px',
   }
@@ -198,37 +233,37 @@ export default function BTSpage() {
         {/* // <div className= {classes.videoContainer}> */}
         
         <Grid container spacing = {2} width="1500px"  container wrap='nowrap' paddingTop='50px'>
-          <Grid item xs={12} lg={8} className={classes.Page} align='left'>
-          <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
-                CONTENT LEADS
-            </Typography>
-            {/* <Typography component="body1" variant="body1" align="left" color="textPrimary"> */}
-            <Grid container>
-              <Grid item lg={4} md={6}>
-                <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-              </Grid>
-              <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-              </Grid>
-            </Grid>
-            <Box height="20px"/>
-            <Grid container>
-              <Grid item lg={4} md={6}>
-                <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-              </Grid>
-              <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-              </Grid>
-            </Grid>
-            <Grid container>
-              <Grid item lg={4} md={6}>
-                <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-              </Grid>
-              <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-              </Grid>
-            </Grid>
-            {/* </Typography> */}
+          <Grid item xs={12} lg={8} align='left'>
+            <div className = {classes.contentHeads}> 
+              <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
+                    CONTENT LEADS
+                </Typography>
+                <Grid container>
+                  <Grid item lg={4} md={6}>
+                    <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                  </Grid>
+                </Grid>
+                <Box height="20px"/>
+                <Grid container>
+                  <Grid item lg={4} md={6}>
+                    <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                  </Grid>
+                </Grid>
+                <Grid container>
+                  <Grid item lg={4} md={6}>
+                    <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                  </Grid>
+                </Grid>
+            </div> 
           </Grid>
           <Grid item xs={12} lg={8}>
           <Typography component="h1" variant="h1" align="left" color="textPrimary">
