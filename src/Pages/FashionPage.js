@@ -31,6 +31,13 @@ const theme = createMuiTheme({
         fontSize: '24px',
       },
     },
+    h2: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '24px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '42px',
+      },
+    },
     h3: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '32px',
@@ -105,8 +112,8 @@ const useStyles = makeStyles((theme) => ({
     height: '100',
   },
   videoContainer: { // div containing the video
-    //width: '60%', //60%
-    paddingTop: '33.75%', // for ratio purposes 9/16 is 56.25% //33.75%
+    width: '100%', //60%
+    paddingTop: '56.25%', // for ratio purposes 9/16 is 56.25% //33.75%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
     //height:0,
@@ -116,8 +123,8 @@ const useStyles = makeStyles((theme) => ({
     //
     flex: '1',
     //paddingBottom: '75%',
-    maxWidth: '70%',
-    maxHeight: '30%',
+    // maxWidth: '70%',
+    // maxHeight: '30%',
   },
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
@@ -125,14 +132,6 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: '100%',
     height: '100%',
-  },
-  fashionleadtext: {
-    //padding: '10px',
-    bottom: '0',
-    left: '0',
-    boxsizing: 'border-box',
-    //margin: '0',
-    marginLeft: '5vh',
   },
   rectangleimage: {
     backgroundImage: `url(${rectangle})`,
@@ -157,28 +156,22 @@ const useStyles = makeStyles((theme) => ({
   },
   icon1: {
     image: `url(${icon1})`,
-    width: '148px',
-    height: '148px',
   },
   ah: {
-    width: 'theme.spacing(7)',
-
+    height: '150px',
+    width: '150px',
+    marginBottom: '15px',
   },
-  flexcontainer2: {
+  fashionHeads: {
     display: 'flex',
-    margin: '10% auto',
-    paddingLeft: '10%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
-  iconcontainer: {
-    flex: '1',
-  },
-  lead1: {
-    marginLeft: '10%',
-  },
-  lead2: {
-    marginLeft: '10%',
-    marginTop: '10%',
+  fashionleadtext: {
+    paddingBottom: '20px',
   }
+
 }));
 const videoOptions = {
   playerVars: {
@@ -205,6 +198,7 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
+
       <div>
         <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
           <Grid item className={classes.entirebox}>
@@ -215,56 +209,46 @@ export default function Fashionpage() {
                 SHOW
             </Typography>
             <Box className={classes.fashiondescription} width="40vw">
-              <Typography component="h2" variant="h2" align="left" color="textPrimary">
-                  We don't got designer brands but this is it, this is the best school funding could provide.<br></br><br></br>
-                  Fashion show presents, well, fashion show!
-              </Typography>
             </Box>
           </Grid>
         </Grid>
       </div>
-      <div className={classes.flexcontainer}>
-        <div className= {classes.videoContainer}>
-          <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
-        </div>
+      <Box height="50px"/>
 
-        <div className={classes.rightcontainer} maxWidth="70%">
-          <Box className={classes.t1}>
-            <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="left" color="textPrimary">
+      <Grid container spacing ={2}>
+        <Grid item lg={8} xs = {12}>
+          <div className= {classes.videoContainer}>
+            <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+          </div>
+        </Grid>
+        <Grid item lg={4} sm={8} xs={12}>
+          <div className = {classes.fashionHeads}>
+            <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
                 FASHION LEADS
             </Typography>
-          </Box>
-          <div className={classes.flexcontainer2}>
-            <div className={classes.iconcontainer}>
-            <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
-            </div>
-          <div className={classes.lead1}>
-          <Box width="50vh">
-            <Typography component="h4" variant="h4" align="left" color="textPrimary">
-              YOUR MOM
-            </Typography>
-          </Box>
-          <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
-            They did this, they worked on this
-          </Typography>
-          </div>
-          {
-          //<div className={classes.lead2}>
-          //<Box width="50vh">
-          //  <Typography component="h4" variant="h4" align="left" color="textPrimary">
-          //<img src={icon1} alt="icon 1"/>
-          //  </Typography>
-          //</Box>
-          //<Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
-          //  They did this, they worked on this
-          //</Typography>
-          //</div>
-        }
-
+            <Grid container>
+              <Grid item lg={4} md={6}>
+                <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
+              </Grid>
+              <Grid item lg={4} md={6}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
+              </Grid>
+            </Grid>
+            <Box height="20px"/>
+            <Grid container>
+              <Grid item lg={4} md={6}>
+                <Avatar alt="Shannon Young" src={icon2} className={classes.ah}/>
+              </Grid>
+              <Grid item lg={4} md={6}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
+              </Grid>
+            </Grid>
 
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
+
+
 
       </Container>
     </div>
