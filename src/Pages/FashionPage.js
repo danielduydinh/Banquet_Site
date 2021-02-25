@@ -10,8 +10,8 @@ import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
 import fashion from '../Photos/fashion.png';
-import icon1 from '../Photos/CommitteHeads/AngelaHong.jpg';
-import icon2 from '../Photos/CommitteHeads/ShannonYoung.jpg';
+import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
+import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
 import rectangle from '../Photos/redrectangle.png';
 import Avatar from '@material-ui/core/Avatar';
 
