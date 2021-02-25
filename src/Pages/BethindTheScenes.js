@@ -8,7 +8,7 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import bts from '../Photos/bts_1.png'
+import bts from '../Photos/bts_2.png'
 import YouTube from "react-youtube";
 // import { Block } from '@material-ui/icons';
 
@@ -65,6 +65,15 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '85vh',
     maxWidth: '100%',
   },
+  Page: {
+    paddingTop: '2vh',
+    flexGrow: 1,
+    backgroundColor: '#171C20',
+    padding: theme.spacing(8, 0, 6),
+    minwidth: '100vw',
+    minHeight: '85vh',
+    maxWidth: '100%',
+  },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
     paddingLeft: '5vh',
@@ -79,13 +88,21 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 0,
     flexWrap: 'wrap',
   },
+  
   entirebox: {
+    paddingTop: '2vh',
     backgroundImage: `url(${bts})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right',
     mixBlendMode: 'lighten',
-    minHeight: '500px',
+    margin: 'auto',
+    '@media (min-width: 1200px)':{
+      // width: '100vw',
+      // height: '45vw',
+      right: '0%',
+    },
+    //minHeight: '500px',
     height:'60vh',
     width:'99vw',
   },
@@ -138,15 +155,15 @@ export default function BTSpage() {
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
       <div>
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-          <Grid item className={classes.entirebox}>
+        <Grid container width="1500px" className={classes.entirebox} container wrap='nowrap' paddingTop='50px'>
+          <Grid item >
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               Behind the
             </Typography>
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               Scenes
             </Typography>
-            <Box className={classes.btsdescription} width="40vw">
+            <Box className={classes.btsdescription} width="30vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
               As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
                Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
@@ -165,19 +182,19 @@ export default function BTSpage() {
         <div className= {classes.videoContainer}>
         
         <Grid container width="1500px"  container wrap='nowrap' paddingTop='50px'>
-          <Grid item xs={12}  className={classes.entirebox} align='right'>
+          <Grid item xs={12}  className={classes.Page} align='left'>
           <Typography component="h1" variant="h1" align="left" color="textPrimary">
                 CONTENT LEADS
             </Typography>
-            <Typography component="body1" variant="body1" align="right" color="textPrimary">
+            <Typography component="body1" variant="body1" align="left" color="textPrimary">
                   I don't know what to put for BTS, idk anything about BTS either.
             </Typography>
           </Grid>
-          <Grid item xs={12}  className={classes.entirebox}></Grid>
+          <Grid item xs={12} >
           <Typography component="h1" variant="h1" align="left" color="textPrimary">
             <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
           </Typography>
-          
+          </Grid>
           </Grid>
       </div>
       </Container>
