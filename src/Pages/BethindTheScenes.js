@@ -148,16 +148,8 @@ export default function BTSpage() {
             </Typography>
             <Box className={classes.btsdescription} width="40vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
-                  I don't know what to put for BTS, idk anything about BTS either.
-                  Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-                Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
-            Lorem Ipsum or some shit I just need more fillers rn xd -Kevin.
+              As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
+               Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
             </Box>
           </Grid>
