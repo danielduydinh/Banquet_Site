@@ -29,7 +29,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import Popover from '@material-ui/core/Popover';
-import popo from '../Photos/popo.png'
+import popo from '../Photos/popo.png';
 import AboutUs from '../Pages/AboutUs.js';
 import BTSpage from '../Pages/BethindTheScenes';
 import SvgIcon from '@material-ui/core/SvgIcon';
@@ -138,6 +138,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
+    
   },
   footerRight: {
     display: 'flex',
@@ -169,7 +170,12 @@ const useStyles = makeStyles((theme) => ({
   socials: {
     display: 'flex',
     flexDirection: 'row',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
+  
+ 
   socialText: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
@@ -336,7 +342,7 @@ export default function Appbar(props) {
                     <Typography className={classes.socialText} >INSTAGRAM</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials} 
+                  <div className={classes.socials}
                     onClick={() => window.open("https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ", "_blank")}>
                     <YouTubeIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >YOUTUBE</Typography>
