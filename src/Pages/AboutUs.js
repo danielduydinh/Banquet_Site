@@ -114,8 +114,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "16vh",
   },
   card: {
-    minWidth: 275,
-    maxWidth: 400,
+    minWidth: 337,
+    minHeight: 532
   },
   bullet: {
     display: 'inline-block',
@@ -189,26 +189,28 @@ export default function AboutUs() {
             </Typography>
           </Box>
 
-        <Box>
-          <Card className={classes.card} variant="outlined">
-            <CardContent>
-              <Typography variant="h1" className={classes.title} color="textPrimary">
-                Name
-              </Typography>
-              <Typography variant="h5" component="h2">
-                be{bull}nev{bull}o{bull}lent
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                adjective
-              </Typography>
-              <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
-            </CardContent>
-          </Card>
-        </Box>
+        <Grid container>
+          <Grid item xs={2.4}>
+            <Card className={classes.card} variant="outlined">
+              <CardContent>
+                <Typography variant="h1" className={classes.title} color="textPrimary">
+                  Name
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  be{bull}nev{bull}o{bull}lent
+                </Typography>
+                <Typography className={classes.pos} color="textSecondary">
+                  adjective
+                </Typography>
+                <Typography variant="body2" component="p">
+                  well meaning and kindly.
+                  <br />
+                  {'"a benevolent smile"'}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
       </div>
     </ThemeProvider>
   )
