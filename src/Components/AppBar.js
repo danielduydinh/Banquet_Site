@@ -29,10 +29,11 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import Popover from '@material-ui/core/Popover';
-import popo from '../Photos/popo.png'
+import popo from '../Photos/popo.png';
 import AboutUs from '../Pages/AboutUs.js';
 import BTSpage from '../Pages/BethindTheScenes';
 import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 const theme = createMuiTheme({
   typography: {
@@ -138,7 +139,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    
   },
   footerRight: {
     display: 'flex',
@@ -170,12 +170,7 @@ const useStyles = makeStyles((theme) => ({
   socials: {
     display: 'flex',
     flexDirection: 'row',
-    '&:hover': {
-      cursor: 'pointer',
-    },
   },
-  
- 
   socialText: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
@@ -189,7 +184,6 @@ const useStyles = makeStyles((theme) => ({
 
   logo: {
     height: '10vh',
-    minHeight: '80px',
     maxHeight: '100px',
   },
   mobilelogo: {
@@ -237,10 +231,6 @@ export default function Appbar(props) {
     setValue(newValue);
   };
 
-  const navFacebook = () => {
-
-  }
-
   React.useEffect(() => {
     console.log('appbar running use effect');
   }, [value]);
@@ -266,7 +256,7 @@ export default function Appbar(props) {
               <img src={popo} alt="mobilepopo" className={classes.mobilelogo}/>
             </div>
             <div>
-              <Typography marginLeft="20px">CSA of UCSC</Typography>
+              <Typography marginLeft="20px">UCSC CSA</Typography>
             </div>
             <Menu
               id="simple-menu"
@@ -320,8 +310,8 @@ export default function Appbar(props) {
                 <img src ={popo} alt="popo" className={classes.footerlogo}/>
                 <div className={classes.footerLeftText}>
                   <Typography variant="body2" className={classes.UniversityText}>UNIVERSITY OF CALIFORNIA |<br/> SANTA CRUZ</Typography>
-                  <Typography>CHINESE STUDENT ASSOCIATION</Typography>
                   <Typography className={classes.UCSCText}> UCSC </Typography>
+                  <Typography>CHINESE STUDENT ASSOCIATION</Typography>
                 </div>
               </Grid>
               <Grid item xs={6} className = {classes.footerRight}>
@@ -332,18 +322,17 @@ export default function Appbar(props) {
                 </div>
                 <Divider className={classes.divider} orientation='vertical' variant='middle' />
                 <div className={classes.socialContainer}>
-                  <div className={classes.socials} onClick={() => window.open("https://www.facebook.com/CSAUCSC", "_blank")}>
+                  <div className={classes.socials}>
                     <FacebookIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >FACEBOOK</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials} onClick={() => window.open("https://www.instagram.com/csa_ucsc/?hl=en", "_blank")}>
+                  <div className={classes.socials}>
                     <InstagramIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >INSTAGRAM</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials}
-                    onClick={() => window.open("https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ", "_blank")}>
+                  <div className={classes.socials}>
                     <YouTubeIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >YOUTUBE</Typography>
                   </div>
