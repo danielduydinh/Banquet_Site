@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-
 import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
@@ -20,13 +19,12 @@ const theme = createMuiTheme({
   typography: {
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      //fontSize: '60px',//32
       fontSize: '32px',
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
         fontSize: '60px',
       },
     },
-    h2: {
+    body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '32px',//32
       '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
@@ -45,7 +43,7 @@ const theme = createMuiTheme({
       fontSize: '30px',
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
         fontSize: '40px',
-      },  
+      },
     },
     subtitle1: {
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
@@ -54,10 +52,6 @@ const theme = createMuiTheme({
         fontSize: '24px',
       },
     },
-    color: {
-      textPrimary: 'white',
-    }
-
   },
   palette: {
     type: 'dark',
@@ -85,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    width: '100vw',
+    minwidth: '100vw',
     minHeight: '85vh',
     maxWidth: '100%',
   },
@@ -168,7 +162,7 @@ const useStyles = makeStyles((theme) => ({
   },
   ah: {
     width: 'theme.spacing(7)',
-    
+
   },
   flexcontainer2: {
     display: 'flex',
@@ -190,6 +184,7 @@ const videoOptions = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
+    rel: 0,
 
   }
 
@@ -232,7 +227,7 @@ export default function Fashionpage() {
         <div className= {classes.videoContainer}>
           <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
         </div>
-    
+
         <div className={classes.rightcontainer} maxWidth="70%">
           <Box className={classes.t1}>
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="left" color="textPrimary">
@@ -253,7 +248,7 @@ export default function Fashionpage() {
             They did this, they worked on this
           </Typography>
           </div>
-          { 
+          {
           //<div className={classes.lead2}>
           //<Box width="50vh">
           //  <Typography component="h4" variant="h4" align="left" color="textPrimary">
@@ -265,7 +260,7 @@ export default function Fashionpage() {
           //</Typography>
           //</div>
         }
-         
+
 
           </div>
         </div>
@@ -273,6 +268,7 @@ export default function Fashionpage() {
 
       </Container>
     </div>
+
   </ThemeProvider>
   )
 }
