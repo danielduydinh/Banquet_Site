@@ -9,8 +9,9 @@ import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import bts from '../Photos/bts_2.png'
-// import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
-// import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
+import icon1 from '../Photos/KennethNg.jpg';
+import icon2 from '../Photos/AustinLiu.jpg';
+import icon3 from '../Photos/FanLiu.jpg';
 import YouTube from "react-youtube";
 import Avatar from '@material-ui/core/Avatar';
 // import { Block } from '@material-ui/icons';
@@ -79,17 +80,21 @@ const useStyles = makeStyles((theme) => ({
   },
   IntroPhoto: {
     padding: theme.spacing(8, 0, 6),
-    paddingLeft: '5vh',
+    paddingTop: '2vh',
+    backgroundImage: `url(${bts})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'right',
+    mixBlendMode: 'lighten',
     margin: 'auto',
     '@media (min-width: 1200px)':{
-      width: '100vw',
+      // width: '100vw',
+      // height: '45vw',
       right: '0%',
     },
-    maxWidth: '100%',
-    flexGrow: '1',
-    
-    zIndex: 0,
-    flexWrap: 'wrap',
+    //minHeight: '500px',
+    height:'60vh',
+    width:'99vw',
   },
   
   entirebox: {
@@ -166,7 +171,7 @@ export default function BTSpage() {
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
       <div>
-        <Grid container width="1500px" className={classes.entirebox} container wrap='nowrap' paddingTop='50px'>
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
           <Grid item >
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
               Behind the
@@ -190,48 +195,48 @@ export default function BTSpage() {
       // working in
       // Good luck!
       }
-        <div className= {classes.videoContainer}>
+        {/* // <div className= {classes.videoContainer}> */}
         
-        <Grid container width="1500px"  container wrap='nowrap' paddingTop='50px'>
-          <Grid item xs={12}  className={classes.Page} align='left'>
+        <Grid container spacing = {2} width="1500px"  container wrap='nowrap' paddingTop='50px'>
+          <Grid item xs={12} lg={8} className={classes.Page} align='left'>
           <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                 CONTENT LEADS
             </Typography>
-            <Typography component="body1" variant="body1" align="left" color="textPrimary">
+            {/* <Typography component="body1" variant="body1" align="left" color="textPrimary"> */}
             <Grid container>
               <Grid item lg={4} md={6}>
-                <Avatar alt="Angela Hong"  className={classes.contenthead}/>
+                <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
               </Grid>
               <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Kenneth Ng </Typography>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
               </Grid>
             </Grid>
             <Box height="20px"/>
             <Grid container>
               <Grid item lg={4} md={6}>
-                <Avatar alt="Shannon Young" className={classes.contenthead}/>
+                <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
               </Grid>
               <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Austin Liu </Typography>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
               </Grid>
             </Grid>
             <Grid container>
               <Grid item lg={4} md={6}>
-                <Avatar alt="Shannon Young" className={classes.contenthead}/>
+                <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
               </Grid>
               <Grid item lg={4} md={6}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Fan Liu </Typography>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
               </Grid>
             </Grid>
-            </Typography>
+            {/* </Typography> */}
           </Grid>
-          <Grid item xs={12} >
+          <Grid item xs={12} lg={8}>
           <Typography component="h1" variant="h1" align="left" color="textPrimary">
             <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
           </Typography>
           </Grid>
           </Grid>
-      </div>
+      {/* </div> */}
       </Container>
     </div>
   </ThemeProvider>
