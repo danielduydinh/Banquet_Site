@@ -16,7 +16,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar';
 import Daniel from './Photos/DanielPFP.jpg'
-import { CardHeader } from '@material-ui/core';
+
 
 const theme = createMuiTheme({
   typography: {
@@ -82,14 +82,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(2),
     paddingBottom: '50px',
   },
-  carouseldiv: {
-    width: '600px',
-    height: '200px',
-    margin: 'auto',
-  },
-  carouselContainer:{
-    padding:'30px',
-  },
   bottomText:{
     paddingTop: '150px',
   },
@@ -110,19 +102,18 @@ const useStyles = makeStyles((theme) => ({
     // flexGrow: '1',
     backgroundRepeat: 'no-repeat',
   },
-  buttons:{
-    borderRadius: 15,
-  },
   photopadding:{
     paddingTop: "16vh",
   },
   card: {
-    minWidth: 275,
-    maxWidth: 400,
+    minWidth: 337,
+    minHeight: 475,
+    borderRadius: 65,
+  },
+  cardContent: {
     display:'flex',
     flexDirection: "column",
-    //justifyContent:'center',
-    //alignContent: 'Space-around',
+    alignContent: 'center',
     alignItems: 'center',
   },
   bullet: {
@@ -131,10 +122,13 @@ const useStyles = makeStyles((theme) => ({
     transform: 'scale(0.8)',
   },
   title: {
-    fontSize: 22,
+    fontSize: 14,
   },
   pos: {
-    // marginBottom: 12,
+    marginBottom: 12,
+  },
+  GM: {
+    paddingTop: '5vh',
   },
   avatar: {
     width: '150px',
@@ -200,16 +194,222 @@ export default function AboutUs() {
             (2020 - 2021)
             </Typography>
           </Box>
-        <Box>
-          <Card className={classes.card} variant="outlined">
-            <CardContent className={classes.cardContent}>
-            <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar} />
-              <div> 
-                Daniel Vu | Daniel Vu
-              </div>
-            </CardContent>
-          </Card>
-        </Box>
+
+
+          <div className={classes.GM}>
+           <Grid container spacing={3} justify='center'>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h1" className={classes.title} color="textPrimary">
+                     Name
+                   </Typography>
+                   <Typography variant="h5" component="h2">
+                     be{bull}nev{bull}o{bull}lent
+                   </Typography>
+                   <Typography className={classes.pos} color="textSecondary">
+                     adjective
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+            </Grid>
+        </div>
       </div>
     </ThemeProvider>
   )
