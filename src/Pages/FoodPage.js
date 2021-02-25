@@ -37,7 +37,8 @@ import samuelz from '../ContentSub/samuelz.jpg';
 import tristynl from '../ContentSub/tristynl.JPG';
 import christym from '../ContentSub/christym.jpg';
 import tomatoegg from '../ContentSub/tomatoegg.jpg';
-import songholder from '../ContentSub/songholder.jpg';
+import kennethn from '../ContentSub/kennethn.jpg';
+import kennethsong from '../ContentSub/kennethsong.wav';
 import christym1 from '../ContentSub/christym1.jpg';
 import christym2 from '../ContentSub/christym2.JPG';
 import christym3 from '../ContentSub/christym3.JPG';
@@ -337,10 +338,17 @@ const tileData = [
     extraimg: christym1
   },
   {
-    img: songholder,
+    img: kennethn,
     title: '哪裡只得我共你 or You and Me',
     author: 'Kenneth Ng',
     content: 'I chose to cover one of my favorite Cantonese songs. The song is called 哪裡只得我共你 or You and Me in English, and is created by Dear Jane. Cantonese songs allow me to connect with the Hong Kong part of me that I neglected when I was younger. These songs always feel like a banger, I am able to learn Cantonese along the way, and are really fun to sing along too. I even sang two Cantonese songs in front of a crowd back in high school. The song by Dear Jane in particular is the one that resonates within me the most. With a really nice beat and how popular it is, You and Me will always be there wherever I go. The piano in the beginning of the cover shows how much this song really hits me.',
+    extra: 
+      <div align = "center">
+        <Typography>You and Me</Typography>
+        <audio controls>
+          <embed height="60" type="kennethsong/wav" width="144" src="kennethsong.wav" volume="60" loop="false" autostart="false" />
+        </audio>
+      </div>
   },
     {
     img: tomatoegg,
@@ -348,7 +356,7 @@ const tileData = [
     author: 'Gloria Qiu',
     content: <Typography>
     The stir-fried tomato egg is a dish that represents Chinese home-cooked comfort food. Beloved by many, this dish has been a staple in many family dinners to complement a bowl of rice or noodles. We referred to it solely as 番茄蛋 fān qié dàn and has a special significance to my family. For my mother, like many Chinese aunties and mothers, the tomato egg dish is the first dish she was taught to cook as a kid. Its sweet, tangy, and flavorful taste gets everyone in my family scooping extra rice into their bowl. My grandma made sure to always make 番茄蛋 when I came home for the weekends. This recipe is our rendition of the Stir-Fried Tomato Egg dish.
-    <br>
+    <div>
     This recipe is an estimate because Asians measure out ingredients by harnessing the wisdom of our ancestors. I did the best I can...
     Serving Size: One Family  
     Ingredients
@@ -363,8 +371,8 @@ const tileData = [
     1 tsp corn starch 
     4 tbsp cooking oil
     Spring onion however much you’d like
-    </br>
-    <br>
+    </div>
+    
     Beat eggs and dice garlic
     Add cooking oil to a heated saucepan or wok. Stir fry the eggs with salt and garlic on medium heat and cook until slightly yokey. Remove from pan immediately and set aside. 
     Diced tomatoes and add cooking oil to a heated pan. Stir fry the tomatoes with salt, sugar, and ketchup. 
@@ -372,7 +380,7 @@ const tileData = [
     Combine cornstarch and 2 tbsp of water and incorporate it into the tomatoes 
     Smash tomatoes to your liking and stir fry in the eggs you set aside at the beginning
     Garnish with spring onions and top on up with rice or noodles ,
-    </br>
+    
     </Typography>
   },
 ];
