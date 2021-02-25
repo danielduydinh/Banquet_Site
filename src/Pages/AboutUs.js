@@ -107,15 +107,13 @@ const useStyles = makeStyles((theme) => ({
     // flexGrow: '1',
     backgroundRepeat: 'no-repeat',
   },
-  buttons:{
-    borderRadius: 15,
-  },
   photopadding:{
     paddingTop: "16vh",
   },
   card: {
     minWidth: 337,
-    minHeight: 532
+    minHeight: 475,
+    borderRadius: 65,
   },
   bullet: {
     display: 'inline-block',
@@ -127,6 +125,9 @@ const useStyles = makeStyles((theme) => ({
   },
   pos: {
     marginBottom: 12,
+  },
+  GM: {
+    paddingTop: '5vh',
   },
 }));
 
@@ -189,28 +190,210 @@ export default function AboutUs() {
             </Typography>
           </Box>
 
-        <Grid container>
-          <Grid item xs={2.4}>
-            <Card className={classes.card} variant="outlined">
-              <CardContent>
-                <Typography variant="h1" className={classes.title} color="textPrimary">
-                  Name
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  be{bull}nev{bull}o{bull}lent
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
-                  adjective
-                </Typography>
-                <Typography variant="body2" component="p">
-                  well meaning and kindly.
-                  <br />
-                  {'"a benevolent smile"'}
-                </Typography>
-              </CardContent>
-            </Card>
+        <div className={classes.GM}>
+          <Grid container spacing={3} justify='center'>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '2px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }}>
+                <CardContent>
+                  <Typography variant="h1" className={classes.title} color="textPrimary">
+                    Name
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    be{bull}nev{bull}o{bull}lent
+                  </Typography>
+                  <Typography className={classes.pos} color="textSecondary">
+                    adjective
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    well meaning and kindly.
+                    <br />
+                    {'"a benevolent smile"'}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
     </ThemeProvider>
   )
