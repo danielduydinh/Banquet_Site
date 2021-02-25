@@ -9,7 +9,10 @@ import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import bts from '../Photos/bts_2.png'
+// import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
+// import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
 import YouTube from "react-youtube";
+import Avatar from '@material-ui/core/Avatar';
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
@@ -125,9 +128,17 @@ const useStyles = makeStyles((theme) => ({
     width: '100',
     height: '100',
   },
+  contenthead: {
+    height: '150px',
+    width: '150px',
+    marginBottom: '15px',
+  },
   Video: {
     marginLeft: "-7%",
   },
+  contentleadtext: {
+    paddingBottom: '20px',
+  }
 }));
 const videoOptions = {
   height: "390",
@@ -183,11 +194,35 @@ export default function BTSpage() {
         
         <Grid container width="1500px"  container wrap='nowrap' paddingTop='50px'>
           <Grid item xs={12}  className={classes.Page} align='left'>
-          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+          <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                 CONTENT LEADS
             </Typography>
             <Typography component="body1" variant="body1" align="left" color="textPrimary">
-                  I don't know what to put for BTS, idk anything about BTS either.
+            <Grid container>
+              <Grid item lg={4} md={6}>
+                <Avatar alt="Angela Hong"  className={classes.contenthead}/>
+              </Grid>
+              <Grid item lg={4} md={6}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Kenneth Ng </Typography>
+              </Grid>
+            </Grid>
+            <Box height="20px"/>
+            <Grid container>
+              <Grid item lg={4} md={6}>
+                <Avatar alt="Shannon Young" className={classes.contenthead}/>
+              </Grid>
+              <Grid item lg={4} md={6}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Austin Liu </Typography>
+              </Grid>
+            </Grid>
+            <Grid container>
+              <Grid item lg={4} md={6}>
+                <Avatar alt="Shannon Young" className={classes.contenthead}/>
+              </Grid>
+              <Grid item lg={4} md={6}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> Fan Liu </Typography>
+              </Grid>
+            </Grid>
             </Typography>
           </Grid>
           <Grid item xs={12} >
