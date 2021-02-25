@@ -138,6 +138,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
+    
   },
   footerRight: {
     display: 'flex',
@@ -169,7 +170,12 @@ const useStyles = makeStyles((theme) => ({
   socials: {
     display: 'flex',
     flexDirection: 'row',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
+  
+ 
   socialText: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
@@ -336,7 +342,7 @@ export default function Appbar(props) {
                     <Typography className={classes.socialText} >INSTAGRAM</Typography>
                   </div>
                   <br/>
-                  <div className={classes.socials} 
+                  <div className={classes.socials}
                     onClick={() => window.open("https://www.youtube.com/channel/UCMHgsts6RlX_2QWuzsYXKiQ", "_blank")}>
                     <YouTubeIcon className={classes.icons}/>
                     <Typography className={classes.socialText} >YOUTUBE</Typography>
