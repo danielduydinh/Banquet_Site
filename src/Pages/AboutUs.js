@@ -14,6 +14,9 @@ import WWABGP from './Photos/WWABGP.png';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent'
+import Avatar from '@material-ui/core/Avatar';
+import Daniel from './Photos/DanielPFP.jpg'
+import { CardHeader } from '@material-ui/core';
 
 const theme = createMuiTheme({
   typography: {
@@ -116,6 +119,11 @@ const useStyles = makeStyles((theme) => ({
   card: {
     minWidth: 275,
     maxWidth: 400,
+    display:'flex',
+    flexDirection: "column",
+    //justifyContent:'center',
+    //alignContent: 'Space-around',
+    alignItems: 'center',
   },
   bullet: {
     display: 'inline-block',
@@ -126,7 +134,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 22,
   },
   pos: {
-    marginBottom: 12,
+    // marginBottom: 12,
+  },
+  avatar: {
+    width: '150px',
+    height: '150px',
   },
 }));
 
@@ -188,24 +200,13 @@ export default function AboutUs() {
             (2020 - 2021)
             </Typography>
           </Box>
-
         <Box>
           <Card className={classes.card} variant="outlined">
-            <CardContent>
-              <Typography variant="h1" className={classes.title} color="textPrimary">
-                Name
-              </Typography>
-              <Typography variant="h5" component="h2">
-                be{bull}nev{bull}o{bull}lent
-              </Typography>
-              <Typography className={classes.pos} color="textSecondary">
-                adjective
-              </Typography>
-              <Typography variant="body2" component="p">
-                well meaning and kindly.
-                <br />
-                {'"a benevolent smile"'}
-              </Typography>
+            <CardContent className={classes.cardContent}>
+            <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar} />
+              <div> 
+                Daniel Vu | Daniel Vu
+              </div>
             </CardContent>
           </Card>
         </Box>
