@@ -10,9 +10,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
 
-import icon1 from '../Photos/AustinLiu.jpg';
-import icon2 from '../Photos/KennethNg.jpg';
-import icon3 from '../Photos/FanLiu.jpg';
+import icon1 from '../Photos/CommitteHeads/AustinLiu.jpg';
+import icon2 from '../Photos/CommitteHeads/KennethNg.jpg';
+import icon3 from '../Photos/CommitteHeads/FanLiu.jpg';
 
 // import { Block } from '@material-ui/icons';
 

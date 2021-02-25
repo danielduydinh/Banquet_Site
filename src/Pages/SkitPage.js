@@ -10,7 +10,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
 // import { Block } from '@material-ui/icons';
-import icon1 from '../Photos/BrianLiu.jpg';
+import icon1 from '../Photos/CommitteHeads/BrianLiu.jpg';
 
 const theme = createMuiTheme({
   palette: {
