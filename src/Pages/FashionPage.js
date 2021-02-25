@@ -11,8 +11,10 @@ import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
 import fashion from '../Photos/fashion.png';
-import icon1 from '../Photos/icon.png';
+import icon1 from '../Photos/AngelaHong.jpg';
+import icon2 from '../Photos/ShannonYoung.jpg';
 import rectangle from '../Photos/redrectangle.png';
+import Avatar from '@material-ui/core/Avatar';
 
 const theme = createMuiTheme({
   typography: {
@@ -153,10 +155,20 @@ const useStyles = makeStyles((theme) => ({
   rightcontainer: {
     marginRight: '20%',
   },
+  t1: {
+    width: '30vh',
+    '@media screen and (min-width: 1200px) and (min-height: 1000px)': {
+      width: '25vh',
+    },
+  },
   icon1: {
     image: `url(${icon1})`,
     width: '148px',
     height: '148px',
+  },
+  ah: {
+    width: 'theme.spacing(7)',
+    
   },
   flexcontainer2: {
     display: 'flex',
@@ -169,6 +181,10 @@ const useStyles = makeStyles((theme) => ({
   lead1: {
     marginLeft: '10%',
   },
+  lead2: {
+    marginLeft: '10%',
+    marginTop: '10%',
+  }
 }));
 const videoOptions = {
   playerVars: {
@@ -205,33 +221,27 @@ export default function Fashionpage() {
             </Typography>
             <Box className={classes.fashiondescription} width="40vw">
               <Typography component="h2" variant="h2" align="left" color="textPrimary">
-                  We don't got designer brands but this is it, this is the best school funding could provide.
+                  We don't got designer brands but this is it, this is the best school funding could provide.<br></br><br></br>
+                  Fashion show presents, well, fashion show!
               </Typography>
             </Box>
           </Grid>
         </Grid>
       </div>
-      {
-      // You can try containing this portion into a grid so you can add other text and stuff
-      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
-      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
-      // working in
-      // Good luck!
-      }
       <div className={classes.flexcontainer}>
         <div className= {classes.videoContainer}>
           <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
         </div>
     
         <div className={classes.rightcontainer} maxWidth="70%">
-          <Box width="30vh">
+          <Box className={classes.t1}>
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                 FASHION LEADS
             </Typography>
           </Box>
           <div className={classes.flexcontainer2}>
             <div className={classes.iconcontainer}>
-            <img src={icon1} alt="icon 1"/>
+            <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
             </div>
           <div className={classes.lead1}>
           <Box width="50vh">
@@ -243,40 +253,21 @@ export default function Fashionpage() {
             They did this, they worked on this
           </Typography>
           </div>
+          { 
+          //<div className={classes.lead2}>
+          //<Box width="50vh">
+          //  <Typography component="h4" variant="h4" align="left" color="textPrimary">
+          //<img src={icon1} alt="icon 1"/>
+          //  </Typography>
+          //</Box>
+          //<Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
+          //  They did this, they worked on this
+          //</Typography>
+          //</div>
+        }
+         
+
           </div>
-          {
-          //<div className={classes.firstfl}>
-          //  <div>
-          //    <img className={classes.icon1}
-          //     src="Banquet_Site/src/Photos/icon.png"
-          //    />          
-          //  </div>
-           // <div>
-           //   <Typography component="h4" variant="h4" align="left" color="textPrimary">
-           //     YOUR MOM
-          //    </Typography>
-          //    <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
-          //      They did this, they worked on this
-          //    </Typography>
-          //  </div>
-         // </div>
-          
-        //  <div className={classes.secondfl}>
-        //    <div>
-        //      <img className={classes.icon2}
-        //       src="Banquet_Site/src/Photos/icon.png"
-        //      />          
-        //    </div>
-        //    <div>
-         //     <Typography className={classes.ftext} component="h4" variant="h4" align="left" color="textPrimary">
-          //      JOE MOMMA 
-          //    </Typography>
-           //   <Typography component="subtitle1" variant="subtitle1" align="left" color="textPrimary">
-            //    They also did this.
-             // </Typography>
-            //</div>
-           // </div>
-          }
         </div>
       </div>
 
