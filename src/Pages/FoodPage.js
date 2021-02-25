@@ -38,6 +38,11 @@ import tristynl from '../ContentSub/tristynl.JPG';
 import christym from '../ContentSub/christym.jpg';
 import tomatoegg from '../ContentSub/tomatoegg.jpg';
 import songholder from '../ContentSub/songholder.jpg';
+import christym1 from '../ContentSub/christym1.jpg';
+import christym2 from '../ContentSub/christym2.JPG';
+import christym3 from '../ContentSub/christym3.JPG';
+import christym4 from '../ContentSub/christym4.jpg';
+import christym5 from '../ContentSub/christym5.jpg';
 
 const theme = createMuiTheme({
   typography: {
@@ -241,6 +246,21 @@ export default function Foodpage() {
                     <img src={selectedElement.img} alt={selectedElement.img} />
                   </GridList>
                   {selectedElement.extra}
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
+                    <img src={christym1} alt={selectedElement.img} />
+                  </GridList>
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={710} cols={getGridListCols}>
+                    <img src={christym2} alt={selectedElement.img} />
+                  </GridList>
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={710} cols={getGridListCols}>
+                    <img src={christym3} alt={selectedElement.img} />
+                  </GridList>
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
+                    <img src={christym4} alt={selectedElement.img} />
+                  </GridList>
+                  <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
+                    <img src={christym5} alt={selectedElement.img} />
+                  </GridList>
                 </Typography>
               </DialogContent>
             </Dialog>
@@ -314,6 +334,7 @@ const tileData = [
     title: 'Dumpling 饺子',
     author: 'Christy Mei',
     content: 'Dumplings have always been a staple dish eaten in my family, whether it was homemade or store-bought. Growing up, my mom would always hand make dumplings from scratch for me to eat. I vividly remember the excitement I had whenever I smelled the delicious fragrance of the stuffing from a distance. Even today, I still feel the same thrill as my younger self did whenever I see dumplings sitting on the dinner table. When I was younger, I always wondered why my mom frequently chooses to spend countless hours hand making dumplings instead of buying premade ones from the store. It turns out that hand making dumplings is actually a family tradition that has been passed down for many years and holds a meaningful place in my mom’s heart. Since this year’s Lunar New Year Banquet is virtual, I wanted to share some pictures of my mom’s dumpling-making process.',
+    extraimg: christym1
   },
   {
     img: songholder,
