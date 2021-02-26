@@ -13,7 +13,7 @@ import YouTube from "react-youtube";
 import icon2 from '../Photos/CommitteeHeads/AustinLiu.jpg';
 import icon1 from '../Photos/CommitteeHeads/KennethNg.jpg';
 import icon3 from '../Photos/CommitteeHeads/FanLiu.jpg';
-import Avatar from '@material-ui/core/avatar';
+import Avatar from '@material-ui/core/Avatar';
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
