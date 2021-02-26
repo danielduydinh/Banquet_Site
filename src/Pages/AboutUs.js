@@ -19,17 +19,17 @@ import Daniel from './Photos/DanielPFP.jpg'
 
 
 //Office Heads Pics
-import icon1 from '../Photos/OfficeHeads/DanielVu.jpg';
-import icon2 from '../Photos/OfficeHeads/DatVu.jpg';
-import icon3 from '../Photos/OfficeHeads/EsmondTsai.jpg';
-import icon4 from '../Photos/OfficeHeads/GloriaQiu.JPG';
-import icon5 from '../Photos/OfficeHeads/KevinXu.jpg';
-import icon6 from '../Photos/OfficeHeads/LianaLau.jpg';
-import icon7 from '../Photos/OfficeHeads/LyPhung.jpg';
-import icon8 from '../Photos/OfficeHeads/MaryYuen.jpg';
-import icon9 from '../Photos/OfficeHeads/RaymondLee.jpg';
+import danielv from '../Photos/OfficeHeads/DanielVu.jpg';
+import datv from '../Photos/OfficeHeads/DatVu.jpg';
+import esmondt from '../Photos/OfficeHeads/EsmondTsai.jpg';
+import gloriaq from '../Photos/OfficeHeads/GloriaQiu.JPG';
+import kevinx from '../Photos/OfficeHeads/KevinXu.jpg';
+import lianal from '../Photos/OfficeHeads/LianaLau.jpg';
+import lyp from '../Photos/OfficeHeads/LyPhung.jpg';
+import maryy from '../Photos/OfficeHeads/MaryYuen.jpg';
+import raymondl from '../Photos/OfficeHeads/RaymondLee.jpg';
 //Icon10 for Vania
-import icon10 from '../Photos/OfficeHeads/DanielVu.jpg';
+import vaniag from '../Photos/OfficeHeads/VaniaGunawan.jpg';
 
 const theme = createMuiTheme({
   typography: {
@@ -100,23 +100,21 @@ const useStyles = makeStyles((theme) => ({
   },
   GroupPhoto:{
     image: `url(${GP})`,
-    height:'561px',
+    width: '100%',
+    height: 'auto',
   },
   AUBKGP:{
     backgroundImage: `url(${WWABGP})`,
-    height:'118vh',
+    height:'100%',
     backgroundPosition: 'center',
     backgroundSize: 'cover',
     width: '100vw',
-    // '@media (min-width: 1200px)':{
-    //   width: '60vw',
-    // },
     maxWidth: '100%',
-    // flexGrow: '1',
     backgroundRepeat: 'no-repeat',
   },
   photopadding:{
-    paddingTop: "16vh",
+    margin: 'auto',
+    paddingTop: "50px",
   },
   card: {
     minWidth: 337,
@@ -163,11 +161,11 @@ export default function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-        <Container maxWidth="1/4">
-          <Grid className={classes.AUBKGP} align="center">
+        <Container maxWidth="1/4" align="center">
+          <Grid container className={classes.AUBKGP} >
             <div className={classes.photopadding}>
-                <Grid className={classes.GroupPhoto} align="center">
-                  <img src={GP} alt="Group photo"/>
+                <Grid item xs={12}  align="center">
+                  <img src={GP} className={classes.GroupPhoto} alt="Group photo"/>
                 </Grid>
             </div>
           </Grid>
@@ -211,7 +209,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Esmond Tsai" src={esmondt} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Esmond Tsai
                    </Typography>
@@ -229,7 +227,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Dat Vu" src={datv} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Dat Vu
                    </Typography>
@@ -247,7 +245,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Gloria Qiu" src={gloriaq} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary" height='100px'>
                      Gloria Qiu
                    </Typography>
@@ -265,7 +263,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Raymond Lee" src={raymondl} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Raymond Lee
                    </Typography>
@@ -283,7 +281,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Kevin Xu" src={kevinx} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Kevin Xu
                    </Typography>
@@ -301,7 +299,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Vania Gunawan" src={vaniag} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Vania Gunawan
                    </Typography>
@@ -337,7 +335,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Liana Lau" src={lianal} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Liana Lau
                    </Typography>
@@ -355,7 +353,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Mary Yuen" src={maryy} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Mary Yuen
                    </Typography>
@@ -373,7 +371,7 @@ export default function AboutUs() {
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                  <Avatar alt="Ly Phung" src={lyp} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Ly Phung
                    </Typography>

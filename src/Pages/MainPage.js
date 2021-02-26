@@ -123,6 +123,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${tDance})`,
+    backgroundSize: 'cover',
     mixBlendMode: 'lighten',
     minHeight: '750px',
     height:'50vh',
