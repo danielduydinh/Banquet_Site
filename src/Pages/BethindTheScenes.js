@@ -206,19 +206,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  // videoPlayer: { // the actual video itself
-  //   position: 'absolute', // allows us to scale the video responsively
-  //   top: 0,
-  //   left: 0,
-  //   width: '100%',
-  //   height: '100%',
-  // },
+
   contentleadtext: {
     paddingBottom: '20px',
-<<<<<<< HEAD
-  }
-  
-=======
   },
   videoContainer: { // div containing the video
     margin: 'auto',
@@ -242,7 +232,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
   },
->>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
+
 }));
 const videoOptions = {
   height: "390",
@@ -268,25 +258,26 @@ export default function BTSpage() {
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
-      <Container maxWidth="1/4">
-      <div>
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-          <Grid item >
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              Behind the
-            </Typography>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+    <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
+        <Grid item >
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+            Behind the
+          </Typography>
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
               Scenes
-            </Typography>
-            <Box className={classes.btsdescription} width="30vw">
+          </Typography>
+          <Box className={classes.btsdescription} width="30vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
-              As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
-               Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
+                As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
+                 Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
-            </Box>
-          </Grid>
-        </Grid> 
-      </div>
+          </Box>
+        </Grid>
+    </Grid>
+    
+
+{/*
+
       {
       // You can try containing this portion into a grid so you can add other text and stuff
       // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
@@ -294,78 +285,57 @@ export default function BTSpage() {
       // working in
       // Good luck!
       }
-        {/* // <div className= {classes.videoContainer}> */}
+        {/* // <div className= {classes.videoContainer}>
         <Grid container spacing = {2} width="1500px"  container wrap='nowrap' className={classes.middle}>
           <Grid item xs={12} lg={8} align='left'>
-            <div className = {classes.contentHeads}> 
-<<<<<<< HEAD
               <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                     CONTENT LEADS
                 </Typography>
-                <Grid container>
+              <Grid container>
+                    <Grid item lg={4} md={6}>
+                        <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+                    </Grid>
+                    <Grid item lg={4} md={6}>
+                        <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                        <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                    </Grid>
+                    <Typography className={classes.contentleadtext} component="h3" variant="h3" color="textPrimary">
+                      CONTENT LEADS
+                    </Typography>
+              </Grid>
+
+              <Grid container>
                   <Grid item lg={4} md={6}>
                     <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
                   </Grid>
                   <Grid item lg={4} md={6}>
                     <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
-=======
-              <Typography className={classes.contentleadtext} component="h3" variant="h3" color="textPrimary">
-                CONTENT LEADS
-              </Typography>
-              <Grid container>
-                <Grid item lg={4} md={6}>
-                  <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-                </Grid>
-                <Grid item lg={4} md={6}>
-                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
->>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
-                </Grid>
               </Grid>
               <Box height="20px"/>
-                <Grid container>
-                  <Grid item lg={4} md={6}>
-                    <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
+
+              <Grid container>
+                <Grid item lg={4} md={6}>
+                  <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
                 </Grid>
-                <Grid container>
-                  <Grid item lg={4} md={6}>
-                    <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
+                <Grid item lg={4} md={6}>
+                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                 </Grid>
-<<<<<<< HEAD
-            </div> 
+              </Grid>
+              <Grid container>
+                <Grid item lg={4} md={6}>
+                  <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+                </Grid>
+                <Grid item lg={4} md={6}>
+                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                </Grid>
+              </Grid>
+
           </Grid>
-          {/* <Grid container spacing ={2}> */}
-          <Grid item xs={12} lg={12} spacing ={0}>
-          {/* <div className= {classes.videoContainer}> */}
-          {/* <Typography component="h1" variant="h1" align="left" color="textPrimary"> */}
-            <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-          {/* </Typography> */}
-          {/* </div> */}
-          </Grid>
-          {/* </Grid> */}
-=======
-              </div> 
-            </Grid>
-          <Grid item xs={12} lg={8}>
-            <div className={classes.videoContainer}>
-              <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-            </div>
->>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
-          </Grid>
-      </Grid> 
-      {/* </div> */}
-      </Container>
+        </Grid>
+      </Grid>*/}
     </div>
   </ThemeProvider>
   )
