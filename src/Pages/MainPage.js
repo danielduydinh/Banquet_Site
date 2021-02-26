@@ -144,7 +144,7 @@ const useStyles = makeStyles((theme) => ({
   },
   videoContainer: { // div containing the video
     margin: 'auto',
-    width: '100%',
+    width: '60%',
     paddingBottom: '33.75%', // for ratio purposes 9/16 is 56.25%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
