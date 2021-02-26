@@ -126,6 +126,9 @@ const useStyles = makeStyles((theme) => ({
   // if you change width here, make sure to change the cellHeight at line 195
   Tile: {
     width: '300px',
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
   // zIndex is set to appear in front of the appBarTabs
   dialogBox: {
