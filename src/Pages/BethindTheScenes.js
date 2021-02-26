@@ -54,6 +54,14 @@ const theme = createMuiTheme({
         fontSize: '40px',
       },
     },
+    h5: {
+      fontFamily: ['Lexend Exa', 'sans-serif'].join(','),
+      fontSize: '18px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '36px',
+      },
+    },
+
     subtitle1: {
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '32px',//32
@@ -98,6 +106,22 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '85vh',
     maxWidth: '100%',
   },
+  videoContainer: { // div containing the video
+    width: '100%', //60%
+    height: '100%',
+    paddingTop: '0%', // for ratio purposes 9/16 is 56.25% //33.75%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    //height:0,
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'left', // make the position relative while allowing us to make the video absolute
+    //
+    flex: '1',
+    //paddingBottom: '75%',
+    // maxWidth: '70%',
+    // maxHeight: '30%',
+  },
   Page: {
     paddingTop: '2vh',
     flexGrow: 1,
@@ -125,7 +149,13 @@ const useStyles = makeStyles((theme) => ({
     height:'60vh',
     width:'99vw',
   },
-  
+  // videoPlayer: { // the actual video itself
+  //   position: 'absolute', // allows us to scale the video responsively
+  //   top: 0,
+  //   left: 0,
+  //   width: '20%',
+  //   height: '20%',
+  // },
   entirebox: {
     paddingTop: '2vh',
     backgroundImage: `url(${bts})`,
@@ -176,9 +206,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
   },
+  // videoPlayer: { // the actual video itself
+  //   position: 'absolute', // allows us to scale the video responsively
+  //   top: 0,
+  //   left: 0,
+  //   width: '100%',
+  //   height: '100%',
+  // },
   contentleadtext: {
     paddingBottom: '20px',
   }
+  
 }));
 const videoOptions = {
   height: "390",
@@ -244,6 +282,7 @@ export default function BTSpage() {
                   </Grid>
                   <Grid item lg={4} md={6}>
                     <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
                 </Grid>
                 <Box height="20px"/>
@@ -253,6 +292,7 @@ export default function BTSpage() {
                   </Grid>
                   <Grid item lg={4} md={6}>
                     <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
                 </Grid>
                 <Grid container>
@@ -261,15 +301,20 @@ export default function BTSpage() {
                   </Grid>
                   <Grid item lg={4} md={6}>
                     <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
                 </Grid>
             </div> 
           </Grid>
-          <Grid item xs={12} lg={8}>
-          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+          {/* <Grid container spacing ={2}> */}
+          <Grid item xs={12} lg={12} spacing ={0}>
+          {/* <div className= {classes.videoContainer}> */}
+          {/* <Typography component="h1" variant="h1" align="left" color="textPrimary"> */}
             <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-          </Typography>
+          {/* </Typography> */}
+          {/* </div> */}
           </Grid>
+          {/* </Grid> */}
           </Grid>
       {/* </div> */}
       </Container>
