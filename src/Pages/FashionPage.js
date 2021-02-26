@@ -10,7 +10,10 @@ import YouTube from "react-youtube";
 import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
 import fashion from '../Photos/fashion.png';
-import icon1 from '../Photos/icon.png';
+import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
+import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
+import rectangle from '../Photos/redrectangle.png';
+import Avatar from '@material-ui/core/Avatar';
 
 const theme = createMuiTheme({
   typography: {
@@ -23,15 +26,45 @@ const theme = createMuiTheme({
     },
     body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      fontSize: '12px',
+      fontSize: '32px',//32
       '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
         fontSize: '24px',
       },
     },
-    fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-    fontSize: '12px',
-    '@media screen and (min-width: 1000px) and (min-height: 1000px)':{
-      fontSize: '24px',
+    body2:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '16px',
+      },
+    },
+    h2: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '20px',//24
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '24px',//42
+      },
+    },
+    h3: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '32px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '50px',
+      },
+    },
+    h4: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '30px',
+      '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
+        fontSize: '40px',
+      },
+    },
+    subtitle1: {
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '32px',//32
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '24px',
+      },
     },
   },
   palette: {
@@ -63,36 +96,38 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     minHeight: '85vh',
     maxWidth: '100%',
+
+    flexGrow: 1,
+
   },
   IntroPhoto: {
-    padding: theme.spacing(8, 0, 6),
+    paddingTop:'20%',//5vh
     backgroundImage: `url(${fashion})`,
-    mixBlendMode: 'lighten',
-    height:'50vh',
-    width:'99vw',
-    '@media (min-width: 1200px)':{
-      width: '60vw',
-      right: '0%',
-    },
-    maxWidth: '100%',
-    flexGrow: '1',
+    backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
-    zIndex: 0,
-    flexWrap: 'wrap',
+    mixBlendMode: 'lighten',
+    height:'50%',//50vh
+    maxWidth: '100%',
   },
+
   fashiondescription: {
     width: '100',
     height: '100',
   },
   videoContainer: { // div containing the video
-    width: '60%',
-    paddingTop: '33.75%', // for ratio purposes 9/16 is 56.25%
+    width: '100%', //60%
+    paddingTop: '56.25%', // for ratio purposes 9/16 is 56.25% //33.75%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
-    height:0,
+    //height:0,
     overflow: 'hidden', // removes any parts of the div that might extend outside it
     zIndex: 1, // idk its just says so in the code haha
     position: 'relative', // make the position relative while allowing us to make the video absolute
+    //
+    flex: '1',
+    //paddingBottom: '75%',
+    // maxWidth: '70%',
+    // maxHeight: '30%',
   },
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
@@ -100,7 +135,45 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     width: '100%',
     height: '100%',
-  }
+  },
+  rectangleimage: {
+    backgroundImage: `url(${rectangle})`,
+    width: '25rem',
+    height: '2rem',
+    //
+    position: 'absolute',
+  },
+  flexcontainer: {
+    display: 'flex',
+    //maxWidth: '200vh',
+    margin: '50px auto',
+  },
+  rightcontainer: {
+    marginRight: '20%',
+  },
+  t1: {
+    width: '30vh',
+    '@media screen and (min-width: 1200px) and (min-height: 1000px)': {
+      width: '25vh',
+    },
+  },
+  icon1: {
+    image: `url(${icon1})`,
+  },
+  ah: {
+    height: '100px',
+    width: '100px',
+    marginBottom: '15px',
+  },
+  fashionleadtext: {
+    paddingBottom: '20px',
+  },
+  labels: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+
 }));
 const videoOptions = {
   playerVars: {
@@ -127,33 +200,65 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-      <div>
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-          <Grid item className={classes.entirebox}>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' spacing={3} paddingTop='50px'>
+          <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
+          <div className = {classes.f}>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>
                 FASHION
-            </Typography>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+                <br></br>
                 SHOW
             </Typography>
-            <Box className={classes.fashiondescription} width="40vw">
-              <Typography component="body1" variant="body1" align="left" color="textPrimary">
-                  We don't got designer brands but this is it, this is the best school funding could provide.
+            <Grid item>
+              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
+                  Fashion is nothing without people, and CSA is nothing without our beloved members.
+                  <br></br>
+                  Fashion show presents, well, fashion show!
               </Typography>
-            </Box>
+            </Grid>
+
+            </div>
           </Grid>
         </Grid>
-      </div>
-      {
-      // You can try containing this portion into a grid so you can add other text and stuff
-      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
-      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
-      // working in
-      // Good luck!
-      }
-      <div className= {classes.videoContainer}>
-        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-      </div>
+
+
+      <Box height="50px"/>
+
+      <Grid container spacing ={2}>
+        <Grid item lg={8} xs = {12}>
+          <div className= {classes.videoContainer}>
+            <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+          </div>
+        </Grid>
+        <Grid item lg={4} sm={8} xs={12}>
+          <div className = {classes.fashionHeads}>
+            <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
+                FASHION LEADS
+            </Typography>
+            <Grid container spacing={4}>
+              <Grid item lg={4} className={classes.labels}>
+                <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
+              </Grid>
+              <Grid item lg={4} className={classes.labels}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+              </Grid>
+            </Grid>
+            <Grid container spacing={4}>
+              <Grid item lg={4} className={classes.labels}>
+                <Avatar alt="Shannon Young" src={icon2} className={classes.ah}/>
+              </Grid>
+              <Grid item lg={4} className={classes.labels}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+              </Grid>
+            </Grid>
+
+          </div>
+        </Grid>
+      </Grid>
+
+
+
       </Container>
     </div>
 

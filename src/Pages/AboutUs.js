@@ -10,6 +10,26 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 //import Paper from '@material-ui/core/Paper';
 //import tDance from '../Photos/tdance.png';
 import GP from './Photos/AboutUs.jpg';
+import WWABGP from './Photos/WWABGP.png';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent'
+import Avatar from '@material-ui/core/Avatar';
+import Daniel from './Photos/DanielPFP.jpg'
+
+
+//Office Heads Pics
+import danielv from '../Photos/OfficeHeads/DanielVu.jpg';
+import datv from '../Photos/OfficeHeads/DatVu.jpg';
+import esmondt from '../Photos/OfficeHeads/EsmondTsai.jpg';
+import gloriaq from '../Photos/OfficeHeads/GloriaQiu.JPG';
+import kevinx from '../Photos/OfficeHeads/KevinXu.jpg';
+import lianal from '../Photos/OfficeHeads/LianaLau.jpg';
+import lyp from '../Photos/OfficeHeads/LyPhung.jpg';
+import maryy from '../Photos/OfficeHeads/MaryYuen.jpg';
+import raymondl from '../Photos/OfficeHeads/RaymondLee.jpg';
+//Icon10 for Vania
+import vaniag from '../Photos/OfficeHeads/VaniaGunawan.jpg';
 
 const theme = createMuiTheme({
   typography: {
@@ -28,18 +48,18 @@ const theme = createMuiTheme({
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '12px',
       '@media (min-width: 1200px)' :{
-        fontSize: '24px', 
-        textAlign: 'center',  
+        fontSize: '24px',
+        textAlign: 'center',
         margin: 'auto'
       },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
     fontSize: '12px',
     '@media (min-width: 1200px)' :{
-      fontSize: '24px',   
+      fontSize: '24px',
       margin: 'auto',
     },
-  },   
+  },
   palette: {
     type: 'dark',
     primary: {
@@ -67,36 +87,67 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(8, 0, 6),
     width: '100vw',
     minHeight: '85vh',
+    flexGrow: 1,
+    maxWidth: '100%',
+    paddingBottom: '300px'
   },
   PageButtons: {
-    marginTop: theme.spacing(4),
-  },
-  carouseldiv: {
-    width: '600px',
-    height: '200px',
-    margin: 'auto',
-  },
-  carouselContainer:{
-    padding:'30px',
+    marginTop: theme.spacing(2),
+    paddingBottom: '50px',
   },
   bottomText:{
     paddingTop: '150px',
   },
   GroupPhoto:{
     image: `url(${GP})`,
-    height:'561px',
+    width: '100%',
+    height: 'auto',
   },
-  buttons:{
-    borderRadius: 15,
+  AUBKGP:{
+    backgroundImage: `url(${WWABGP})`,
+    height:'100%',
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    width: '100vw',
+    maxWidth: '100%',
+    backgroundRepeat: 'no-repeat',
   },
   photopadding:{
-    paddingTop: "12vh",
-  }
+    margin: 'auto',
+    paddingTop: "50px",
+  },
+  card: {
+    minWidth: 337,
+    minHeight: 475,
+    borderRadius: 65,
+  },
+  cardContent: {
+    height: 400,
+    display:'flex',
+    flexDirection: "column",
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+
+  GM: {
+    paddingTop: '5vh',
+  },
+  avatar: {
+    width: '150px',
+    height: '150px',
+  },
 }));
 
 export default function AboutUs() {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
+  const bull = <span className={classes.bullet}>•</span>;
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -110,33 +161,233 @@ export default function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-        <Container maxWidth="1/4">
-          <div className={classes.photopadding}>
-            <Grid className={classes.GroupPhoto} align="center">
-              <img src={GP} alt="Group photo"/>
-            </Grid>
-          </div>
-          <Box width="100%" paddingTop="38vh">
+        <Container maxWidth="1/4" align="center">
+          <Grid container className={classes.AUBKGP} >
+            <div className={classes.photopadding}>
+                <Grid item xs={12}  align="center">
+                  <img src={GP} className={classes.GroupPhoto} alt="Group photo"/>
+                </Grid>
+            </div>
+          </Grid>
+          <Box width="100%" paddingTop="20vh">
             <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
           </Box>
           <Box width="100%">
             <Typography variant="h1" align="center" color="textPrimary">
-              CHINESE STUDENT ASSOCIATION
+              Chinese Student Association
             </Typography>
           </Box>
-          <Box width="100%" paddingTop="8vh">
-            <Typography variant="body1" align="center" color="textPrimary">
-              CSA is the association of Chinese people. Join pls. Here's a link to our YouTube channel if you are interested about what our previous banquets looked like in person:
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> https://www.youtube.com/watch?v=dQw4w9WgXcQ</a>
+          <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center'>
+            <Typography variant="body1" align="justify" color="textPrimary">
+            Chinese Student Association also known as CSA is an ethnic UCSC organization that
+            seeks to serve those that identify with Chinese-American culture and
+            foster an Asian-American community on campus!
+            <br/>
+            <br/>
+            We strive to create a safe space for these individuals through
+            cultural-themed events such as this banquet, and small-scale events
+            primarily run through our unique house system.
+            <br/>
+            <br/>
+            In spite of COVID-19, we aim to help our members build life-long
+            friendships, and to provide a second home while at home.
             </Typography>
           </Box>
           <Box width="100%" paddingTop="16vh">
             <Typography variant="h1" align="center" color="textPrimary">
-            GRAPHIC LEADS
+            CSA OFFICERS
+            <br/>
+            (2020 - 2021)
             </Typography>
           </Box>
+
+
+          <div className={classes.GM}>
+           <Grid container spacing={3} justify='center'>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Esmond Tsai" src={esmondt} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Esmond Tsai
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                     Co-Chair
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Dat Vu" src={datv} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Dat Vu
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                     Co-Chair
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Gloria Qiu" src={gloriaq} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary" height='100px'>
+                     Gloria Qiu
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary" height='100px'>
+                    Banquet Coordinator
+                   </Typography>
+                   <Typography variant="body2" component="p" height='100px'>
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Raymond Lee" src={raymondl} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Raymond Lee
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Banquet Coordinator
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Kevin Xu" src={kevinx} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Kevin Xu
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Pubic Relation
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Vania Gunawan" src={vaniag} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Vania Gunawan
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Public Relation
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Daniel Vu
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Financial Chair
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Liana Lau" src={lianal} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Liana Lau
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Financial Chair
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Mary Yuen" src={maryy} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Mary Yuen
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Secretary
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Ly Phung" src={lyp} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Ly Phung
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    House Mediator
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+            </Grid>
+        </div>
         </Container>
       </div>
     </ThemeProvider>

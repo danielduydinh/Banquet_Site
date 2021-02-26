@@ -123,6 +123,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: theme.spacing(8, 0, 6),
     backgroundImage: `url(${tDance})`,
+    backgroundSize: 'cover',
     mixBlendMode: 'lighten',
     minHeight: '750px',
     height:'50vh',
@@ -271,14 +272,6 @@ export default function Mainpage() {
                       </Button>
                     </Link>
                   </Grid>
-                  <Grid item>
-                    <Link style={{ textDecoration: 'none' }} to="/skit">
-                      <Button variant="contained" color='#171C20' className={classes.buttons}
-                        onClick={() => handleBanquet(setValue)}>
-                        WATCH THE BANQUET!
-                      </Button>
-                    </Link>
-                  </Grid>
                 </Grid>
               )}
             </LocationContext.Consumer>
@@ -371,12 +364,7 @@ export default function Mainpage() {
             </Grid>
           </Grid>
         </Container>
-
       </div>
     </ThemeProvider>
   )
 }
-
-/*
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3yVPCwnk-I8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-*/
