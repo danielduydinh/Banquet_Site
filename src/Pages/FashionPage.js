@@ -31,6 +31,13 @@ const theme = createMuiTheme({
         fontSize: '24px',
       },
     },
+    body2:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '16px',
+      },
+    },
     h2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '20px',//24
@@ -89,9 +96,9 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     minHeight: '85vh',
     maxWidth: '100%',
-    
+
     flexGrow: 1,
-    
+
   },
   IntroPhoto: {
     paddingTop:'20%',//5vh
@@ -102,7 +109,7 @@ const useStyles = makeStyles((theme) => ({
     height:'50%',//50vh
     maxWidth: '100%',
   },
-  
+
   fashiondescription: {
     width: '100',
     height: '100',
@@ -154,24 +161,19 @@ const useStyles = makeStyles((theme) => ({
     image: `url(${icon1})`,
   },
   ah: {
-    height: '150px',
-    width: '150px',
+    height: '100px',
+    width: '100px',
     marginBottom: '15px',
   },
-  //fashionHeads: {
-   // display: 'flex',
-    //alignItems: 'center',
-    //justifyContent: 'center',
-    //flexDirection: 'column',
-  //},
-  //f: {
-  //  position: 'relative',
-  //  top: '-10vh',
-  //},
   fashionleadtext: {
     paddingBottom: '20px',
-  }
-  
+  },
+  labels: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
+
 }));
 const videoOptions = {
   playerVars: {
@@ -213,11 +215,11 @@ export default function Fashionpage() {
                   Fashion show presents, well, fashion show!
               </Typography>
             </Grid>
-          
+
             </div>
           </Grid>
         </Grid>
-      
+
 
       <Box height="50px"/>
 
@@ -232,20 +234,22 @@ export default function Fashionpage() {
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
                 FASHION LEADS
             </Typography>
-            <Grid container>
-              <Grid item lg={4} md={6}>
+            <Grid container spacing={4}>
+              <Grid item lg={4} className={classes.labels}>
                 <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
               </Grid>
-              <Grid item lg={4} md={6}>
+              <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
               </Grid>
             </Grid>
-            <Grid container>
-              <Grid item lg={4} md={6}>
+            <Grid container spacing={4}>
+              <Grid item lg={4} className={classes.labels}>
                 <Avatar alt="Shannon Young" src={icon2} className={classes.ah}/>
               </Grid>
-              <Grid item lg={4} md={6}>
+              <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
               </Grid>
             </Grid>
 
