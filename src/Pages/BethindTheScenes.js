@@ -35,11 +35,18 @@ const theme = createMuiTheme({
         fontSize: '24px',
       },
     },
+    body2:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '12px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '16px',
+      },
+    },
     h2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '24px',
+      fontSize: '20px',
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
-        fontSize: '42px',
+        fontSize: '24px',
       },
     },
     h3: {
@@ -124,71 +131,19 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: '70%',
     // maxHeight: '30%',
   },
-  Page: {
-    paddingTop: '2vh',
-    flexGrow: 1,
-    backgroundColor: '#171C20',
-    padding: theme.spacing(8, 0, 6),
-    minwidth: '100vw',
-    minHeight: '85vh',
-    maxWidth: '100%',
-  },
   IntroPhoto: {
-    padding: theme.spacing(8, 0, 6),
-    paddingTop: '2vh',
+    paddingTop: '20%',
     backgroundImage: `url(${bts})`,
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right',
     mixBlendMode: 'lighten',
-    margin: 'auto',
-    '@media (min-width: 1200px)':{
-      // width: '100vw',
-      // height: '45vw',
-      right: '0%',
-    },
-    //minHeight: '500px',
-    height:'60vh',
-    width:'99vw',
-  },
-  // videoPlayer: { // the actual video itself
-  //   position: 'absolute', // allows us to scale the video responsively
-  //   top: 0,
-  //   left: 0,
-  //   width: '20%',
-  //   height: '20%',
-  // },
-  entirebox: {
-    paddingTop: '2vh',
-    backgroundImage: `url(${bts})`,
-    backgroundSize: 'contain',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'right',
-    mixBlendMode: 'lighten',
-    margin: 'auto',
-    '@media (min-width: 1200px)':{
-      // width: '100vw',
-      // height: '45vw',
-      right: '0%',
-    },
-    //minHeight: '500px',
-    height:'60vh',
-    width:'99vw',
-  },
-  btsPhoto: {
-    mixBlendMode: 'lighten',
-    paddingTop : '5vh',
-    paddingLeft: '5vh',
-    minHeight:'100vh',
-    width:'99vw',
-    backgroundImage: `url(${bts})`,
-    backgroundSize: 'contain',
-    backgroundPosition: 'right',
-    backgroundRepeat: 'no-repeat',
-    backgroundOrigin: 'padding-box',
-  },
-  PageButtom: {
-    marginTop: theme.spacing(4),
+    // margin: 'auto',
+    height:'50%',
+    maxWidth: '100%',
+    [theme.breakpoints.down('sm')]: {
+      backgroundSize: 'auto',
+    }
   },
   btsdescription: {
     width: '100',
@@ -198,13 +153,13 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '100px',
   },
   contenthead: {
-    height: '150px',
-    width: '150px',
+    height: '100px',
+    width: '100px',
     marginBottom: '15px',
   },
   contentHeads: {
     display: 'flex',
-    alignItems: 'left',
+    alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
   },
@@ -213,19 +168,14 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '20px',
   },
   videoContainer: { // div containing the video
-    margin: 'auto',
+    // margin: 'auto',
     width: '100%',
-    paddingBottom: '33.75%', // for ratio purposes 9/16 is 56.25%
+    paddingBottom: '56.25%', // for ratio purposes 9/16 is 56.25%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
-    height:'100%',
     overflow: 'hidden', // removes any parts of the div that might extend outside it
     zIndex: 1, // idk its just says so in the code haha
     position: 'relative', // make the position relative while allowing us to make the video absolute
-    [theme.breakpoints.down('sm')]: {
-      width: '95%',
-      paddingBottom: '53.4375%',
-    },
   },
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
@@ -234,14 +184,18 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
   },
+  labels: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column'
+  },
 
 }));
 const videoOptions = {
-  height: "390",
-  width: "640",
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
-    autoplay: 1
+    autoplay: 0,
+    rel: 0,
   }
 };
 function _onReady(event) {
@@ -260,79 +214,89 @@ export default function BTSpage() {
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
-    <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-        <Grid item >
-          <Typography component="h1" variant="h1" align="left" color="textPrimary">
-            Behind the
-          </Typography>
-          <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              Scenes
-          </Typography>
-          <Box className={classes.btsdescription} width="30vw">
+    <Container maxWidth="1/4">
+      <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' >
+          <Grid item>
+              <Typography component="h1" variant="h1" align="left" color="textPrimary" margin='auto'>
+                  BEHIND THE SCENES
+              </Typography>
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
                 As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
                  Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
-          </Box>
-        </Grid>
-    </Grid>
-    </div>
-    
-
-
-
-
-        <div className ={classes.PageContent}>
-        <Grid container spacing = {2} width="1500px"  container wrap='nowrap' className={classes.middle}>
-          <Grid item xs={12} lg={8} align='left'>
-              <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
-                    CONTENT LEADS
-                </Typography>
-              <Grid container>
-                    <Grid item lg={4} md={6}>
-                        <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-                    </Grid>
-                    <Grid item lg={4} md={6}>
-                        <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-                        <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                    </Grid>
-              </Grid>
-              <Box height="20px"/>
-              <Grid container>
-                <Grid item lg={4} md={6}>
-                  <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-                </Grid>
-                <Grid item lg={4} md={6}>
-                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item lg={4} md={6}>
-                  <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-                </Grid>
-                <Grid item lg={4} md={6}>
-                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                </Grid>
-              </Grid>
-              </Grid> 
-          {/* <Grid container spacing ={2}> */}
-          <Grid item xs={12} lg={12} spacing ={0}>
-          <div className= {classes.videoContainer}>
-          {/* <Typography component="h1" variant="h1" align="left" color="textPrimary"> */}
-            <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
-          {/* </Typography> */}
-          </div>
           </Grid>
-          
-          {/* </Grid> */}
-   
-   
-      {/* </div> */}
       </Grid>
 
-      </div> 
+      <Box height="50px"/>
+
+      <Grid container spacing = {2}>
+          {/*
+            <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
+                  CONTENT LEADS
+              </Typography>
+                  <Grid item lg={4} md={6}>
+                      <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                      <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                      <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+                  </Grid>
+                  <Grid item lg={4} md={6}>
+                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                  </Grid> */}
+                <Grid item lg={4} sm={8} xs={12} spacing={2}>
+                  <Typography paddingBottom="20px" component="h3" variant="h3" align="center" color="textPrimary">
+                      CONTENT LEADS
+                  </Typography>
+                  <Grid container spacing={4}>
+                      <Grid item lg={4} >
+                          <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+                      </Grid>
+                      <Grid item lg={4}  className={classes.labels}>
+                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                      </Grid>
+                  </Grid>
+                  <Grid container spacing={4}>
+                      <Grid item lg={4} >
+                          <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
+                      </Grid>
+                      <Grid item lg={4} className={classes.labels}>
+                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                      </Grid>
+                  </Grid>
+                  <Grid container spacing={4}>
+                      <Grid item lg={4} >
+                          <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+                      </Grid>
+                      <Grid item lg={4} className={classes.labels}>
+                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                      </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item xs={12} lg={8}>
+                    <div className= {classes.videoContainer}>
+                        <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+                    </div>
+                </Grid>
+        </Grid>
+        </Container>
+      </div>
+
+
       </ThemeProvider>
   )
 }
