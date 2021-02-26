@@ -98,7 +98,7 @@ const theme = createMuiTheme({
 });
 const useStyles = makeStyles((theme) => ({
   PageContent: {
-    paddingTop: '8vh',
+    paddingTop: '100px',
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
@@ -192,13 +192,13 @@ const useStyles = makeStyles((theme) => ({
     width: '100',
     height: '100',
   },
+  middle: {
+    paddingTop: '100px',
+  },
   contenthead: {
     height: '150px',
     width: '150px',
     marginBottom: '15px',
-  },
-  Video: {
-    marginLeft: "-7%",
   },
   contentHeads: {
     display: 'flex',
@@ -215,8 +215,34 @@ const useStyles = makeStyles((theme) => ({
   // },
   contentleadtext: {
     paddingBottom: '20px',
+<<<<<<< HEAD
   }
   
+=======
+  },
+  videoContainer: { // div containing the video
+    margin: 'auto',
+    width: '100%',
+    paddingBottom: '33.75%', // for ratio purposes 9/16 is 56.25%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    height:'100%',
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'relative', // make the position relative while allowing us to make the video absolute
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+      paddingBottom: '53.4375%',
+    },
+  },
+  videoPlayer: { // the actual video itself
+    position: 'absolute', // allows us to scale the video responsively
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+>>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
 }));
 const videoOptions = {
   height: "390",
@@ -269,10 +295,10 @@ export default function BTSpage() {
       // Good luck!
       }
         {/* // <div className= {classes.videoContainer}> */}
-        
-        <Grid container spacing = {2} width="1500px"  container wrap='nowrap' paddingTop='50px'>
+        <Grid container spacing = {2} width="1500px"  container wrap='nowrap' className={classes.middle}>
           <Grid item xs={12} lg={8} align='left'>
             <div className = {classes.contentHeads}> 
+<<<<<<< HEAD
               <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                     CONTENT LEADS
                 </Typography>
@@ -284,8 +310,20 @@ export default function BTSpage() {
                     <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
                     <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
+=======
+              <Typography className={classes.contentleadtext} component="h3" variant="h3" color="textPrimary">
+                CONTENT LEADS
+              </Typography>
+              <Grid container>
+                <Grid item lg={4} md={6}>
+                  <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
                 </Grid>
-                <Box height="20px"/>
+                <Grid item lg={4} md={6}>
+                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+>>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
+                </Grid>
+              </Grid>
+              <Box height="20px"/>
                 <Grid container>
                   <Grid item lg={4} md={6}>
                     <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
@@ -304,6 +342,7 @@ export default function BTSpage() {
                     <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                   </Grid>
                 </Grid>
+<<<<<<< HEAD
             </div> 
           </Grid>
           {/* <Grid container spacing ={2}> */}
@@ -315,7 +354,16 @@ export default function BTSpage() {
           {/* </div> */}
           </Grid>
           {/* </Grid> */}
+=======
+              </div> 
+            </Grid>
+          <Grid item xs={12} lg={8}>
+            <div className={classes.videoContainer}>
+              <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
+            </div>
+>>>>>>> e8adf7fb2f5b226f76eaa56848d49b137b00a75c
           </Grid>
+      </Grid> 
       {/* </div> */}
       </Container>
     </div>
