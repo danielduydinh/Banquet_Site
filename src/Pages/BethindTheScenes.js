@@ -9,11 +9,13 @@ import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import bts from '../Photos/bts_2.png'
-import icon1 from '../Photos/KennethNg.jpg';
-import icon2 from '../Photos/AustinLiu.jpg';
-import icon3 from '../Photos/FanLiu.jpg';
+
 import YouTube from "react-youtube";
-import Avatar from '@material-ui/core/Avatar';
+
+import icon2 from '../Photos/CommitteeHeads/AustinLiu.jpg';
+import icon1 from '../Photos/CommitteeHeads/KennethNg.jpg';
+import icon3 from '../Photos/CommitteeHeads/FanLiu.jpg';
+import Avatar from '@material-ui/core/avatar';
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
@@ -206,17 +208,33 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column',
   },
-  // videoPlayer: { // the actual video itself
-  //   position: 'absolute', // allows us to scale the video responsively
-  //   top: 0,
-  //   left: 0,
-  //   width: '100%',
-  //   height: '100%',
-  // },
+
   contentleadtext: {
     paddingBottom: '20px',
-  }
-  
+  },
+  videoContainer: { // div containing the video
+    margin: 'auto',
+    width: '100%',
+    paddingBottom: '33.75%', // for ratio purposes 9/16 is 56.25%
+    display: 'block', // takes up the whole width of the div
+    borderRadius: '16px', // curves the edges of the div
+    height:'100%',
+    overflow: 'hidden', // removes any parts of the div that might extend outside it
+    zIndex: 1, // idk its just says so in the code haha
+    position: 'relative', // make the position relative while allowing us to make the video absolute
+    [theme.breakpoints.down('sm')]: {
+      width: '95%',
+      paddingBottom: '53.4375%',
+    },
+  },
+  videoPlayer: { // the actual video itself
+    position: 'absolute', // allows us to scale the video responsively
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+  },
+
 }));
 const videoOptions = {
   height: "390",
@@ -242,82 +260,79 @@ export default function BTSpage() {
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
-      <Container maxWidth="1/4">
-      <div>
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-          <Grid item >
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
-              Behind the
-            </Typography>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+    <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
+        <Grid item >
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
+            Behind the
+          </Typography>
+          <Typography component="h1" variant="h1" align="left" color="textPrimary">
               Scenes
-            </Typography>
-            <Box className={classes.btsdescription} width="30vw">
+          </Typography>
+          <Box className={classes.btsdescription} width="30vw">
               <Typography component="body1" variant="body1" align="left" color="textPrimary">
-              As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
-               Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
+                As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
+                 Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
-            </Box>
-          </Grid>
-        </Grid> 
-      </div>
-      {
-      // You can try containing this portion into a grid so you can add other text and stuff
-      // currently, this is pretty darn big, so try playing around with the numbers here or setting your own
-      // width and height. Play around with different screen size by pressing F12 in the Chrome tab you're
-      // working in
-      // Good luck!
-      }
-        {/* // <div className= {classes.videoContainer}> */}
+          </Box>
+        </Grid>
+    </Grid>
+    </div>
+    
+
+
+
+
+        <div className ={classes.PageContent}>
         <Grid container spacing = {2} width="1500px"  container wrap='nowrap' className={classes.middle}>
           <Grid item xs={12} lg={8} align='left'>
-            <div className = {classes.contentHeads}> 
               <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
                     CONTENT LEADS
                 </Typography>
-                <Grid container>
-                  <Grid item lg={4} md={6}>
-                    <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
-                </Grid>
+              <Grid container>
+                    <Grid item lg={4} md={6}>
+                        <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+                    </Grid>
+                    <Grid item lg={4} md={6}>
+                        <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                        <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                    </Grid>
+              </Grid>
               <Box height="20px"/>
-                <Grid container>
-                  <Grid item lg={4} md={6}>
-                    <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
+              <Grid container>
+                <Grid item lg={4} md={6}>
+                  <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
                 </Grid>
-                <Grid container>
-                  <Grid item lg={4} md={6}>
-                    <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                    <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-                    <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
+                <Grid item lg={4} md={6}>
+                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
                 </Grid>
-            </div> 
-          </Grid>
+              </Grid>
+              <Grid container>
+                <Grid item lg={4} md={6}>
+                  <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+                </Grid>
+                <Grid item lg={4} md={6}>
+                  <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                  <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                </Grid>
+              </Grid>
+              </Grid> 
           {/* <Grid container spacing ={2}> */}
           <Grid item xs={12} lg={12} spacing ={0}>
-          {/* <div className= {classes.videoContainer}> */}
+          <div className= {classes.videoContainer}>
           {/* <Typography component="h1" variant="h1" align="left" color="textPrimary"> */}
             <YouTube className={classes.videoPlayer} videoId="5qap5aO4i9A" opts={videoOptions} onReady={_onReady}  />
           {/* </Typography> */}
-          {/* </div> */}
+          </div>
           </Grid>
+          
           {/* </Grid> */}
-      </Grid> 
+   
+   
       {/* </div> */}
-      </Container>
-    </div>
-  </ThemeProvider>
+      </Grid>
+
+      </div> 
+      </ThemeProvider>
   )
 }
