@@ -33,9 +33,9 @@ const theme = createMuiTheme({
     },
     h2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '24px',
+      fontSize: '20px',//24
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
-        fontSize: '42px',
+        fontSize: '24px',//42
       },
     },
     h3: {
@@ -89,24 +89,20 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     minHeight: '85vh',
     maxWidth: '100%',
+    
+    flexGrow: 1,
+    
   },
   IntroPhoto: {
-    padding: theme.spacing(8, 0, 6),
+    paddingTop:'20%',//5vh
     backgroundImage: `url(${fashion})`,
-    backgroundPosition: 'right',//
-    mixBlendMode: 'lighten',
-    height:'50vh',
-    width:'99vw',
-    //'@media (min-width: 1200px)':{
-     // width: '60vw',
-      //right: '0%',
-    //},
-    maxWidth: '100%',
-    flexGrow: '1',
+    backgroundPosition: 'right',
     backgroundRepeat: 'no-repeat',
-    zIndex: 0,
-    flexWrap: 'wrap',
+    mixBlendMode: 'lighten',
+    height:'50%',//50vh
+    maxWidth: '100%',
   },
+  
   fashiondescription: {
     width: '100',
     height: '100',
@@ -162,16 +158,20 @@ const useStyles = makeStyles((theme) => ({
     width: '150px',
     marginBottom: '15px',
   },
-  fashionHeads: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
+  //fashionHeads: {
+   // display: 'flex',
+    //alignItems: 'center',
+    //justifyContent: 'center',
+    //flexDirection: 'column',
+  //},
+  //f: {
+  //  position: 'relative',
+  //  top: '-10vh',
+  //},
   fashionleadtext: {
     paddingBottom: '20px',
   }
-
+  
 }));
 const videoOptions = {
   playerVars: {
@@ -198,21 +198,27 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-
-      <div>
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' paddingTop='50px'>
-          <Grid item className={classes.entirebox}>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' spacing={3} paddingTop='50px'>
+          <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
+          <div className = {classes.f}>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>
                 FASHION
-            </Typography>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary">
+                <br></br>
                 SHOW
             </Typography>
-            <Box className={classes.fashiondescription} width="40vw">
-            </Box>
+            <Grid item>
+              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
+                  Fashion is nothing without people, and CSA is nothing without our beloved members.
+                  <br></br>
+                  Fashion show presents, well, fashion show!
+              </Typography>
+            </Grid>
+          
+            </div>
           </Grid>
         </Grid>
-      </div>
+      
+
       <Box height="50px"/>
 
       <Grid container spacing ={2}>
@@ -234,7 +240,6 @@ export default function Fashionpage() {
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
               </Grid>
             </Grid>
-            <Box height="20px"/>
             <Grid container>
               <Grid item lg={4} md={6}>
                 <Avatar alt="Shannon Young" src={icon2} className={classes.ah}/>
