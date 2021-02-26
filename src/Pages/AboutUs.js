@@ -169,7 +169,7 @@ export default function AboutUs() {
                 </Grid>
             </div>
           </Grid>
-          <Box width="100%" paddingTop="20vh">
+          <Box width="100%" paddingTop="50px">
             <Typography variant="body1" align="center" color="textPrimary">
               UNIVERSITY OF CALIFORNIA | SANTA CRUZ
             </Typography>
@@ -195,15 +195,13 @@ export default function AboutUs() {
             friendships, and to provide a second home while at home.
             </Typography>
           </Box>
-          <Box width="100%" paddingTop="16vh">
+          <Box width="100%" paddingTop="100px">
             <Typography variant="h1" align="center" color="textPrimary">
             CSA OFFICERS
             <br/>
             (2020 - 2021)
             </Typography>
           </Box>
-
-
           <div className={classes.GM}>
            <Grid container spacing={3} justify='center'>
              <Grid item xs={2.4}>
@@ -217,9 +215,7 @@ export default function AboutUs() {
                      Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -235,9 +231,7 @@ export default function AboutUs() {
                      Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -253,9 +247,7 @@ export default function AboutUs() {
                     Banquet Coordinator
                    </Typography>
                    <Typography variant="body2" component="p" height='100px'>
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     2nd Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -271,9 +263,7 @@ export default function AboutUs() {
                     Banquet Coordinator
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     3rd Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -286,12 +276,10 @@ export default function AboutUs() {
                      Kevin Xu
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
-                    Pubic Relation
+                    Pubic Relations
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -304,12 +292,10 @@ export default function AboutUs() {
                      Vania Gunawan
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
-                    Public Relation
+                    Public Relations
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -325,9 +311,7 @@ export default function AboutUs() {
                     Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -343,9 +327,7 @@ export default function AboutUs() {
                     Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     4th Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -361,9 +343,7 @@ export default function AboutUs() {
                     Secretary
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     2nd Year
                    </Typography>
                  </CardContent>
                </Card>
@@ -379,9 +359,7 @@ export default function AboutUs() {
                     House Mediator
                    </Typography>
                    <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
+                     3rd Year
                    </Typography>
                  </CardContent>
                </Card>
