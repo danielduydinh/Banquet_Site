@@ -150,7 +150,7 @@ export default function AboutUs() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-
+        <Container maxWidth="1/4">
           <Grid className={classes.AUBKGP} align="center">
             <div className={classes.photopadding}>
                 <Grid className={classes.GroupPhoto} align="center">
@@ -377,6 +377,7 @@ export default function AboutUs() {
              </Grid>
             </Grid>
         </div>
+        </Container>
       </div>
     </ThemeProvider>
   )
