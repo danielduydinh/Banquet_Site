@@ -9,11 +9,13 @@ import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import bts from '../Photos/bts_2.png'
-import icon1 from '../Photos/KennethNg.jpg';
-import icon2 from '../Photos/AustinLiu.jpg';
-import icon3 from '../Photos/FanLiu.jpg';
+
 import YouTube from "react-youtube";
-import Avatar from '@material-ui/core/Avatar';
+
+import icon1 from '../Photos/CommitteeHeads/AustinLiu.jpg';
+import icon2 from '../Photos/CommitteeHeads/KennethNg.jpg';
+import icon3 from '../Photos/CommitteeHeads/FanLiu.jpg';
+
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
@@ -274,7 +276,7 @@ export default function BTSpage() {
           </Box>
         </Grid>
     </Grid>
-    
+
 
 {/*
 
