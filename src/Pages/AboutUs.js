@@ -111,22 +111,19 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 65,
   },
   cardContent: {
+    height: 400,
     display:'flex',
     flexDirection: "column",
     alignContent: 'center',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
+
   GM: {
     paddingTop: '5vh',
   },
@@ -202,14 +199,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Esmond Tsai
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                     Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -223,14 +217,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Dat Vu
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                     Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -244,14 +235,29 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary" height='100px'>
+                     Gloria Qiu
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
+                   <Typography variant="h6" color="textPrimary" height='100px'>
+                    Banquet Coordinator
                    </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="body2" component="p" height='100px'>
+                     well meaning and kindly.
+                     <br />
+                     {'"a benevolent smile"'}
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Raymond Lee
+                   </Typography>
+                   <Typography variant="h6" color="textPrimary">
+                    Banquet Coordinator
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -265,14 +271,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Kevin Xu
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    Pubic Relation
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -286,14 +289,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Vania Gunawan
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    Public Relation
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -307,14 +307,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Daniel Vu
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -328,14 +325,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Liana Lau
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -349,14 +343,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Mary Yuen
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    Secretary
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
@@ -370,35 +361,11 @@ export default function AboutUs() {
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Ly Phung
                    </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
-                   </Typography>
-                   <Typography variant="body2" component="p">
-                     well meaning and kindly.
-                     <br />
-                     {'"a benevolent smile"'}
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.4}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
-                  <Avatar alt="Daniel Vu" src={Daniel} className={classes.avatar}/>
-                   <Typography variant="h1" className={classes.title} color="textPrimary">
-                     Name
-                   </Typography>
-                   <Typography variant="h5" component="h2">
-                     be{bull}nev{bull}o{bull}lent
-                   </Typography>
-                   <Typography className={classes.pos} color="textSecondary">
-                     adjective
+                   <Typography variant="h6" color="textPrimary">
+                    House Mediator
                    </Typography>
                    <Typography variant="body2" component="p">
                      well meaning and kindly.
