@@ -85,12 +85,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     fontSize: '70px',
     fontWeight: 'bold',
-    [theme.breakpoints.down('md')]: {
+    '@media screen and (max-width: 1282px)':{
       justifyContent: 'space-between',
     },
   },
   mobileMenu: {
-    '@media screen and (max-width: 1280px)':{
+    '@media screen and (max-width: 1282px)':{
       display: 'flex',
 
     },
@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
   appBarTabs:{
-    [theme.breakpoints.down('md')]: {
+    '@media screen and (max-width: 1282px)':{
       display: 'none',
     },
   },
@@ -138,7 +138,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    
+
   },
   footerRight: {
     display: 'flex',
@@ -174,8 +174,8 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
     },
   },
-  
- 
+
+
   socialText: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
