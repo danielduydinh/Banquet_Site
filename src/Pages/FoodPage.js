@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -15,11 +14,6 @@ import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
-import myImg from './Photos/foood.jpg';
-import pic from './Photos/dat.jpg';
-import pic2 from './Photos/DanielPFP.jpg';
-import pizza from './Photos/pizza.jpg';
-import mac from './Photos/mac.jpg';
 import withWidth, { isWidthUp } from '@material-ui/core/withWidth';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import InfoIcon from '@material-ui/icons/Info';

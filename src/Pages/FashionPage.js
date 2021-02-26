@@ -200,7 +200,7 @@ export default function Fashionpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' spacing={3} paddingTop='50px'>
+        <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' spacing={3} paddingTop='50px'>
           <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
           <div className = {classes.f}>
             <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>

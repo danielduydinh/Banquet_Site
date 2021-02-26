@@ -27,12 +27,10 @@ import Skitpage from '../Pages/SkitPage.js';
 import Fashionpage from '../Pages/FashionPage.js';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Toolbar from '@material-ui/core/Toolbar';
-import Popover from '@material-ui/core/Popover';
 import popo from '../Photos/popo.png';
 import AboutUs from '../Pages/AboutUs.js';
 import BTSpage from '../Pages/BethindTheScenes';
-import SvgIcon from '@material-ui/core/SvgIcon';
+
 
 const theme = createMuiTheme({
   typography: {
@@ -237,9 +235,9 @@ export default function Appbar(props) {
     setValue(newValue);
   };
 
-  const navFacebook = () => {
-
-  }
+  // const navFacebook = () => {
+  //
+  // }
 
   React.useEffect(() => {
     console.log('appbar running use effect');

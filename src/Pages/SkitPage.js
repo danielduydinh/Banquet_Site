@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,11 +6,8 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
-import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
-import fashion from '../Photos/fashion.png';
 import icon1 from '../Photos/CommitteeHeads/BrianLiu.jpg';
-import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
 import rectangle from '../Photos/redrectangle.png';
 import Avatar from '@material-ui/core/Avatar';
 import skitphoto from '../Photos/CSASkitBanner.png';
@@ -202,7 +198,7 @@ export default function Skitpage() {
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
       <Container maxWidth="1/4">
-        <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' spacing={3} paddingTop='50px'>
+        <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' spacing={3} paddingTop='50px'>
           <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
           <div className = {classes.f}>
             <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>

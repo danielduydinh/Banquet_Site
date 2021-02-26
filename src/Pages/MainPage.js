@@ -11,17 +11,13 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import Carousel from 'react-bootstrap/Carousel'
 import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-import { spacing } from '@material-ui/system';
-import Paper from '@material-ui/core/Paper';
 import tDance from '../Photos/tdance.png';
 import nax from '../Photos/nax.png';
-import fashion from '../Photos/fashion.png';
 import tpose from '../Photos/tpose.jpg';
 import bts from '../Photos/btsphoto.jpg';
 import sworks from '../Photos/sworksphoto.jpg';
 import aboutphoto from '../Photos/aboutusphoto.jpg';
 import skitphoto from '../Photos/skitphoto.png';
-import Foodpage from '../Pages/FoodPage.js';
 import LocationContext from '../Components/LocationContext.js';
 import YouTube from "react-youtube";
 import AOS from 'aos';

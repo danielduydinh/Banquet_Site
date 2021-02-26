@@ -12,14 +12,12 @@ import "../../node_modules/bootstrap/dist/css/bootstrap.css"
 import GP from './Photos/AboutUs.jpg';
 import WWABGP from './Photos/WWABGP.png';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar';
-import Daniel from './Photos/DanielPFP.jpg'
 
 
 //Office Heads Pics
-import danielv from '../Photos/OfficeHeads/DanielVu.jpg';
+import Daniel from './Photos/DanielPFP.jpg'
 import datv from '../Photos/OfficeHeads/DatVu.jpg';
 import esmondt from '../Photos/OfficeHeads/EsmondTsai.jpg';
 import gloriaq from '../Photos/OfficeHeads/GloriaQiu.JPG';
@@ -147,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
 export default function AboutUs() {
   const classes = useStyles();
   const [index, setIndex] = React.useState(0);
-  const bull = <span className={classes.bullet}>•</span>;
+
 
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
@@ -165,7 +163,7 @@ export default function AboutUs() {
           <Grid container className={classes.AUBKGP} >
             <div className={classes.photopadding}>
                 <Grid item xs={12}  align="center">
-                  <img src={GP} className={classes.GroupPhoto} alt="Group photo"/>
+                  <img src={GP} className={classes.GroupPhoto} alt="Groupphoto"/>
                 </Grid>
             </div>
           </Grid>
