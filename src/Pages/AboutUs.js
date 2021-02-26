@@ -18,6 +18,19 @@ import Avatar from '@material-ui/core/Avatar';
 import Daniel from './Photos/DanielPFP.jpg'
 
 
+//Office Heads Pics
+import icon1 from '../Photos/OfficeHeads/DanielVu.jpg';
+import icon2 from '../Photos/OfficeHeads/DatVu.jpg';
+import icon3 from '../Photos/OfficeHeads/EsmondTsai.jpg';
+import icon4 from '../Photos/OfficeHeads/GloriaQiu.JPG';
+import icon5 from '../Photos/OfficeHeads/KevinXu.jpg';
+import icon6 from '../Photos/OfficeHeads/LianaLau.jpg';
+import icon7 from '../Photos/OfficeHeads/LyPhung.jpg';
+import icon8 from '../Photos/OfficeHeads/MaryYuen.jpg';
+import icon9 from '../Photos/OfficeHeads/RaymondLee.jpg';
+//Icon10 for Vania
+import icon10 from '../Photos/OfficeHeads/DanielVu.jpg';
+
 const theme = createMuiTheme({
   typography: {
     margin: 'auto',
