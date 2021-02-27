@@ -200,11 +200,6 @@ export default function Mainpage() {
     setValue('fashion');
   }
 
-  // there isnt a banquet page atm so this links to skit
-  const handleBanquet = (setValue) => {
-    setValue('skit');
-  }
-
   React.useEffect(() => {
     console.log('Scrolling to top in mainpage');
     window.scrollTo(0, 0);
