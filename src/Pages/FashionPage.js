@@ -14,6 +14,9 @@ import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
 import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
 import rectangle from '../Photos/redrectangle.png';
 import Avatar from '@material-ui/core/Avatar';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {
@@ -200,7 +203,7 @@ export default function Fashionpage() {
       <Container maxWidth="1/4">
         <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' spacing={3} paddingTop='50px'>
           <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
-          <div className = {classes.f}>
+          <div className = {classes.f} data-aos="fade-right">
             <Typography component="h1" variant="h1" align="left" color="textPrimary">
                 FASHION
                 <br></br>
@@ -224,11 +227,11 @@ export default function Fashionpage() {
 
       <Grid container spacing ={2}>
         <Grid item lg={8} xs = {12}>
-          <div className= {classes.videoContainer}>
+          <div className= {classes.videoContainer} data-aos="fade-right">
             <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
           </div>
         </Grid>
-        <Grid item lg={4} sm={8} xs={12}>
+        <Grid item lg={4} sm={8} xs={12} data-aos="fade-right">
           <div className = {classes.fashionHeads}>
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
                 FASHION LEADS

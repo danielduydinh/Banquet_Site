@@ -25,6 +25,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar';
 // import { Block } from '@material-ui/icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {
@@ -206,6 +209,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridContainer: {
     paddingTop: '5vh',
+    maxWidth: '100%',
   },
   card: {
     minWidth: 337,
@@ -248,7 +252,7 @@ export default function BTSpage() {
   return (
     <ThemeProvider theme={theme}>
     <div className={classes.PageContent}>
-    <Container maxWidth="1/4">
+    <Container maxWidth="100%">
       <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' >
           <Grid item>
               <Typography component="h1" variant="h1" align="left" color="textPrimary" margin='auto'>
@@ -329,13 +333,12 @@ export default function BTSpage() {
                 </Grid>
         </Grid>
         </Container>
-
-        <Box width="100%" paddingTop="100px">
+        <Box width="100%" paddingTop="100px" data-aos="fade-right">
           <Typography variant="h3" align="center" color="textPrimary">
             GRAPHIC LEADS
           </Typography>
         </Box>
-        <div className={classes.gridContainer}>
+        <div className={classes.gridContainer} data-aos="fade-right">
            <Grid container spacing={3} justify='center'>
              <Grid item xs={2.5}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
@@ -392,12 +395,12 @@ export default function BTSpage() {
           </Grid>
         </div>
 
-        <Box width="100%" paddingTop="100px">
+        <Box width="100%" paddingTop="100px" data-aos="fade-right">
           <Typography variant="h3" align="center" color="textPrimary">
             WEBSITE LEADS
           </Typography>
         </Box>
-        <div className={classes.gridContainer}>
+        <div className={classes.gridContainer} data-aos="fade-left">
            <Grid container spacing={3} justify='center'>
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >

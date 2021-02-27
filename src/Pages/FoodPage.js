@@ -62,6 +62,9 @@ import nicolepaper4 from '../ContentSub/PaperCutting/Nicole(4).jpg';
 import samuelpaper from '../ContentSub/PaperCutting/Samuel.jpg';
 
 import YouTube from "react-youtube";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const videoOptions = {
   playerVars: {
@@ -271,11 +274,11 @@ export default function Foodpage() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
-          <Typography component="h1" variant="h1" align="center" color="textPrimary" gutterBottom>
+          <Typography component="h1" variant="h1" align="center" color="textPrimary" gutterBottom data-aos="fade-right">
             STUDENT WORKS
           </Typography>
         </Container>
-        <div className={classes.blurb}>
+        <div className={classes.blurb} data-aos="fade-right">
           <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
             This year, we asked our members to submit works showcasing their creativity, interests, and experiences through a cultural lens.
             We wanted to highlight each of our member's cultural experiences and maybe showcase some recipes while we're at it. Take a look at what we've
@@ -283,7 +286,7 @@ export default function Foodpage() {
           </Typography>
         </div>
         <Box height="50px"/>
-          <div className={classes.gridListContainer}>
+          <div className={classes.gridListContainer} data-aos="fade-left">
             <GridList className= {classes.gridList} spacing = {15} cellHeight={300} cols={getGridListCols}>
               {tileData.map((tile) => (
                   <GridListTile className={classes.Tile} key={tile.img} cols={1} >
