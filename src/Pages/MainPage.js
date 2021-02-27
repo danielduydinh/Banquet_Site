@@ -254,14 +254,14 @@ export default function Mainpage() {
             </Typography>
           </Box>
           <Box p={2} width="60vw"  margin="auto" textAlign= 'center'>
-            <Typography component="body1" variant="body1" color="textPrimary" align="justify" gutterBottom>
+            <Typography component="body1" variant="body1" color="textPrimary" align="center" gutterBottom>
               Banquet has been strange this year, with communication and planning being strictly online.
               As a result, the experience accrued through past banquets is not as applicable.
               Banquet has been a journey, and we have embarked on a new, different path.
             </Typography>
             <br/>
             <br/>
-            <Typography component="body1" variant="body1" color="textPrimary" align="justify" gutterBottom>
+            <Typography component="body1" variant="body1" color="textPrimary" align="center" gutterBottom>
               However, the core beliefs of banquet have not changed; banquet is hosted by Asian-Americans
               for the celebration of Asian-American culture and heritage. This much will never change.
               Our exhibition of this culture and heritage encapsulate what unites us under the CSA banner,
@@ -287,6 +287,7 @@ export default function Mainpage() {
           </div>
           <div className={classes.DonationDiv}>
             <div data-aos="fade-right">
+            <Box p={2} width="60vw"  margin="auto" textAlign= 'center'>
             <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
               OUR FUNDRAISER WITH THE CHINATOWN COMMUNITY DEVELOPMENT CENTER
             </Typography>
@@ -294,15 +295,12 @@ export default function Mainpage() {
                 At the start of the pandemic, chinatowns across the United States have been devastated as once bustling streets are now ghost towns.
                 Local businesses owners and residents have been harmed due to the horrible association their livelihood to sickness and disease.
                 Our Chinese Student Association’s Lunar New Year Celebration is partnering up with Chinatown Community Development Center to grass
-                root organizing to heal a community that has been deeply impacted by the pandemic.
-                <br/>
-                “Many SF Chinatown restaurants are on the brink of closing permanently. With your support they can re-open their doors and re-hire
-                employees to provide means for SRO residents in need.”
-                <br/>
-                Your donations will be directly impacting Chinese Americans by preserving our rich Asian American history and the
-                legacy of America’s longest-standing and most resilient Chinatown. No donation is too small and all proceeds will
-                be directly be going to small local businesses in Chinatown.
+                root organizing to heal a community that has been deeply impacted by the pandemic. “Many SF Chinatown restaurants are on the brink of closing permanently.
+                With your support they can re-open their doors and re-hire employees to provide means for SRO residents in need.” Your donations will be directly impacting
+                Chinese Americans by preserving our rich Asian American history and the legacy of America’s longest-standing and most resilient Chinatown. No donation is
+                too small and all proceeds will be directly be going to small local businesses in Chinatown.
             </Typography>
+            </Box>
             </div>
             <Box height="50px"/>
             <Button variant="contained" color="#171C20" className={classes.buttons}
