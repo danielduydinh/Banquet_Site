@@ -205,8 +205,9 @@ export default function Skitpage() {
                 SKIT
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
-                  Skit blah blah blah
+              <Typography component="body1" variant="body1" align="left" color="textPrimary" gutterBottom>
+                  Skit this year has been difficult during the pandemic. Nonetheless, we were able to produce
+                  something truly special even when apart. We hope you enjoy the show.
               </Typography>
             </Grid>
 

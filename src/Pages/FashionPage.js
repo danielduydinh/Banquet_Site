@@ -209,12 +209,11 @@ export default function Fashionpage() {
                 SHOW
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
-              Fashion Show is about tying modern fashion, such as streetwear and everyday clothing,
-              to traditional clothing, such as QiPaos. Its a series of short skits compiled by members of CSA,
-              each of them being being unique and exciting. The Fashion Show members used their creativity
-              and their wardrobe to express themselves as individuals.
-
+              <Typography component="body1" variant="body1" align="left" color="textPrimary" gutterBottom>
+                Fashion Show is about tying modern fashion, such as streetwear and everyday clothing,
+                to traditional clothing, such as Qipaos. It's a series of short skits compiled by members of CSA,
+                each of them being being unique and exciting. The Fashion Show members used their creativity
+                and their wardrobe to express themselves as individuals.
               </Typography>
             </Grid>
 

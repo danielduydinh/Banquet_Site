@@ -20,6 +20,7 @@ import aboutphoto from '../Photos/aboutusphoto.jpg';
 import skitphoto from '../Photos/skitphoto.png';
 import LocationContext from '../Components/LocationContext.js';
 import YouTube from "react-youtube";
+import ccdc from '../Photos/CCDC.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import {
@@ -161,6 +162,22 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '100%',
   },
+  DonationDiv: {
+    width: '70%',
+    margin: 'auto',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  banner: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  ccdcpic: {
+    width: "60%",
+    height: "auto",
+  },
 }));
 
 const videoOptions = {
@@ -214,6 +231,7 @@ export default function Mainpage() {
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
         <Container maxWidth="1/4">
+          <div className={classes.banner} margin="auto">
             <Grid className={classes.IntroPhoto} container wrap='nowrap' spacing={3}>
               <Grid item>
                 <Typography underline="always" variant="h1" align="left" color="textPrimary" gutterBottom>
@@ -229,6 +247,7 @@ export default function Mainpage() {
                 </Grid>
               </Grid>
             </Grid>
+            </div>
             <Box height="100px"/>
             <div className= {classes.videoContainer}>
               <YouTube className={classes.videoPlayer} videoId="3yVPCwnk-I8" opts={videoOptions} onReady={_onReady}  />
@@ -271,6 +290,42 @@ export default function Mainpage() {
                 </Grid>
               )}
             </LocationContext.Consumer>
+          </div>
+          <div className={classes.DonationDiv}>
+            <div data-aos="fade-right">
+            <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
+              OUR FUNDRAISER WITH THE CHINATOWN COMMUNITY DEVELOPMENT CENTER
+            </Typography>
+            <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
+                At the start of the pandemic, chinatowns across the United States have been devastated as once bustling streets are now ghost towns.
+                Local businesses owners and residents have been harmed due to the horrible association their livelihood to sickness and disease.
+                Our Chinese Student Association’s Lunar New Year Celebration is partnering up with Chinatown Community Development Center to grass
+                root organizing to heal a community that has been deeply impacted by the pandemic.
+                <br/>
+                “Many SF Chinatown restaurants are on the brink of closing permanently. With your support they can re-open their doors and re-hire
+                employees to provide meas for SRO residents in need.”
+                <br/>
+                Your donations will be directly impacting Chinese Americans by preserving our rich Asian American history and the
+                legacy of America’s longest-standing and most resilient Chinatown. No donation is too small and all proceeds will
+                be directly be going to small local businesses in Chinatown.
+            </Typography>
+            </div>
+            <Box height="50px"/>
+            <Button variant="contained" color="#171C20" className={classes.buttons}
+              onClick={() => window.open("https://www.facebook.com/donate/231640755302806/825935011299674/", "_blank")}
+              data-aos="fade-right">
+              CHECK OUT OUR FUNDRAISER
+            </Button>
+            <Box height="50px"/>
+            <img src={ccdc} alt="ccdc" className={classes.ccdcpic} data-aos="fade-right"/>
+            <Box height="50px"/>
+          </div>
+          <div className={classes.DonationDiv}>
+            <Typography component="h1" underline="always" variant="h1" align="center" color="textPrimary" gutterBottom>
+            <Box height="50px"/>
+              CHECK OUT OUR OTHER PAGES
+            </Typography>
+            <Box height="50px"/>
           </div>
           <Grid className={classes.carouselContainer}>
             <Grid item paddingBottom="15vh">

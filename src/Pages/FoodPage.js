@@ -199,6 +199,13 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
   },
+  blurb: {
+    width: "70%",
+    margin: "auto",
+    display: "flex",
+    justifyContent:"center",
+    alignItems: "center",
+  },
 }));
 const DialogTitle = withStyles(useStyles)((props) => {
   const { children, classes, onClose, ...other } = props;
@@ -268,6 +275,14 @@ export default function Foodpage() {
             STUDENT WORKS
           </Typography>
         </Container>
+        <div className={classes.blurb}>
+          <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
+            This year, we asked our members to submit works showcasing their creativity, interests, and experiences through a cultural lens.
+            We wanted to highlight each of our member's cultural experiences and maybe showcase some recipes while we're at it. Take a look at what we've
+            worked on!
+          </Typography>
+        </div>
+        <Box height="50px"/>
           <div className={classes.gridListContainer}>
             <GridList className= {classes.gridList} spacing = {15} cellHeight={300} cols={getGridListCols}>
               {tileData.map((tile) => (
