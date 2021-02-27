@@ -167,12 +167,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '15px',
   },
   fashionleadtext: {
-    paddingBottom: '20px',
+    paddingBottom: '50px',
   },
   labels: {
     display: 'flex',
     justifyContent: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 
 }));

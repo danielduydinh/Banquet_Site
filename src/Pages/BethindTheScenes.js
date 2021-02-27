@@ -187,7 +187,8 @@ const useStyles = makeStyles((theme) => ({
   labels: {
     display: 'flex',
     justifyContent: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    alignItems: 'center',
   },
 
 }));
@@ -260,7 +261,7 @@ export default function BTSpage() {
                       CONTENT LEADS
                   </Typography>
                   <Grid container spacing={4}>
-                      <Grid item lg={4} >
+                      <Grid item lg={4} className={classes.labels}>
                           <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
                       </Grid>
                       <Grid item lg={4}  className={classes.labels}>
@@ -269,7 +270,7 @@ export default function BTSpage() {
                       </Grid>
                   </Grid>
                   <Grid container spacing={4}>
-                      <Grid item lg={4} >
+                      <Grid item lg={4} className={classes.labels}>
                           <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
                       </Grid>
                       <Grid item lg={4} className={classes.labels}>
@@ -278,7 +279,7 @@ export default function BTSpage() {
                       </Grid>
                   </Grid>
                   <Grid container spacing={4}>
-                      <Grid item lg={4} >
+                      <Grid item lg={4} className={classes.labels}>
                           <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
                       </Grid>
                       <Grid item lg={4} className={classes.labels}>
