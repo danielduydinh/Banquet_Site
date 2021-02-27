@@ -19,6 +19,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import InfoIcon from '@material-ui/icons/Info';
 import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 
 // all the pictures from content submissions
@@ -40,6 +41,7 @@ import christym3 from '../ContentSub/christym3.JPG';
 import christym4 from '../ContentSub/christym4.jpg';
 import christym5 from '../ContentSub/christym5.jpg';
 import kaseyl from '../ContentSub/kaseyl.png';
+import kaseydance from '../ContentSub/KaseyDance.mp4';
 
 //paper cutting event photos
 import aaronpaper from '../ContentSub/PaperCutting/Aaron.jpg';
@@ -67,7 +69,6 @@ const videoOptions = {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
     rel: 0,
-
   }
 
 };
@@ -87,9 +88,9 @@ const theme = createMuiTheme({
     },
     h2: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '24px',
+      fontSize: '18px',
       '@media screen and (min-width: 1400px)':{
-        fontSize: '40px',
+        fontSize: '32px',
       },
     },
     body1:{
@@ -164,6 +165,10 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  submissionImage: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   gridListContainer: {
     position: 'relative',
     margin: 'auto',
@@ -189,6 +194,8 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'none',
   },
   extras: {
+    width: "90%",
+    height: "auto",
     margin: "auto",
     display: "flex",
     justifyContent: "center",
@@ -294,24 +301,31 @@ export default function Foodpage() {
             className={classes.dialogBox}
             onClose={handleClose} aria-labelledby="customized-dialog-title"
             fullWidth
+            maxWidth= "md"
+            autoDetectWindowHeight={false}
+            autoScrollBodyContent={false}
+            contentStyle={{width: "100%", maxWidth: "none"}}
             classes={{ paperFullWidth: classes.dialogCustomizedWidth }}
             selectedElement={selectedElement}
             open={open}
             setOpen={setOpen}>
-              <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
-                <CloseIcon />
-              </IconButton>
-                <Typography gutterBottom variant='h2'>
-                  {selectedElement.title}
-                </Typography>
-                <Typography gutterBottom variant='body2'>
-                  {selectedElement.author}
-                </Typography>
-
+                <div>
+                  <div padding-left="20px">
+                    <Typography gutterBottom variant='h2'>
+                      {selectedElement.title}
+                    </Typography>
+                    <Typography gutterBottom variant='body2'>
+                      {selectedElement.author}
+                    </Typography>
+                  </div>
+                    <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
+                      <CloseIcon />
+                    </IconButton>
+                </div>
                 <DialogContent dividers>
-                <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
-                  <img src={selectedElement.img} alt={selectedElement.img}/>
-                </GridList>
+                <div className = {classes.extras} margin="auto" display="flex" justifyContent="center">
+                  <img src={selectedElement.img}  alt="aaronpaper" width="60%" height="auto" />
+                </div>
                 <Typography gutterBottom fontSize='9px'>
                   {selectedElement.content}
                 </Typography>
@@ -357,6 +371,10 @@ const tileData = [
     title: 'Comeback - WayV Dance Cover',
     author: 'Kasey La',
     content: <Typography>
+    Scroll to the bottom to see the video!
+    <br/>
+    A little bit about this submission:
+    <br/>
     Music has always been a big part of my life. I distinctly remember one of my friends telling
     me about K-pop in middle school and my lack of interest at that time. Once I got to high school,
     I heard EXO’s Call Me Baby and was immediately intrigued. The ironic part? I ended up solely listening
@@ -373,9 +391,18 @@ const tileData = [
     the lyrics, even if it’s just bits and pieces throughout the songs. I knew I had to dedicate my first solo dance cover to WayV as a way
     to express my love and gratitude for this group, especially if it’s for CSA.
     </Typography>,
-    extra: <div>
-    <YouTube videoId="nI-sMuRvhEQ" width="60%" height="auto" opts={videoOptions} onReady={_onReady} />
-    </div>
+    extra:
+      <div>
+      <video width="320" height="240" controls>
+        <source src ={kaseydance} type="video/mp4" />
+      </video>
+      <br/>
+      <Button align="center" onClick={() => window.open("https://youtu.be/nI-sMuRvhEQ", "_blank")}>
+        Check it out on Youtube!
+      </Button>
+      </div>
+
+
   },
   {
     img: lyp,
