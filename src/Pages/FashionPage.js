@@ -29,9 +29,9 @@ const theme = createMuiTheme({
     },
     body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
-      fontSize: '32px',//32
+      fontSize: '20px',//32
       '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
-        fontSize: '24px',
+        fontSize: '28px',
       },
     },
     body2:{
