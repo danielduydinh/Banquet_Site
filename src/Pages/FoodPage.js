@@ -41,7 +41,6 @@ import christym3 from '../ContentSub/christym3.JPG';
 import christym4 from '../ContentSub/christym4.jpg';
 import christym5 from '../ContentSub/christym5.jpg';
 import kaseyl from '../ContentSub/kaseyl.png';
-import kaseydance from '../ContentSub/KaseyDance.mp4';
 
 //paper cutting event photos
 import aaronpaper from '../ContentSub/PaperCutting/Aaron.jpg';
@@ -393,13 +392,11 @@ const tileData = [
     </Typography>,
     extra:
       <div>
-      <video width="320" height="240" controls>
-        <source src ={kaseydance} type="video/mp4" />
-      </video>
-      <br/>
-      <Button align="center" onClick={() => window.open("https://youtu.be/nI-sMuRvhEQ", "_blank")}>
-        Check it out on Youtube!
-      </Button>
+          <iframe width="320" height="240" src="https://www.youtube.com/embed/nI-sMuRvhEQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <br/>
+          <Button align="center" onClick={() => window.open("https://youtu.be/nI-sMuRvhEQ", "_blank")}>
+            Check it out on Youtube!
+          </Button>
       </div>
 
 
