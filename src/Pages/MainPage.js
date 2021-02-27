@@ -303,7 +303,7 @@ export default function Mainpage() {
                 root organizing to heal a community that has been deeply impacted by the pandemic.
                 <br/>
                 “Many SF Chinatown restaurants are on the brink of closing permanently. With your support they can re-open their doors and re-hire
-                employees to provide meas for SRO residents in need.”
+                employees to provide means for SRO residents in need.”
                 <br/>
                 Your donations will be directly impacting Chinese Americans by preserving our rich Asian American history and the
                 legacy of America’s longest-standing and most resilient Chinatown. No donation is too small and all proceeds will
