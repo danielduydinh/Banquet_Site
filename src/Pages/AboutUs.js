@@ -25,7 +25,7 @@ import kevinx from '../Photos/OfficeHeads/KevinXu.jpg';
 import lianal from '../Photos/OfficeHeads/LianaLau.jpg';
 import lyp from '../Photos/OfficeHeads/LyPhung.jpg';
 import maryy from '../Photos/OfficeHeads/MaryYuen.jpg';
-import raymondl from '../Photos/OfficeHeads/RaymondLee.jpg';
+import raymondl from '../Photos/OfficeHeads/RaymondLee.png';
 import vaniag from '../Photos/OfficeHeads/VaniaGunawan.jpg';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
