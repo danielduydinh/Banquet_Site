@@ -39,12 +39,13 @@ const theme = createMuiTheme({
       },
     },
     h2: {
-      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '20px',//24
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
         fontSize: '24px',//42
       },
     },
+    
     h3: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       fontSize: '32px',
@@ -54,9 +55,9 @@ const theme = createMuiTheme({
     },
     h4: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
-      fontSize: '30px',
+      fontSize: '20px',//24
       '@media screen and (min-width: 1400px) and (min-height: 1000px)':{
-        fontSize: '40px',
+        fontSize: '24px',//42
       },
     },
     subtitle1: {
@@ -239,7 +240,7 @@ export default function Fashionpage() {
                 <Avatar alt="Angela Hong" src={icon1} className={classes.ah}/>
               </Grid>
               <Grid item lg={4} className={classes.labels}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
+                <Typography component="h4" variant="h4" align="center" color="textPrimary"> ANGELA HONG </Typography>
                 <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
               </Grid>
             </Grid>
@@ -248,7 +249,7 @@ export default function Fashionpage() {
                 <Avatar alt="Shannon Young" src={icon2} className={classes.ah}/>
               </Grid>
               <Grid item lg={4} className={classes.labels}>
-                <Typography component="h2" variant="h2" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
+                <Typography component="h4" variant="h4" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
                 <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
               </Grid>
             </Grid>
