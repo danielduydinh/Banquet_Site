@@ -13,11 +13,22 @@ import YouTube from "react-youtube";
 import icon2 from '../Photos/CommitteeHeads/AustinLiu.jpg';
 import icon1 from '../Photos/CommitteeHeads/KennethNg.jpg';
 import icon3 from '../Photos/CommitteeHeads/FanLiu.jpg';
-import Avatar from '@material-ui/core/avatar';
+import Kathy from '../Photos/CommitteeHeads/KathyYan.jpg';
+import Robin from '../Photos/CommitteeHeads/RobinLiu.jpg';
+import Samuel from '../Photos/CommitteeHeads/SamuelChern.jpg';
+import Christy from '../Photos/CommitteeHeads/ChristyMei.jpg';
+import Tommy from '../Photos/CommitteeHeads/TommyChan.JPG';
+import Tristyn from '../Photos/CommitteeHeads/TristynLai.jpg';
+import Wendy from '../Photos/CommitteeHeads/WendyChan.jpg';
+
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent'
+import Avatar from '@material-ui/core/Avatar';
 // import { Block } from '@material-ui/icons';
 
 const theme = createMuiTheme({
   typography: {
+    margin: 'auto',
     h1: {
       fontFamily: ['Archivo Black', 'sans-serif'].join(','),
       //Font size for the title
@@ -97,11 +108,10 @@ const theme = createMuiTheme({
       contrastText: '#000',
     },
     background: {
-      default: '#424242',
-      paper: '#424242',
+      default: '#171C20',
+      paper: '#171C20',
     },
   },
-
 });
 const useStyles = makeStyles((theme) => ({
   PageContent: {
@@ -109,10 +119,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    minwidth: '100vw',
+    //minwidth: '100vw',
     minHeight: '85vh',
+    width:'100vw',
     maxWidth: '100%',
   },
+
   videoContainer: { // div containing the video
     width: '100%', //60%
     height: '100%',
@@ -187,7 +199,31 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column'
   },
-
+  f: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  gridContainer: {
+    paddingTop: '5vh',
+  },
+  card: {
+    minWidth: 337,
+    minHeight: 475,
+    borderRadius: 65,
+  },
+  cardContent: {
+    height: 400,
+    display:'flex',
+    flexDirection: "column",
+    alignContent: 'center',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+  },
+  avatar: {
+    width: '150px',
+    height: '150px',
+  },
 }));
 const videoOptions = {
   playerVars: {
@@ -218,10 +254,11 @@ export default function BTSpage() {
               <Typography component="h1" variant="h1" align="left" color="textPrimary" margin='auto'>
                   BEHIND THE SCENES
               </Typography>
-              <Typography component="body1" variant="body1" align="left" color="textPrimary">
+              <Typography component="body1" variant="body1" align="justify" color="textPrimary" gutterBottom>
                 As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
                  Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
+
           </Grid>
       </Grid>
 
@@ -292,9 +329,119 @@ export default function BTSpage() {
                 </Grid>
         </Grid>
         </Container>
+
+        <Box width="100%" paddingTop="100px">
+          <Typography variant="h3" align="center" color="textPrimary">
+            GRAPHIC LEADS
+          </Typography>
+        </Box>
+        <div className={classes.gridContainer}>
+           <Grid container spacing={3} justify='center'>
+             <Grid item xs={2.5}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Kathy Yan" src={Kathy} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Kathy Yan
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     4th Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.5}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Samuel Chern" src={Samuel} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Samuel Chern
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     4th Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.5}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Christy Mei" src={Christy} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Christy Mei
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     1st Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.5}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Robin Liu" src={Robin} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Robin Liu
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     1st Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+          </Grid>
+        </div>
+
+        <Box width="100%" paddingTop="100px">
+          <Typography variant="h3" align="center" color="textPrimary">
+            WEBSITE LEADS
+          </Typography>
+        </Box>
+        <div className={classes.gridContainer}>
+           <Grid container spacing={3} justify='center'>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Tommy Chan" src={Tommy} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Tommy Chan
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     3rd Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Tristyn Lai" src={Tristyn} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Tristyn
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     1st Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+             <Grid item xs={2.4}>
+               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                 <CardContent className={classes.cardContent}>
+                  <Avatar alt="Wendy Chan" src={Wendy} className={classes.avatar}/>
+                   <Typography variant="h3" className={classes.title} color="textPrimary">
+                     Wendy Chan
+                   </Typography>
+                   <Typography variant="body2" component="p">
+                     1st Year
+                   </Typography>
+                 </CardContent>
+               </Card>
+             </Grid>
+          </Grid>
+        </div>
+
       </div>
-
-
-      </ThemeProvider>
+    </ThemeProvider>
   )
 }
