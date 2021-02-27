@@ -220,7 +220,7 @@ export default function Mainpage() {
                   WELCOME TO OUR ANNUAL BANQUET
                 </Typography>
                 <Grid item>
-                  <Typography component="body1" variant="body1" align="left" margin='auto' color="textPrimary" gutterBottom>
+                  <Typography component="body1" variant="body1" align="justify" margin='auto' color="textPrimary" gutterBottom>
                     Hey there, thanks for stopping by! We’ve been working really hard to put together a fantastic show throughout the past few months.
                     Despite occasional adversity, we can confidently say that this 35th banquet will be unlike anything you’ve seen in the past.
                     <br/>
@@ -240,15 +240,14 @@ export default function Mainpage() {
             </Typography>
           </Box>
           <Box p={2} width="60vw"  margin="auto" textAlign= 'center'>
-            <Typography component="body1" variant="body1" color="textPrimary" gutterBottom>
+            <Typography component="body1" variant="body1" color="textPrimary" align="justify" gutterBottom>
               Banquet has been strange this year, with communication and planning being strictly online.
               As a result, the experience accrued through past banquets is not as applicable.
               Banquet has been a journey, and we have embarked on a new, different path.
-
             </Typography>
             <br/>
             <br/>
-            <Typography component="body1" variant="body1" color="textPrimary" gutterBottom>
+            <Typography component="body1" variant="body1" color="textPrimary" align="justify" gutterBottom>
               However, the core beliefs of banquet have not changed; banquet is hosted by Asian-Americans
               for the celebration of Asian-American culture and heritage. This much will never change.
               Our exhibition of this culture and heritage encapsulate what unites us under the CSA banner,

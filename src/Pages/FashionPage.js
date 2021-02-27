@@ -209,10 +209,11 @@ export default function Fashionpage() {
                 SHOW
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
-                  Fashion is nothing without people, and CSA is nothing without our beloved members.
-                  <br></br>
-                  Fashion show presents, well, fashion show!
+              <Typography component="h2" variant="h2" align="justify" color="textPrimary" gutterBottom>
+                  Fashion Show is about tying modern fashion, such as streetwear and everyday clothing, to traditional clothing, such as QiPaos.
+                  <br/>
+                  <br/>
+                  Using their creativity and wardrobe, members of Fashion Show express themselves as individuals through a series of short skits, each of them unique and exciting.
               </Typography>
             </Grid>
 

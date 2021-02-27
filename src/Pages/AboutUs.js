@@ -189,8 +189,8 @@ export default function AboutUs() {
             primarily run through our unique house system.
             <br/>
             <br/>
-            In spite of COVID-19, we aim to help our members build life-long
-            friendships, and to provide a second home while at home.
+            In spite of COVID-19, we aim provide our members a welcoming home in college and
+            a place to make life-long friends.
             </Typography>
           </Box>
           <Box width="100%" paddingTop="100px">
