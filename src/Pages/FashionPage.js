@@ -173,14 +173,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column'
   },
-
 }));
 const videoOptions = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
     rel: 0,
-
   }
 
 };
@@ -203,13 +201,13 @@ export default function Fashionpage() {
         <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' spacing={3} paddingTop='50px'>
           <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
           <div className = {classes.f}>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
                 FASHION
                 <br></br>
                 SHOW
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
+              <Typography component="h2" variant="h2" align="left" color="textPrimary">
                   Fashion is nothing without people, and CSA is nothing without our beloved members.
                   <br></br>
                   Fashion show presents, well, fashion show!

@@ -189,7 +189,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column'
   },
-
+  f: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
 }));
 const videoOptions = {
   playerVars: {
@@ -216,14 +220,16 @@ export default function BTSpage() {
     <div className={classes.PageContent}>
     <Container maxWidth="1/4">
       <Grid container width="1500px" className={classes.IntroPhoto} container wrap='nowrap' >
-          <Grid item>
-              <Typography component="h1" variant="h1" align="left" color="textPrimary" margin='auto'>
+          <Grid item lg={4} sm={8} xs={12}>
+            <div className={classes.f}>
+              <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>
                   BEHIND THE SCENES
               </Typography>
-              <Typography component="body1" variant="body1" align="left" color="textPrimary">
+              <Typography component="body1" variant="body1" align="justify" color="textPrimary" gutterBottom>
                 As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
                  Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
+            </div>
           </Grid>
       </Grid>
 
