@@ -11,6 +11,9 @@ import icon1 from '../Photos/CommitteeHeads/BrianLiu.jpg';
 import rectangle from '../Photos/redrectangle.png';
 import Avatar from '@material-ui/core/Avatar';
 import skitphoto from '../Photos/CSASkitBanner.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {
@@ -205,8 +208,9 @@ export default function Skitpage() {
                 SKIT
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
-                  Skit blah blah blah
+              <Typography component="body1" variant="body1" align="left" color="textPrimary" gutterBottom data-aos="fade-right">
+                  Skit this year has been difficult during the pandemic. Nonetheless, we were able to produce
+                  something truly special even when apart. We hope you enjoy the show.
               </Typography>
             </Grid>
 
@@ -224,7 +228,7 @@ export default function Skitpage() {
           </div>
         </Grid>
         <Grid item lg={4} sm={8} xs={12}>
-          <div className = {classes.fashionHeads}>
+          <div className = {classes.fashionHeads} data-aos="fade-left">
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
                 SKIT LEAD
             </Typography>

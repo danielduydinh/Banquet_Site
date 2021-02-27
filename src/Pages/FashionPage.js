@@ -14,6 +14,9 @@ import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
 import icon2 from '../Photos/CommitteeHeads/ShannonYoung.jpg';
 import rectangle from '../Photos/redrectangle.png';
 import Avatar from '@material-ui/core/Avatar';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {
@@ -173,14 +176,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     flexDirection: 'column'
   },
-
 }));
 const videoOptions = {
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 0,
     rel: 0,
-
   }
 
 };
@@ -202,18 +203,18 @@ export default function Fashionpage() {
       <Container maxWidth="1/4">
         <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' spacing={3} paddingTop='50px'>
           <Grid item className={classes.firsttext} lg={4} sm={8} xs={12}>
-          <div className = {classes.f}>
-            <Typography component="h1" variant="h1" align="left" color="textPrimary" gutterBottom>
+          <div className = {classes.f} data-aos="fade-right">
+            <Typography component="h1" variant="h1" align="left" color="textPrimary">
                 FASHION
                 <br></br>
                 SHOW
             </Typography>
             <Grid item>
-              <Typography component="h2" variant="h2" align="justify" color="textPrimary" gutterBottom>
-                  Fashion Show is about tying modern fashion, such as streetwear and everyday clothing, to traditional clothing, such as QiPaos.
-                  <br/>
-                  <br/>
-                  Using their creativity and wardrobe, members of Fashion Show express themselves as individuals through a series of short skits, each of them unique and exciting.
+              <Typography component="body1" variant="body1" align="left" color="textPrimary" gutterBottom>
+                Fashion Show is about tying modern fashion, such as streetwear and everyday clothing,
+                to traditional clothing, such as Qipaos. It's a series of short skits compiled by members of CSA,
+                each of them being being unique and exciting. The Fashion Show members used their creativity
+                and their wardrobe to express themselves as individuals.
               </Typography>
             </Grid>
 
@@ -226,11 +227,11 @@ export default function Fashionpage() {
 
       <Grid container spacing ={2}>
         <Grid item lg={8} xs = {12}>
-          <div className= {classes.videoContainer}>
+          <div className= {classes.videoContainer} data-aos="fade-right">
             <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
           </div>
         </Grid>
-        <Grid item lg={4} sm={8} xs={12}>
+        <Grid item lg={4} sm={8} xs={12} data-aos="fade-right">
           <div className = {classes.fashionHeads}>
             <Typography className={classes.fashionleadtext} component="h3" variant="h3" align="center" color="textPrimary">
                 FASHION LEADS
@@ -241,7 +242,7 @@ export default function Fashionpage() {
               </Grid>
               <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
-                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 2ND YEAR </Typography>
               </Grid>
             </Grid>
             <Grid container spacing={4}>

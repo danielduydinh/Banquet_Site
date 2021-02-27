@@ -26,8 +26,10 @@ import lianal from '../Photos/OfficeHeads/LianaLau.jpg';
 import lyp from '../Photos/OfficeHeads/LyPhung.jpg';
 import maryy from '../Photos/OfficeHeads/MaryYuen.jpg';
 import raymondl from '../Photos/OfficeHeads/RaymondLee.jpg';
-//Icon10 for Vania
 import vaniag from '../Photos/OfficeHeads/VaniaGunawan.jpg';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+AOS.init();
 
 const theme = createMuiTheme({
   typography: {
@@ -161,7 +163,7 @@ export default function AboutUs() {
       <div className={classes.PageContent}>
         <Container maxWidth="1/4" align="center">
           <Grid container className={classes.AUBKGP} >
-            <div className={classes.photopadding}>
+            <div className={classes.photopadding} data-aos="fade-right">
                 <Grid item xs={12}  align="center">
                   <img src={GP} className={classes.GroupPhoto} alt="Groupphoto"/>
                 </Grid>
@@ -177,7 +179,7 @@ export default function AboutUs() {
               Chinese Student Association
             </Typography>
           </Box>
-          <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center'>
+          <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center' data-aos="fade-right">
             <Typography variant="body1" align="justify" color="textPrimary">
             Chinese Student Association also known as CSA is an ethnic UCSC organization that
             seeks to serve those that identify with Chinese-American culture and
@@ -193,14 +195,14 @@ export default function AboutUs() {
             a place to make life-long friends.
             </Typography>
           </Box>
-          <Box width="100%" paddingTop="100px">
+          <Box width="100%" paddingTop="100px" data-aos="fade-right">
             <Typography variant="h1" align="center" color="textPrimary">
             CSA OFFICERS
             <br/>
             (2020 - 2021)
             </Typography>
           </Box>
-          <div className={classes.GM}>
+          <div className={classes.GM} data-aos="fade-right">
            <Grid container spacing={3} justify='center'>
              <Grid item xs={2.4}>
                <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
