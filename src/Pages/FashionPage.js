@@ -228,7 +228,7 @@ export default function Fashionpage() {
       <Grid container spacing ={2}>
         <Grid item lg={8} xs = {12}>
           <div className= {classes.videoContainer} data-aos="fade-right">
-            <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+            <YouTube className={classes.videoPlayer} videoId="y8asx2jXalU" opts={videoOptions} onReady={_onReady} />
           </div>
         </Grid>
         <Grid item lg={4} sm={8} xs={12} data-aos="fade-right">

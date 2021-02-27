@@ -224,7 +224,7 @@ export default function Skitpage() {
       <Grid container spacing ={2}>
         <Grid item lg={8} xs = {12}>
           <div className= {classes.videoContainer}>
-            <YouTube className={classes.videoPlayer} videoId="JOwmYhAFiGk" opts={videoOptions} onReady={_onReady} />
+            <YouTube className={classes.videoPlayer} videoId="jooTwG-An_U" opts={videoOptions} onReady={_onReady} />
           </div>
         </Grid>
         <Grid item lg={4} sm={8} xs={12}>
