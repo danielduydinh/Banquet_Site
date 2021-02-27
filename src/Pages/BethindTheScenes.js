@@ -420,7 +420,7 @@ export default function BTSpage() {
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Tristyn Lai" src={Tristyn} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Tristyn
+                     Tristyn Lai
                    </Typography>
                    <Typography variant="body2" component="p">
                      1st Year
@@ -433,7 +433,7 @@ export default function BTSpage() {
                  <CardContent className={classes.cardContent}>
                   <Avatar alt="Wendy Chan" src={Wendy} className={classes.avatar}/>
                    <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Wendy Chan
+                     Wendy Chen
                    </Typography>
                    <Typography variant="body2" component="p">
                      1st Year
