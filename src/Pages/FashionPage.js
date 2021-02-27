@@ -210,9 +210,11 @@ export default function Fashionpage() {
             </Typography>
             <Grid item>
               <Typography component="h2" variant="h2" align="left" color="textPrimary" gutterBottom>
-                  Fashion is nothing without people, and CSA is nothing without our beloved members.
-                  <br></br>
-                  Fashion show presents, well, fashion show!
+              Fashion Show is about tying modern fashion, such as streetwear and everyday clothing,
+              to traditional clothing, such as QiPaos. Its a series of short skits compiled by members of CSA,
+              each of them being being unique and exciting. The Fashion Show members used their creativity
+              and their wardrobe to express themselves as individuals.
+
               </Typography>
             </Grid>
 
@@ -240,7 +242,7 @@ export default function Fashionpage() {
               </Grid>
               <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
-                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 2ND YEAR </Typography>
               </Grid>
             </Grid>
             <Grid container spacing={4}>

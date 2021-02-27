@@ -39,8 +39,42 @@ import christym2 from '../ContentSub/christym2.JPG';
 import christym3 from '../ContentSub/christym3.JPG';
 import christym4 from '../ContentSub/christym4.jpg';
 import christym5 from '../ContentSub/christym5.jpg';
+import kaseyl from '../ContentSub/kaseyl.png';
 
+//paper cutting event photos
+import aaronpaper from '../ContentSub/PaperCutting/Aaron.jpg';
+import anitapaper1 from '../ContentSub/PaperCutting/Anita (2).jpg';
+import anitapaper2 from '../ContentSub/PaperCutting/Anitaa.JPG';
+import ernestpaper from '../ContentSub/PaperCutting/Ernest.jpg';
+import kaseypaper1 from '../ContentSub/PaperCutting/Kasey1.JPG';
+import kaseypaper2 from '../ContentSub/PaperCutting/Kasey2.JPG';
+import kaseypaper3 from '../ContentSub/PaperCutting/Kasey3.JPG';
+import kaseypaper4 from '../ContentSub/PaperCutting/Kasey4.JPG';
+import lianapaper1 from '../ContentSub/PaperCutting/Liana_1.jpeg';
+import lianapaper2 from '../ContentSub/PaperCutting/Liana_2.JPG';
+import marypaper1 from '../ContentSub/PaperCutting/mary_s.jpg';
+import marypaper2 from '../ContentSub/PaperCutting/marys2.jpg';
+import nicolepaper1 from '../ContentSub/PaperCutting/Nicole(1).jpg';
+import nicolepaper2 from '../ContentSub/PaperCutting/Nicole(2).jpg';
+import nicolepaper3 from '../ContentSub/PaperCutting/Nicole(3).jpg';
+import nicolepaper4 from '../ContentSub/PaperCutting/Nicole(4).jpg';
+import samuelpaper from '../ContentSub/PaperCutting/Samuel.jpg';
 
+import YouTube from "react-youtube";
+
+const videoOptions = {
+  playerVars: {
+    // https://developers.google.com/youtube/player_parameters
+    autoplay: 0,
+    rel: 0,
+
+  }
+
+};
+function _onReady(event) {
+  // access to player in all event handlers via event.target
+  event.target.pauseVideo();
+}
 
 const theme = createMuiTheme({
   typography: {
@@ -51,11 +85,25 @@ const theme = createMuiTheme({
         fontSize: '60px',
       },
     },
+    h2: {
+      fontFamily: ['Archivo Black', 'sans-serif'].join(','),
+      fontSize: '24px',
+      '@media screen and (min-width: 1400px)':{
+        fontSize: '40px',
+      },
+    },
     body1:{
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '12px',
       '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
         fontSize: '24px',
+      },
+    },
+    body2:{
+      fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
+      fontSize: '10px',
+      '@media screen and (min-width: 1200px) and (min-height: 1000px)':{
+        fontSize: '18px',
       },
     },
     fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
@@ -89,6 +137,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
+    flexDirection: 'row',
     justifyContent: 'space-around',
     overflow: 'hidden',
     margin: 0,
@@ -102,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     maxwidth: '100%',
     [theme.breakpoints.down('sm')]: {
-      paddingBottom: '1000px',
+      paddingBottom: '1500px',
     },
   },
   closeButton: {
@@ -137,6 +186,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     display: "flex",
     justifyContent: "center",
+    overflow: 'none',
   },
   extras: {
     margin: "auto",
@@ -207,7 +257,7 @@ export default function Foodpage() {
   return (
     <ThemeProvider theme={theme}>
       <div className={classes.PageContent}>
-        <Container maxWidth="sm">
+        <Container maxWidth="1/4">
           <Typography component="h1" variant="h1" align="center" color="textPrimary" gutterBottom>
             STUDENT WORKS
           </Typography>
@@ -244,22 +294,28 @@ export default function Foodpage() {
             className={classes.dialogBox}
             onClose={handleClose} aria-labelledby="customized-dialog-title"
             fullWidth
-            maxWidth='md'
             classes={{ paperFullWidth: classes.dialogCustomizedWidth }}
             selectedElement={selectedElement}
             open={open}
             setOpen={setOpen}>
-
-                <Typography gutterBottom variant='h1'>
+              <IconButton aria-label="close" className={classes.closeButton} onClick={handleClose}>
+                <CloseIcon />
+              </IconButton>
+                <Typography gutterBottom variant='h2'>
                   {selectedElement.title}
                 </Typography>
+                <Typography gutterBottom variant='body2'>
+                  {selectedElement.author}
+                </Typography>
+
                 <DialogContent dividers>
+                <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
+                  <img src={selectedElement.img} alt={selectedElement.img}/>
+                </GridList>
                 <Typography gutterBottom fontSize='9px'>
                   {selectedElement.content}
                 </Typography>
-                  <GridList className= {classes.gridList} spacing = {15} cellHeight={400} cols={getGridListCols}>
-                    <img src={selectedElement.img} alt={selectedElement.img} />
-                  </GridList>
+                  <Box height="50px"/>
                 <div className = {classes.extras} margin="auto" display="flex" justifyContent="center">
                   {selectedElement.extra}
                 </div>
@@ -295,6 +351,31 @@ const tileData = [
     title: '鱼 or Fish',
     author: 'Joanna Yu',
     content: "鱼, or Fish, is a common entree in a Chinese or Asian household.  It can be prepared in a variety of ways, from being steamed to being pan-fried. However, it also holds a special meaning when served for the Lunar New Year. For context, 鱼 (yú) is pronounced in the second intonation of the Chinese language. It is the same pronunciation 余 of 多余, (dūo yú), meaning prosperity, wealth, and abundance. Fish is commonly seen on a Lunar New Year banquet table to bring hope to people, in wishing them prosperity in the New Year. Fish holds a special memory for me, as the many methods I have eaten them at home have given me many family memories that I cherish. From seeing my parents prepare the fish, to how they cook it, adding the necessary spices, to me testing a variety of methods of preparing fish with my brother as we celebrate the new year together."
+  },
+  {
+    img: kaseyl,
+    title: 'Comeback - WayV Dance Cover',
+    author: 'Kasey La',
+    content: <Typography>
+    Music has always been a big part of my life. I distinctly remember one of my friends telling
+    me about K-pop in middle school and my lack of interest at that time. Once I got to high school,
+    I heard EXO’s Call Me Baby and was immediately intrigued. The ironic part? I ended up solely listening
+    to the Chinese versions of their songs and my interest leaned towards C-pop instead. If you know me,
+    you’d know that I ended up going back to K-pop anyway. I owe this to my high school’s K-pop dance team,
+    which not only introduced me to a variety of great songs, but also taught me to be more confident in myself.
+    Although I may not be the best dancer, the joy that I get from performing or simply learning these choreographies is unmatched.
+    <br/>
+    My cultural submission is a dance cover of WayV’s Come Back. WayV is a Chinese subunit of NCT (Neo Cultural Technology),
+    my favorite K-pop boy group. Following WayV’s debut back in 2019, I ended up joining a subtitling team that focuses on translating
+    and captioning Chinese content into English for fans who do not understand Chinese. Since my Chinese is as good as it can get for an
+    ABC (if not worse), this has been a great way for me to practice my listening and reading comprehension while simultaneously enjoying
+    content from my favorite group. Aside from that, I also absolutely love WayV’s discography! It makes me feel even happier to understand
+    the lyrics, even if it’s just bits and pieces throughout the songs. I knew I had to dedicate my first solo dance cover to WayV as a way
+    to express my love and gratitude for this group, especially if it’s for CSA.
+    </Typography>,
+    extra: <div>
+    <YouTube videoId="nI-sMuRvhEQ" width="60%" height="auto" opts={videoOptions} onReady={_onReady} />
+    </div>
   },
   {
     img: lyp,
@@ -353,12 +434,45 @@ const tileData = [
     content: 'Almond jello, a traditional Cantonese dessert, has always been a popular dish to have at my family gatherings. It was a sweet treat to end the night and I remember all the times me and my cousins would sit around the kitchen table slurping the dessert down as a quick break from playing. My mom used to be the one in charge of making/bringing the jello and I loved helping her prepare it. Eventually, I ended up taking over this family tradition of making it. Usually the dessert is supposed to be mixed with lychee or mandarin oranges, but my family’s recipe was adjusted because the fruit would make the dessert too sweet for my elder relatives.',
   },
   {
+    img: lianapaper2,
+    title: '剪紙 Paper Cutting',
+    author: "Chrysanthemum's Paper Cutting Event",
+    content: <Typography>
+        剪紙 (paper-cutting), an activity consisting of folding and cutting (typically) red paper into intricate designs, is a very popular Chinese folk art.
+        It is said that paper cutting has been around for over 1500 years and it continues to be a big part of Chinese culture today. Paper-cutting symbolizes
+        good luck and prosperity, so it is especially prevalent during festivals such as weddings and Chinese New Year. Paper-cutting designs oftentimes incorporate
+        symmetry, which is considered to be lucky in Chinese culture. For Chrysanthemum’s paper-cutting event, most of the designs incorporated the character 春 (spring),
+        since Chinese New Year is called 春節. One of these even included an outline of an ox to represent 2021 as Year of the Ox. Another design had the phrase 平安 (peace/safety).
+        While the drawing and cutting processes may be time-consuming, the beautiful finished products are well worth the effort.
+      </Typography>,
+    extra:
+          <div margin="auto" display="flex" justify-content="center">
+            <img src={aaronpaper}  alt="aaronpaper" width="60%" height="auto" />
+            <img src={anitapaper1}  alt="anitapaper1"  width="60%" height="auto" />
+            <img src={anitapaper2}  alt="anitapaper2" width="60%" height="auto" />
+            <img src={ernestpaper}  alt="ernestpaper" width="60%" height="auto" />
+            <img src={kaseypaper1}  alt="kaseypaper1" width="60%" height="auto"  />
+            <img src={kaseypaper2}  alt="kaseypaper2" width="60%" height="auto"  />
+            <img src={kaseypaper3}  alt="kaseypaper3" width="60%" height="auto"  />
+            <img src={kaseypaper4}  alt="kaseypaper4" width="60%" height="auto"  />
+            <img src={lianapaper1}  alt="lianapaper1" width="60%" height="auto"  />
+            <img src={lianapaper2}  alt="lianapaper2" width="60%" height="auto"  />
+            <img src={marypaper1}  alt="marypaper1" width="60%" height="auto"  />
+            <img src={marypaper2}  alt="marypaper2" width="60%" height="auto"  />
+            <img src={nicolepaper1}  alt="nicolepaper1" width="60%" height="auto"  />
+            <img src={nicolepaper2}  alt="nicolepaper2" width="60%" height="auto"  />
+            <img src={nicolepaper3}  alt="nicolepaper3" width="60%" height="auto"  />
+            <img src={nicolepaper4}  alt="nicolepaper4" width="60%" height="auto"  />
+            <img src={samuelpaper}  alt="samuelpaper" width="60%" height="auto"  />
+          </div>
+  },
+  {
     img: christym,
     title: 'Dumpling 饺子',
     author: 'Christy Mei',
     content: 'Dumplings have always been a staple dish eaten in my family, whether it was homemade or store-bought. Growing up, my mom would always hand make dumplings from scratch for me to eat. I vividly remember the excitement I had whenever I smelled the delicious fragrance of the stuffing from a distance. Even today, I still feel the same thrill as my younger self did whenever I see dumplings sitting on the dinner table. When I was younger, I always wondered why my mom frequently chooses to spend countless hours hand making dumplings instead of buying premade ones from the store. It turns out that hand making dumplings is actually a family tradition that has been passed down for many years and holds a meaningful place in my mom’s heart. Since this year’s Lunar New Year Banquet is virtual, I wanted to share some pictures of my mom’s dumpling-making process.',
     extra:
-      <div margin="auto" display="flex" justifyContent="center">
+      <div margin="auto" display="flex" justify-content="center">
             <img src={christym1}  alt="christy1" width="60%" height="auto" />
             <img src={christym2}  alt="christy2"  width="60%" height="auto" />
             <img src={christym3}  alt="christy3" width="60%" height="auto" />
@@ -397,7 +511,6 @@ const tileData = [
         <br/>
         Serving Size: One Family
         <br/>
-        <br/>
         Ingredients
         <br/>
         <ul>5 eggs</ul>
@@ -426,18 +539,13 @@ const tileData = [
         <br/>
         Add cooking oil to a heated saucepan or wok. Stir fry the eggs with salt and garlic on medium heat and cook until slightly yokey. Remove from pan immediately and set aside.
         <br/>
-        <br/>
         Diced tomatoes and add cooking oil to a heated pan. Stir fry the tomatoes with salt, sugar, and ketchup.
-        <br/>
         <br/>
         After 2 minutes, add water and cover the lid until the water has almost evaporated.
         <br/>
-        <br/>
         Combine cornstarch and 2 tbsp of water and incorporate it into the tomatoes
         <br/>
-        <br/>
         Smash tomatoes to your liking and stir fry in the eggs you set aside at the beginning
-        <br/>
         <br/>
         Finally, Garnish with spring onions and top on up with rice or noodles
     </Typography>
