@@ -180,17 +180,13 @@ export default function AboutUs() {
             </Typography>
           </Box>
           <Box width="60vw" paddingTop="8vh"  margin="auto" textAlign= 'center' data-aos="fade-right">
-            <Typography variant="body1" align="justify" color="textPrimary">
+            <Typography variant="body1" align="center" color="textPrimary">
             Chinese Student Association also known as CSA is an ethnic UCSC organization that
             seeks to serve those that identify with Chinese-American culture and
             foster an Asian-American community on campus!
-            <br/>
-            <br/>
             We strive to create a safe space for these individuals through
             cultural-themed events such as this banquet, and small-scale events
             primarily run through our unique house system.
-            <br/>
-            <br/>
             In spite of COVID-19, we aim provide our members a welcoming home in college and
             a place to make life-long friends.
             </Typography>
@@ -215,6 +211,10 @@ export default function AboutUs() {
                      Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
+                     Molecular, Cellular, and
+                     <br/>
+                     Developmental Biology
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -231,6 +231,8 @@ export default function AboutUs() {
                      Co-Chair
                    </Typography>
                    <Typography variant="body2" component="p">
+                    Biochemistry
+                    <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -247,6 +249,8 @@ export default function AboutUs() {
                     Banquet Coordinator
                    </Typography>
                    <Typography variant="body2" component="p" height='100px'>
+                   Human Biology
+                   <br/>
                      2nd Year
                    </Typography>
                  </CardContent>
@@ -263,6 +267,8 @@ export default function AboutUs() {
                     Banquet Coordinator
                    </Typography>
                    <Typography variant="body2" component="p">
+                    Computer Science
+                    <br/>
                      3rd Year
                    </Typography>
                  </CardContent>
@@ -276,9 +282,12 @@ export default function AboutUs() {
                      Kevin Xu
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
+
                     Pubic Relations
                    </Typography>
                    <Typography variant="body2" component="p">
+                     Computer Science | Economics
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -295,6 +304,8 @@ export default function AboutUs() {
                     Public Relations
                    </Typography>
                    <Typography variant="body2" component="p">
+                    Cognitive Science
+                    <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -308,9 +319,12 @@ export default function AboutUs() {
                      Daniel Vu
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
+
                     Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
+                     Computer Science
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -327,6 +341,8 @@ export default function AboutUs() {
                     Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">
+                    Film and Digital Media | Economics
+                    <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -343,6 +359,8 @@ export default function AboutUs() {
                     Secretary
                    </Typography>
                    <Typography variant="body2" component="p">
+                    Cognitive Science
+                    <br/>
                      2nd Year
                    </Typography>
                  </CardContent>
@@ -359,6 +377,8 @@ export default function AboutUs() {
                     House Mediator
                    </Typography>
                    <Typography variant="body2" component="p">
+                   Computer Science: Game Design
+                   <br/>
                      3rd Year
                    </Typography>
                  </CardContent>

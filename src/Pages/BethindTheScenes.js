@@ -304,6 +304,7 @@ export default function BTSpage() {
                       </Grid>
                       <Grid item lg={4}  className={classes.labels}>
                           <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> FILM AND DIGITAL MEDIA </Typography>
                           <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
                       </Grid>
                   </Grid>
@@ -313,6 +314,7 @@ export default function BTSpage() {
                       </Grid>
                       <Grid item lg={4} className={classes.labels}>
                           <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> COGNITIVE SCIENCE </Typography>
                           <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
                       </Grid>
                   </Grid>
@@ -322,6 +324,7 @@ export default function BTSpage() {
                       </Grid>
                       <Grid item lg={4} className={classes.labels}>
                           <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> EDUCATION, <br/> DEMOCRACY, AND <br/> JUSTICE </Typography>
                           <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
                       </Grid>
                   </Grid>
@@ -347,7 +350,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Kathy Yan
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                     Global Economics
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -360,7 +365,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Samuel Chern
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                      Psychology
+                      <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -373,7 +380,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Christy Mei
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                      Psychology
+                      <br/>
                      1st Year
                    </Typography>
                  </CardContent>
@@ -386,7 +395,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Robin Liu
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                    Art
+                    <br/>
                      1st Year
                    </Typography>
                  </CardContent>
@@ -409,7 +420,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Tommy Chan
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                    Computer Science
+                    <br/>
                      3rd Year
                    </Typography>
                  </CardContent>
@@ -422,7 +435,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Tristyn Lai
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2"  align= "center" component="p">
+                   Computer Science: Game Design
+                   <br/>
                      1st Year
                    </Typography>
                  </CardContent>
@@ -435,7 +450,9 @@ export default function BTSpage() {
                    <Typography variant="h3" className={classes.title} color="textPrimary">
                      Wendy Chen
                    </Typography>
-                   <Typography variant="body2" component="p">
+                   <Typography variant="body2" align= "center" component="p">
+                   Computer Science: Game Design
+                   <br/>
                      1st Year
                    </Typography>
                  </CardContent>

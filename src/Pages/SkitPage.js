@@ -238,7 +238,7 @@ export default function Skitpage() {
               </Grid>
               <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> BRIAN LIU </Typography>
-                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 3RD YEAR </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> COMPUTER SCIENCE <br/> 3RD YEAR </Typography>
               </Grid>
             </Grid>
 

@@ -242,7 +242,7 @@ export default function Fashionpage() {
               </Grid>
               <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> ANGELA HONG </Typography>
-                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 2ND YEAR </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> GLOBAL ECONOMICS <br/> 2ND YEAR </Typography>
               </Grid>
             </Grid>
             <Grid container spacing={4}>
@@ -251,7 +251,7 @@ export default function Fashionpage() {
               </Grid>
               <Grid item lg={4} className={classes.labels}>
                 <Typography component="h2" variant="h2" align="center" color="textPrimary"> SHANNON YOUNG </Typography>
-                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> UNDECLARED <br/> 1ST YEAR </Typography>
               </Grid>
             </Grid>
 
