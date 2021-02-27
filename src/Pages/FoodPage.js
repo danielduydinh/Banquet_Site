@@ -196,11 +196,13 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'none',
   },
   extras: {
-    width: "90%",
+    width: "80%",
     height: "auto",
     margin: "auto",
     display: "flex",
     justifyContent: "center",
+    alignItems: "flex-start",
+    flexDirection: "column",
   },
   blurb: {
     width: "70%",
