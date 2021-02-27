@@ -292,13 +292,14 @@ export default function Mainpage() {
               OUR FUNDRAISER WITH THE CHINATOWN COMMUNITY DEVELOPMENT CENTER
             </Typography>
             <Typography component="body1" variant="body1" align="center" color="textPrimary" gutterBottom>
-                At the start of the pandemic, chinatowns across the United States have been devastated as once bustling streets are now ghost towns.
-                Local businesses owners and residents have been harmed due to the horrible association their livelihood to sickness and disease.
-                Our Chinese Student Association’s Lunar New Year Celebration is partnering up with Chinatown Community Development Center to grass
-                root organizing to heal a community that has been deeply impacted by the pandemic. “Many SF Chinatown restaurants are on the brink of closing permanently.
-                With your support they can re-open their doors and re-hire employees to provide means for SRO residents in need.” Your donations will be directly impacting
-                Chinese Americans by preserving our rich Asian American history and the legacy of America’s longest-standing and most resilient Chinatown. No donation is
-                too small and all proceeds will be directly be going to small local businesses in Chinatown.
+            At the start of the pandemic, chinatowns across the United States have been devastated as once bustling streets
+            are now ghost towns — many SF Chinatown restaurants are on the brink of closing permanently. The Chinese Student
+            Association’s Lunar New Year Celebration is partnering up with the Chinatown Community Development Center to
+            grassroots organize for and heal a community that has been deeply impacted by the pandemic. With your support,
+            they can re-open their doors and re-hire employees to provide means for SRO residents in need. Your donations
+            will be directly impacting Chinese Americans by preserving our rich Asian American history and the legacy of America’s
+            longest-standing and most resilient Chinatown. No donation is too small and all proceeds will directly be going
+            to small local businesses in Chinatown.
             </Typography>
             </Box>
             </div>
