@@ -215,6 +215,7 @@ export default function AboutUs() {
                      <br/>
                      Developmental Biology
                      <br/>
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -233,7 +234,8 @@ export default function AboutUs() {
                    <Typography variant="body2" component="p">
                     Biochemistry
                     <br/>
-                     4th Year
+                    <br/>
+                    4th year
                    </Typography>
                  </CardContent>
                </Card>
@@ -250,6 +252,7 @@ export default function AboutUs() {
                    </Typography>
                    <Typography variant="body2" component="p" height='100px'>
                    Human Biology
+                   <br/>
                    <br/>
                      2nd Year
                    </Typography>
@@ -268,6 +271,7 @@ export default function AboutUs() {
                    </Typography>
                    <Typography variant="body2" component="p">
                     Computer Science
+                    <br/>
                     <br/>
                      3rd Year
                    </Typography>
@@ -288,6 +292,7 @@ export default function AboutUs() {
                    <Typography variant="body2" component="p">
                      Computer Science | Economics
                      <br/>
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -305,6 +310,7 @@ export default function AboutUs() {
                    </Typography>
                    <Typography variant="body2" component="p">
                     Cognitive Science
+                    <br/>
                     <br/>
                      4th Year
                    </Typography>
@@ -325,6 +331,7 @@ export default function AboutUs() {
                    <Typography variant="body2" component="p">
                      Computer Science
                      <br/>
+                     <br/>
                      4th Year
                    </Typography>
                  </CardContent>
@@ -342,6 +349,7 @@ export default function AboutUs() {
                    </Typography>
                    <Typography variant="body2" component="p">
                     Film and Digital Media | Economics
+                    <br/>
                     <br/>
                      4th Year
                    </Typography>
@@ -361,6 +369,7 @@ export default function AboutUs() {
                    <Typography variant="body2" component="p">
                     Cognitive Science
                     <br/>
+                    <br/>
                      2nd Year
                    </Typography>
                  </CardContent>
@@ -378,6 +387,7 @@ export default function AboutUs() {
                    </Typography>
                    <Typography variant="body2" component="p">
                    Computer Science: Game Design
+                   <br/>
                    <br/>
                      3rd Year
                    </Typography>
