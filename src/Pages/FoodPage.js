@@ -41,6 +41,7 @@ import christym3 from '../ContentSub/christym3.JPG';
 import christym4 from '../ContentSub/christym4.jpg';
 import christym5 from '../ContentSub/christym5.jpg';
 import kaseyl from '../ContentSub/kaseyl.png';
+import jarretm from '../ContentSub/jarretm.png';
 
 //paper cutting event photos
 import aaronpaper from '../ContentSub/PaperCutting/Aaron.jpg';
@@ -154,7 +155,7 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     maxwidth: '100%',
     [theme.breakpoints.down('sm')]: {
-      paddingBottom: '1500px',
+      paddingBottom: '2000px',
     },
   },
   closeButton: {
@@ -417,9 +418,28 @@ const tileData = [
           <Button align="center" onClick={() => window.open("https://youtu.be/nI-sMuRvhEQ", "_blank")}>
             Check it out on Youtube!
           </Button>
-      </div>
+      </div>,
 
-
+  },
+  {
+    img:jarretm,
+    title: "Chasing My Cantonese",
+    author: "Jarrett Mao",
+    content: <Typography>
+      For my content submission I wanted to write a script that was thought 
+      provoking and spoke to the core of my experience as a Chinese American. 
+      It was sort of my own personal love letter to language and I hoped to 
+      inspire people to find their own meaning in being Asian Americans.
+    </Typography>,
+    extra:      
+    <div>
+      <iframe width="320" height="240" src="https://www.youtube.com/embed/S4MWuRXwXcw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br/>
+      <Button align="center" onClick={() => window.open("https://youtu.be/S4MWuRXwXcw", "_blank")}>
+        Check it out on Youtube!
+      </Button>
+    </div>,
+    
   },
   {
     img: lyp,
