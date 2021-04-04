@@ -6,15 +6,12 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import "../../node_modules/bootstrap/dist/css/bootstrap.css"
-//import Paper from '@material-ui/core/Paper';
-//import tDance from '../Photos/tdance.png';
-import GP from './Photos/AboutUs.jpg';
-import WWABGP from './Photos/WWABGP.png';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent'
 import Avatar from '@material-ui/core/Avatar';
-
+import "../../node_modules/bootstrap/dist/css/bootstrap.css"
+import GP from './Photos/AboutUs.jpg';
+import WWABGP from './Photos/WWABGP.png';
 
 //Office Heads Pics
 import Daniel from './Photos/DanielPFP.jpg'
@@ -134,7 +131,6 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-
   GM: {
     paddingTop: '5vh',
   },
@@ -146,15 +142,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function AboutUs() {
   const classes = useStyles();
-  const [index, setIndex] = React.useState(0);
 
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-  };
-
+  // when a user navigates to this page it will start at the top.
   React.useEffect(() => {
-    console.log('Scrolling to top in aboutpage');
     window.scrollTo(0, 0);
   }, []);
 
@@ -286,7 +276,6 @@ export default function AboutUs() {
                      Kevin Xu
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
-
                     Pubic Relations
                    </Typography>
                    <Typography variant="body2" component="p">
@@ -325,7 +314,6 @@ export default function AboutUs() {
                      Daniel Vu
                    </Typography>
                    <Typography variant="h6" color="textPrimary">
-
                     Financial Chair
                    </Typography>
                    <Typography variant="body2" component="p">

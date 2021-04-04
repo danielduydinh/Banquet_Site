@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,7 +6,6 @@ import Container from '@material-ui/core/Container';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
 import YouTube from "react-youtube";
-import {Block} from '@material-ui/icons';
 import Box from '@material-ui/core/Box';
 import fashion from '../Photos/fashion.png';
 import icon1 from '../Photos/CommitteeHeads/AngelaHong.jpg';
@@ -99,9 +97,6 @@ const useStyles = makeStyles((theme) => ({
     minwidth: '100vw',
     minHeight: '85vh',
     maxWidth: '100%',
-
-    flexGrow: 1,
-
   },
   IntroPhoto: {
     paddingTop:'20%',//5vh

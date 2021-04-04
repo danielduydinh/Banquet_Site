@@ -6,10 +6,12 @@ import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/core/styles';
-import bts from '../Photos/bts_2.png'
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent'
+import Avatar from '@material-ui/core/Avatar';
 import YouTube from "react-youtube";
 
+import bts from '../Photos/bts_2.png'
 import icon2 from '../Photos/CommitteeHeads/AustinLiu.jpg';
 import icon1 from '../Photos/CommitteeHeads/KennethNg.jpg';
 import icon3 from '../Photos/CommitteeHeads/FanLiu.jpg';
@@ -21,10 +23,6 @@ import Tommy from '../Photos/CommitteeHeads/TommyChan.JPG';
 import Tristyn from '../Photos/CommitteeHeads/TristynLai.jpg';
 import Wendy from '../Photos/CommitteeHeads/WendyChan.jpg';
 
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent'
-import Avatar from '@material-ui/core/Avatar';
-// import { Block } from '@material-ui/icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 AOS.init();
@@ -82,7 +80,6 @@ const theme = createMuiTheme({
         fontSize: '36px',
       },
     },
-
     subtitle1: {
       fontFamily: ['Lexend Exa', 'sans-serif',].join(','),
       fontSize: '32px',//32
@@ -122,27 +119,18 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: '#171C20',
     padding: theme.spacing(8, 0, 6),
-    //minwidth: '100vw',
     minHeight: '85vh',
     width:'100vw',
     maxWidth: '100%',
   },
-
   videoContainer: { // div containing the video
-    width: '100%', //60%
-    height: '100%',
-    paddingTop: '0%', // for ratio purposes 9/16 is 56.25% //33.75%
+    width: '100%',
+    paddingBottom: '56.25%', // for ratio purposes 9/16 is 56.25%
     display: 'block', // takes up the whole width of the div
     borderRadius: '16px', // curves the edges of the div
-    //height:0,
     overflow: 'hidden', // removes any parts of the div that might extend outside it
     zIndex: 1, // idk its just says so in the code haha
-    position: 'left', // make the position relative while allowing us to make the video absolute
-    //
-    flex: '1',
-    //paddingBottom: '75%',
-    // maxWidth: '70%',
-    // maxHeight: '30%',
+    position: 'relative', // make the position relative while allowing us to make the video absolute
   },
   IntroPhoto: {
     paddingTop: '20%',
@@ -151,7 +139,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right',
     mixBlendMode: 'lighten',
-    // margin: 'auto',
     height:'50%',
     maxWidth: '100%',
     [theme.breakpoints.down('sm')]: {
@@ -180,16 +167,7 @@ const useStyles = makeStyles((theme) => ({
   contentleadtext: {
     paddingBottom: '20px',
   },
-  videoContainer: { // div containing the video
-    // margin: 'auto',
-    width: '100%',
-    paddingBottom: '56.25%', // for ratio purposes 9/16 is 56.25%
-    display: 'block', // takes up the whole width of the div
-    borderRadius: '16px', // curves the edges of the div
-    overflow: 'hidden', // removes any parts of the div that might extend outside it
-    zIndex: 1, // idk its just says so in the code haha
-    position: 'relative', // make the position relative while allowing us to make the video absolute
-  },
+  
   videoPlayer: { // the actual video itself
     position: 'absolute', // allows us to scale the video responsively
     top: 0,
@@ -256,153 +234,125 @@ export default function BTSpage() {
       <Grid container width="1500px" className={classes.IntroPhoto} wrap='nowrap' >
           <Grid item>
               <Typography component="h1" variant="h1" align="left" color="textPrimary" margin='auto'>
-                  BEHIND THE SCENES
+                BEHIND THE SCENES
               </Typography>
               <Typography component="body1" variant="body1" align="justify" color="textPrimary" gutterBottom>
-                As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one.
-                 Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
+                As banquet navigates through a unique situation of working online, banquet committees continue to work hard to make this event a memorable one. 
+                Dive deep into the minds of the committee heads of the five committees into what it was like to work to make the virtual banquet possible behind the scenes!
               </Typography>
-
           </Grid>
       </Grid>
-
       <Box height="50px"/>
-
       <Grid container spacing = {2}>
-          {/*
-            <Typography className={classes.contentleadtext} component="h3" variant="h3" align="left" color="textPrimary">
-                  CONTENT LEADS
-              </Typography>
-                  <Grid item lg={4} md={6}>
-                      <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                      <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                      <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-                  </Grid>
-                  <Grid item lg={4} md={6}>
-                      <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-                      <Typography component="h5" variant="h5" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                  </Grid> */}
-                <Grid item lg={4} sm={8} xs={12} spacing={2}>
-                  <Typography paddingBottom="20px" component="h3" variant="h3" align="center" color="textPrimary">
-                      CONTENT LEADS
-                  </Typography>
-                  <Grid container spacing={4}>
-                      <Grid item lg={4} >
-                          <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
-                      </Grid>
-                      <Grid item lg={4}  className={classes.labels}>
-                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> FILM AND DIGITAL MEDIA </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                      </Grid>
-                  </Grid>
-                  <Grid container spacing={4}>
-                      <Grid item lg={4} >
-                          <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
-                      </Grid>
-                      <Grid item lg={4} className={classes.labels}>
-                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> COGNITIVE SCIENCE </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                      </Grid>
-                  </Grid>
-                  <Grid container spacing={4}>
-                      <Grid item lg={4} >
-                          <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
-                      </Grid>
-                      <Grid item lg={4} className={classes.labels}>
-                          <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> EDUCATION, <br/> DEMOCRACY, AND <br/> JUSTICE </Typography>
-                          <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
-                      </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={12} lg={8}>
-                    <div className= {classes.videoContainer}>
-                        <YouTube className={classes.videoPlayer} videoId="egp5O7A3Og0" opts={videoOptions} onReady={_onReady}  />
-                    </div>
-                </Grid>
+        <Grid item lg={4} sm={8} xs={12} spacing={2}>
+          <Typography paddingBottom="20px" component="h3" variant="h3" align="center" color="textPrimary">
+            CONTENT LEADS
+          </Typography>
+            <Grid container spacing={4}>
+              <Grid item lg={4} >
+                <Avatar alt="Kenneth Ng" src={icon1} className={classes.contenthead}/>
+              </Grid>
+              <Grid item lg={4}  className={classes.labels}>
+                <Typography component="h2" variant="h2" align="center" color="textPrimary"> KENNETH NG </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> FILM AND DIGITAL MEDIA </Typography>
+                <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+              </Grid>
+            </Grid>
+          <Grid container spacing={4}>
+            <Grid item lg={4} >
+              <Avatar alt="Austin Liu" src={icon2} className={classes.contenthead}/>
+            </Grid>
+            <Grid item lg={4} className={classes.labels}>
+              <Typography component="h2" variant="h2" align="center" color="textPrimary"> AUSTIN LIU </Typography>
+              <Typography component="body2" variant="body2" align="center" color="textPrimary"> COGNITIVE SCIENCE </Typography>
+              <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+            </Grid>
+          </Grid>
+          <Grid container spacing={4}>
+            <Grid item lg={4} >
+              <Avatar alt="Fan Liu" src={icon3} className={classes.contenthead}/>
+            </Grid>
+            <Grid item lg={4} className={classes.labels}>
+              <Typography component="h2" variant="h2" align="center" color="textPrimary"> FAN LIU </Typography>
+              <Typography component="body2" variant="body2" align="center" color="textPrimary"> EDUCATION, <br/> DEMOCRACY, AND <br/> JUSTICE </Typography>
+              <Typography component="body2" variant="body2" align="center" color="textPrimary"> 1ST YEAR </Typography>
+            </Grid>
+          </Grid>
         </Grid>
-        </Container>
+        <Grid item xs={12} lg={8}>
+          <div className= {classes.videoContainer}>
+            <YouTube className={classes.videoPlayer} videoId="egp5O7A3Og0" opts={videoOptions} onReady={_onReady}  />
+          </div>
+        </Grid>
+      </Grid>
+      </Container>
         <Box width="100%" paddingTop="100px" data-aos="fade-right">
           <Typography variant="h3" align="center" color="textPrimary">
             GRAPHIC LEADS
           </Typography>
         </Box>
         <div className={classes.gridContainer} data-aos="fade-right">
-           <Grid container spacing={3} justify='center'>
-             <Grid item xs={2.5}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+          <Grid container spacing={3} justify='center'>
+            <Grid item xs={2.5}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Kathy Yan" src={Kathy} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Kathy Yan
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
-                     Global Economics
-                     <br/>
-                     4th Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.5}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Kathy Yan
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
+                    Global Economics
+                    <br/>
+                    4th Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.5}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Samuel Chern" src={Samuel} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Samuel Chern
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
-                      Psychology
-                      <br/>
-                     4th Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.5}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Samuel Chern
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
+                    Psychology
+                    <br/>
+                    4th Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.5}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Christy Mei" src={Christy} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Christy Mei
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
-                      Psychology
-                      <br/>
-                     1st Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.5}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Christy Mei
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
+                    Psychology
+                    <br/>
+                    1st Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.5}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Robin Liu" src={Robin} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Robin Liu
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Robin Liu
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
                     Art
                     <br/>
-                     1st Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
+                    1st Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </div>
 
@@ -412,55 +362,54 @@ export default function BTSpage() {
           </Typography>
         </Box>
         <div className={classes.gridContainer} data-aos="fade-left">
-           <Grid container spacing={3} justify='center'>
-             <Grid item xs={2.4}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+          <Grid container spacing={3} justify='center'>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Tommy Chan" src={Tommy} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Tommy Chan
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Tommy Chan
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
                     Computer Science
                     <br/>
-                     3rd Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.4}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+                    3rd Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Tristyn Lai" src={Tristyn} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Tristyn Lai
-                   </Typography>
-                   <Typography variant="body2"  align= "center" component="p">
-                   Computer Science: Game Design
-                   <br/>
-                     1st Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
-             <Grid item xs={2.4}>
-               <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
-                 <CardContent className={classes.cardContent}>
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Tristyn Lai
+                  </Typography>
+                  <Typography variant="body2"  align= "center" component="p">
+                    Computer Science: Game Design
+                    <br/>
+                    1st Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={2.4}>
+              <Card className={classes.card} variant="outlined" style={{ border: '3px solid' }} >
+                <CardContent className={classes.cardContent}>
                   <Avatar alt="Wendy Chan" src={Wendy} className={classes.avatar}/>
-                   <Typography variant="h3" className={classes.title} color="textPrimary">
-                     Wendy Chen
-                   </Typography>
-                   <Typography variant="body2" align= "center" component="p">
-                   Computer Science: Game Design
-                   <br/>
-                     1st Year
-                   </Typography>
-                 </CardContent>
-               </Card>
-             </Grid>
+                  <Typography variant="h3" className={classes.title} color="textPrimary">
+                    Wendy Chen
+                  </Typography>
+                  <Typography variant="body2" align= "center" component="p">
+                    Computer Science: Game Design
+                    <br/>
+                    1st Year
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
           </Grid>
         </div>
-
       </div>
     </ThemeProvider>
   )
